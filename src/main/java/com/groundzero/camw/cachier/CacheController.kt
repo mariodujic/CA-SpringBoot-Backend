@@ -14,14 +14,11 @@ class CacheController : CommandLineRunner {
     @Autowired
     private lateinit var repository: CacheRepository
 
-
     override fun run(vararg args: String?) {
-        readQuizzes()
-        // readPrayers()
-        // readThoughts()
+        updateQuizzes()
     }
 
-    private fun readQuizzes() = repository.readNetworkQuizzes()?.let { repository.writeJsonQuizzes(it).getJsonLog(QUIZ_EN_COLLECTION) }
-    private fun readPrayers() = repository.readNetworkPrayers()?.let { repository.writeJsonPrayers(it).getJsonLog(PRAYER_EN_COLLECTION) }
-    private fun readThoughts() = repository.readNetworkThoughts()?.let { repository.writeJsonThoughts(it).getJsonLog(THOUGHT_EN_COLLECTION) }
+    private fun updateQuizzes() = repository.readNetworkQuizzes()?.let { repository.writeJsonQuizzes(it).getJsonLog(QUIZ_EN_COLLECTION) }
+    private fun updatePrayers() = repository.readNetworkPrayers()?.let { repository.writeJsonPrayers(it).getJsonLog(PRAYER_EN_COLLECTION) }
+    private fun updateThoughts() = repository.readNetworkThoughts()?.let { repository.writeJsonThoughts(it).getJsonLog(THOUGHT_EN_COLLECTION) }
 }
