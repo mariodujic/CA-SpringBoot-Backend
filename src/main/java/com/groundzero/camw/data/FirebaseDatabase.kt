@@ -18,8 +18,13 @@ class FirebaseDatabase {
 
     private fun getFirebaseOptions() = FirebaseOptions.Builder()
             .setCredentials(GoogleCredentials.fromStream(getFileInput()))
-            .setDatabaseUrl("https://catholic-prayerbook.firebaseio.com")
+            .setDatabaseUrl(DATABASE_URL)
             .build()
 
-    private fun getFileInput() = FileInputStream("catholic-prayerbook-firebase-adminsdk-vh3gk-41b68d26b9.json")
+    private fun getFileInput() = FileInputStream(KEY)
+
+    companion object {
+        private const val DATABASE_URL = "https://catholic-prayerbook.firebaseio.com"
+        private const val KEY = "catholic-prayerbook-firebase-adminsdk-vh3gk-41b68d26b9.json"
+    }
 }

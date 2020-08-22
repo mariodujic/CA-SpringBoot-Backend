@@ -8,4 +8,17 @@ data class Prayer(
         val title: String? = null,
         val type: Int? = null,
         val segmentedList: List<Segmented>? = null
-)
+) {
+    override fun toString() =
+            """
+             Prayer{
+                 itemId='$itemId',
+                 musicUrl='$musicUrl',
+                 tag='$tag',
+                 text='$text',
+                 title='$title',
+                 type='$type',
+                 segmentedList='$segmentedList'
+            }
+            """
+}

@@ -1,7 +1,6 @@
 package com.groundzero.camw;
 
-import com.groundzero.camw.data.AutoUpdate;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.groundzero.camw.data.WriteJsonService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
@@ -10,10 +9,10 @@ import org.springframework.context.event.EventListener;
 @SpringBootApplication
 public class CamwApplication {
 
-  private final AutoUpdate autoUpdate;
+  private final WriteJsonService writeJsonService;
 
-  public CamwApplication(AutoUpdate autoUpdate) {
-    this.autoUpdate = autoUpdate;
+  public CamwApplication(WriteJsonService writeJsonService) {
+    this.writeJsonService = writeJsonService;
   }
 
   public static void main(String[] args) {
@@ -22,6 +21,6 @@ public class CamwApplication {
 
   @EventListener(ApplicationReadyEvent.class)
   public void doSomethingAfterStartup() {
-    autoUpdate.getData();
+    writeJsonService.writeJson();
   }
 }
