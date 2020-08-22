@@ -13,24 +13,24 @@
       "question" : "Which of these is one of the seven dedly sins?",
       "answers" : [ {
         "answer" : "Arrogance",
-        "itemId" : "0cac9ce1-12be-0a58-b495-bdc837f689f2",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "0cac9ce1-12be-0a58-b495-bdc837f689f2"
       }, {
         "answer" : "Dishonesty",
-        "itemId" : "c0c22dd7-9d18-5705-e5bc-9c96c16287bd",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "c0c22dd7-9d18-5705-e5bc-9c96c16287bd"
       }, {
         "answer" : "Intolerance",
-        "itemId" : "a884f1f7-62a8-8b01-e44c-a03c8b008d66",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "a884f1f7-62a8-8b01-e44c-a03c8b008d66"
       }, {
         "answer" : "Materialism",
-        "itemId" : "ac125543-53b8-9b21-da42-4df8ec9efb39",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "ac125543-53b8-9b21-da42-4df8ec9efb39"
       }, {
         "answer" : "Greed",
-        "itemId" : "48b60b14-e3a6-f923-016a-46c995e64e33",
-        "correctAnswer" : null
+        "isCorrectAnswer" : true,
+        "itemId" : "48b60b14-e3a6-f923-016a-46c995e64e33"
       } ]
     }, {
       "image" : "",
@@ -38,16 +38,16 @@
       "question" : "Complete this hymn: Holy, Holy, Holy ____, God of power and ____, heaven and earth are full of Your ____ in the highest.",
       "answers" : [ {
         "answer" : "God, sight, glory, Jesus",
-        "itemId" : "f41ceb0f-47e4-9b85-937b-76ce404dbcf2",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "f41ceb0f-47e4-9b85-937b-76ce404dbcf2"
       }, {
         "answer" : "Mary, Joseph, John, Amen",
-        "itemId" : "15362591-7a5d-c1af-76e1-146312bff350",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "15362591-7a5d-c1af-76e1-146312bff350"
       }, {
         "answer" : "Lord, might, power, Hosanna",
-        "itemId" : "9c70c2f7-f850-219a-8b5a-4346a298f627",
-        "correctAnswer" : null
+        "isCorrectAnswer" : true,
+        "itemId" : "9c70c2f7-f850-219a-8b5a-4346a298f627"
       } ]
     }, {
       "image" : "",
@@ -55,12 +55,12 @@
       "question" : "What is advent a preparation for?",
       "answers" : [ {
         "answer" : "The birth of Christ",
-        "itemId" : "516b25ce-4ee2-d733-19d4-523bf95df4be",
-        "correctAnswer" : null
+        "isCorrectAnswer" : true,
+        "itemId" : "516b25ce-4ee2-d733-19d4-523bf95df4be"
       }, {
         "answer" : "The death of Christ",
-        "itemId" : "45a76e46-6829-9ead-e8da-32fd0b2d125f",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "45a76e46-6829-9ead-e8da-32fd0b2d125f"
       } ]
     }, {
       "image" : "",
@@ -68,12 +68,12 @@
       "question" : "What might you do before entering a church?",
       "answers" : [ {
         "answer" : "Perform the sign of the cross",
-        "itemId" : "a78db505-01b8-3cb7-66e0-ddaa0a004437",
-        "correctAnswer" : null
+        "isCorrectAnswer" : true,
+        "itemId" : "a78db505-01b8-3cb7-66e0-ddaa0a004437"
       }, {
         "answer" : "Recite the Hail Mary",
-        "itemId" : "7ecb78e4-bcf3-8fec-fa19-62a0a8c8c24c",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "7ecb78e4-bcf3-8fec-fa19-62a0a8c8c24c"
       } ]
     }, {
       "image" : "",
@@ -81,20 +81,20 @@
       "question" : "What is a venial sin?",
       "answers" : [ {
         "answer" : "The type of sin which is committed with full knowledge o the law of God.",
-        "itemId" : "7e977619-58bf-ac9a-17e8-6932b56b2621",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "7e977619-58bf-ac9a-17e8-6932b56b2621"
       }, {
         "answer" : "The type of sin caused by the will of Adam and Even.",
-        "itemId" : "a6d3e8e6-f20f-5ecf-a557-9a04fcc68d21",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "a6d3e8e6-f20f-5ecf-a557-9a04fcc68d21"
       }, {
         "answer" : "The ytype of sin that is committedunwittingly, without full consent.",
-        "itemId" : "8cdc4684-6208-e68c-61e4-eadc5e16a82b",
-        "correctAnswer" : null
+        "isCorrectAnswer" : true,
+        "itemId" : "8cdc4684-6208-e68c-61e4-eadc5e16a82b"
       }, {
         "answer" : "All voluntary acts of thought, word, work or omission that are contrary to the law of God",
-        "itemId" : "5e404adc-148c-598b-e164-753818da61c0",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "5e404adc-148c-598b-e164-753818da61c0"
       } ]
     }, {
       "image" : "",
@@ -102,12 +102,12 @@
       "question" : "Who was the apostole who betrayed Jesus?",
       "answers" : [ {
         "answer" : "Judas Thaddaeus",
-        "itemId" : "2b5bfad0-95e3-c822-4435-1ab5e517d806",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "2b5bfad0-95e3-c822-4435-1ab5e517d806"
       }, {
         "answer" : "Judas Iscariot",
-        "itemId" : "1db731b9-0331-72a4-f9f7-204dde72cc00",
-        "correctAnswer" : null
+        "isCorrectAnswer" : true,
+        "itemId" : "1db731b9-0331-72a4-f9f7-204dde72cc00"
       } ]
     }, {
       "image" : "",
@@ -115,20 +115,20 @@
       "question" : "What gifts did the three wise men bring to Jesus?",
       "answers" : [ {
         "answer" : "Silver, incense and marjoram.",
-        "itemId" : "c36f396d-93c0-a36a-a5be-c078dd74942f",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "c36f396d-93c0-a36a-a5be-c078dd74942f"
       }, {
         "answer" : "Gold, frankincense, and myrrh.",
-        "itemId" : "ccaad7ee-967f-1e84-50d0-d3c5b5c90bf2",
-        "correctAnswer" : null
+        "isCorrectAnswer" : true,
+        "itemId" : "ccaad7ee-967f-1e84-50d0-d3c5b5c90bf2"
       }, {
         "answer" : "Golpar, fingerroot, and mint.",
-        "itemId" : "ae26512b-e212-6d7a-2fb8-a22c20ec63e7",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "ae26512b-e212-6d7a-2fb8-a22c20ec63e7"
       }, {
         "answer" : "Goat, franenstein, and mirth.",
-        "itemId" : "cc9c34ac-d937-2251-17fc-7660e124e18b",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "cc9c34ac-d937-2251-17fc-7660e124e18b"
       } ]
     }, {
       "image" : "",
@@ -136,20 +136,20 @@
       "question" : "Who was Karol Jozef Wojtyla?",
       "answers" : [ {
         "answer" : "Pope Benedict XVI",
-        "itemId" : "e1f3e47d-4655-d1e3-cfb5-ac0b63797270",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "e1f3e47d-4655-d1e3-cfb5-ac0b63797270"
       }, {
         "answer" : "Pope Francis II",
-        "itemId" : "d640c5c8-f752-291a-5f67-35652e3a4050",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "d640c5c8-f752-291a-5f67-35652e3a4050"
       }, {
         "answer" : "Pope John XXIII",
-        "itemId" : "a68d9aa9-d815-2280-0b37-a069eb8554fb",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "a68d9aa9-d815-2280-0b37-a069eb8554fb"
       }, {
         "answer" : "Pope John Paul II",
-        "itemId" : "cf25037f-cbca-924f-420e-663be6141494",
-        "correctAnswer" : null
+        "isCorrectAnswer" : true,
+        "itemId" : "cf25037f-cbca-924f-420e-663be6141494"
       } ]
     }, {
       "image" : "",
@@ -157,16 +157,16 @@
       "question" : "The Father, the Son and the Holy Spirit are:",
       "answers" : [ {
         "answer" : "The Big Three",
-        "itemId" : "6a8b9a65-5db0-b8e6-1145-e884f0fb3447",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "6a8b9a65-5db0-b8e6-1145-e884f0fb3447"
       }, {
         "answer" : "The Three Wise Men",
-        "itemId" : "fd53815f-0ee0-48e3-f4c5-f70832a6e31a",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "fd53815f-0ee0-48e3-f4c5-f70832a6e31a"
       }, {
         "answer" : "The Holy Trinitiy",
-        "itemId" : "e48bbddf-71ba-f330-ea41-a1f35df089fc",
-        "correctAnswer" : null
+        "isCorrectAnswer" : true,
+        "itemId" : "e48bbddf-71ba-f330-ea41-a1f35df089fc"
       } ]
     }, {
       "image" : "",
@@ -174,16 +174,16 @@
       "question" : "What are the three theological virtues?",
       "answers" : [ {
         "answer" : "Faith, Empathy, and Kindness",
-        "itemId" : "b4dca791-3f9a-612f-0c9f-aa6696c7ff21",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "b4dca791-3f9a-612f-0c9f-aa6696c7ff21"
       }, {
         "answer" : "Faith, Hope and Niceness",
-        "itemId" : "29612f91-5a42-b0fd-b7bb-aad20df78d92",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "29612f91-5a42-b0fd-b7bb-aad20df78d92"
       }, {
         "answer" : "Faith, Hope, and Charity",
-        "itemId" : "a7b9b615-06a1-60b8-a161-a47d6afda03b",
-        "correctAnswer" : null
+        "isCorrectAnswer" : true,
+        "itemId" : "a7b9b615-06a1-60b8-a161-a47d6afda03b"
       } ]
     }, {
       "image" : "",
@@ -191,12 +191,12 @@
       "question" : "Jesus chose Saint Peter to be the head of the church?",
       "answers" : [ {
         "answer" : "True",
-        "itemId" : "3fd0ef08-bfe0-5b41-4da9-bee14d4a5129",
-        "correctAnswer" : null
+        "isCorrectAnswer" : true,
+        "itemId" : "3fd0ef08-bfe0-5b41-4da9-bee14d4a5129"
       }, {
         "answer" : "False",
-        "itemId" : "104f628a-a04a-2fe1-29aa-0047292726ff",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "104f628a-a04a-2fe1-29aa-0047292726ff"
       } ]
     }, {
       "image" : "",
@@ -204,20 +204,20 @@
       "question" : "How many books are in the New Testament?",
       "answers" : [ {
         "answer" : "27",
-        "itemId" : "93930569-4e10-4eb9-c5a2-acba0695e1ad",
-        "correctAnswer" : null
+        "isCorrectAnswer" : true,
+        "itemId" : "93930569-4e10-4eb9-c5a2-acba0695e1ad"
       }, {
         "answer" : "37",
-        "itemId" : "dea2bae3-4c33-d5d7-c184-73faf0934921",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "dea2bae3-4c33-d5d7-c184-73faf0934921"
       }, {
         "answer" : "46",
-        "itemId" : "ea656659-68c5-85cd-6cff-f475d1471b2c",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "ea656659-68c5-85cd-6cff-f475d1471b2c"
       }, {
         "answer" : "39",
-        "itemId" : "2360208f-a04d-8072-8dcb-89b1ebcd9af4",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "2360208f-a04d-8072-8dcb-89b1ebcd9af4"
       } ]
     } ]
   }, {
@@ -231,20 +231,20 @@
       "question" : "What was Peter's name before he met Jesus? ",
       "answers" : [ {
         "answer" : "Paul",
-        "itemId" : "2135643f-bd88-47d0-dd9c-70be5c6ea5af",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "2135643f-bd88-47d0-dd9c-70be5c6ea5af"
       }, {
         "answer" : "James",
-        "itemId" : "0c95faca-67a1-d14f-3430-f2ddeb8c91e2",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "0c95faca-67a1-d14f-3430-f2ddeb8c91e2"
       }, {
         "answer" : "Saul",
-        "itemId" : "8c152b6c-5967-7d91-e18d-23a26e202fea",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "8c152b6c-5967-7d91-e18d-23a26e202fea"
       }, {
         "answer" : "Simon",
-        "itemId" : "ece69b02-548f-8703-e62d-aae08aaa5ea2",
-        "correctAnswer" : null
+        "isCorrectAnswer" : true,
+        "itemId" : "ece69b02-548f-8703-e62d-aae08aaa5ea2"
       } ]
     }, {
       "image" : "https://static.magiquiz.com/cdn-cgi/image/width=1000,quality=85,fit=scale-down,format=auto,onerror=redirect/https://static.magiquiz.com/wp-content/uploads/2017/01/rosary.png",
@@ -252,20 +252,20 @@
       "question" : "What are the mysteries of the Rosary? ",
       "answers" : [ {
         "answer" : "The Joyful Mysteries, the Sorrowful Mysteries, and the Glorious Mysteries.",
-        "itemId" : "537c8b4d-e748-ff55-148b-8456adbfd3a0",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "537c8b4d-e748-ff55-148b-8456adbfd3a0"
       }, {
         "answer" : "The Joyful Mysteries, the Sorrowful Mysteries, the Hallowed Mysteries, and the Glorious Mysteries.",
-        "itemId" : "2593280c-ab0e-8138-3adc-d3416f88b75c",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "2593280c-ab0e-8138-3adc-d3416f88b75c"
       }, {
         "answer" : "The Joyful Mysteries, the Sorrowful Mysteries, the Mysteries of Light, and the Glorious Mysteries.",
-        "itemId" : "958b9714-aade-b41d-b446-a44d0a301467",
-        "correctAnswer" : null
+        "isCorrectAnswer" : true,
+        "itemId" : "958b9714-aade-b41d-b446-a44d0a301467"
       }, {
         "answer" : "The Joyful Mysteries, the Sorrowful Mysteries, and the Mysteries of Light.",
-        "itemId" : "9eadb289-036b-0ee2-f5dc-a41168f416a5",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "9eadb289-036b-0ee2-f5dc-a41168f416a5"
       } ]
     }, {
       "image" : "",
@@ -273,20 +273,20 @@
       "question" : "What is a cincture? ",
       "answers" : [ {
         "answer" : "The draping a priest wears around his neck.",
-        "itemId" : "073adc2b-945f-e982-55c5-dce9b63bf879",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "073adc2b-945f-e982-55c5-dce9b63bf879"
       }, {
         "answer" : "A cord that ties around the priest’s robe.",
-        "itemId" : "1f169471-7e20-602c-91b0-30ddcb96cadb",
-        "correctAnswer" : null
+        "isCorrectAnswer" : true,
+        "itemId" : "1f169471-7e20-602c-91b0-30ddcb96cadb"
       }, {
         "answer" : "The device a priest uses to spread incense.",
-        "itemId" : "c3b1247d-9929-5b9b-39e8-9b7ab5f2a4a0",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "c3b1247d-9929-5b9b-39e8-9b7ab5f2a4a0"
       }, {
         "answer" : "A priest’s robe.",
-        "itemId" : "f9f709e5-2f19-f422-572f-9ccba03fe4f1",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "f9f709e5-2f19-f422-572f-9ccba03fe4f1"
       } ]
     }, {
       "image" : "",
@@ -294,20 +294,20 @@
       "question" : "What is a rectory?",
       "answers" : [ {
         "answer" : "The place where the altar is.",
-        "itemId" : "9f982c60-b6de-95be-02a1-a3b8fd68b83a",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "9f982c60-b6de-95be-02a1-a3b8fd68b83a"
       }, {
         "answer" : "The area of the church where the bread and wine are stored.",
-        "itemId" : "4c817bc7-5717-6045-c14d-3896ed84dc73",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "4c817bc7-5717-6045-c14d-3896ed84dc73"
       }, {
         "answer" : "The building where a parish priest lives.",
-        "itemId" : "9f602b8a-2210-205e-dc29-b6640e0604ab",
-        "correctAnswer" : null
+        "isCorrectAnswer" : true,
+        "itemId" : "9f602b8a-2210-205e-dc29-b6640e0604ab"
       }, {
         "answer" : "The bells of a church.",
-        "itemId" : "cb4dd6d6-5cbf-4d6c-e47c-514b14335456",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "cb4dd6d6-5cbf-4d6c-e47c-514b14335456"
       } ]
     }, {
       "image" : "https://static.magiquiz.com/cdn-cgi/image/width=1000,quality=85,fit=scale-down,format=auto,onerror=redirect/https://static.magiquiz.com/wp-content/uploads/2017/01/ash-wednesday.jpg",
@@ -315,16 +315,16 @@
       "question" : "On Ash Wednesday, parishioners are marked with ashes. Where does the ash come from? ",
       "answers" : [ {
         "answer" : "From the ashes of the Advent wreaths of the previous year.",
-        "itemId" : "850b5c95-7eb4-6032-574f-485a10dadfcd",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "850b5c95-7eb4-6032-574f-485a10dadfcd"
       }, {
         "answer" : "From the ground of the nearest cemetary.",
-        "itemId" : "977c6ba3-0c78-4b40-c9dc-6c1ca63f88b7",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "977c6ba3-0c78-4b40-c9dc-6c1ca63f88b7"
       }, {
         "answer" : "The palms from the prior Palm Sunday.",
-        "itemId" : "9e0e82b1-08b5-0acd-3d28-d0ca8549f68e",
-        "correctAnswer" : null
+        "isCorrectAnswer" : true,
+        "itemId" : "9e0e82b1-08b5-0acd-3d28-d0ca8549f68e"
       } ]
     }, {
       "image" : "",
@@ -332,20 +332,20 @@
       "question" : "What does the word 'catholic' mean? ",
       "answers" : [ {
         "answer" : "Universal",
-        "itemId" : "06dc3261-8ae3-21b0-d5dc-148fccb6240f",
-        "correctAnswer" : null
+        "isCorrectAnswer" : true,
+        "itemId" : "06dc3261-8ae3-21b0-d5dc-148fccb6240f"
       }, {
         "answer" : "Holy",
-        "itemId" : "88bf5436-5a2c-cbb6-4ea6-ec83879f1d9c",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "88bf5436-5a2c-cbb6-4ea6-ec83879f1d9c"
       }, {
         "answer" : "Church",
-        "itemId" : "4e260af1-49a1-3c50-aefa-b6c8a1fd3d0c",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "4e260af1-49a1-3c50-aefa-b6c8a1fd3d0c"
       }, {
         "answer" : "Correct",
-        "itemId" : "60409b0d-83cc-faa4-1bc0-4b9d3e0d9f9e",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "60409b0d-83cc-faa4-1bc0-4b9d3e0d9f9e"
       } ]
     }, {
       "image" : "",
@@ -353,20 +353,20 @@
       "question" : "How many sacraments are there? ",
       "answers" : [ {
         "answer" : "Four",
-        "itemId" : "0f3ef801-902a-a19d-45b2-8cca8e25f427",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "0f3ef801-902a-a19d-45b2-8cca8e25f427"
       }, {
         "answer" : "Five",
-        "itemId" : "0c1f86b0-d514-f368-989c-67d711d5d3cb",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "0c1f86b0-d514-f368-989c-67d711d5d3cb"
       }, {
         "answer" : "Six",
-        "itemId" : "a462728b-55ac-c296-234e-7fcd5f267c5b",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "a462728b-55ac-c296-234e-7fcd5f267c5b"
       }, {
         "answer" : "Seven",
-        "itemId" : "b8acec7e-b2ec-f59f-7bb8-2b5a3fdd37a6",
-        "correctAnswer" : null
+        "isCorrectAnswer" : true,
+        "itemId" : "b8acec7e-b2ec-f59f-7bb8-2b5a3fdd37a6"
       } ]
     }, {
       "image" : "https://static.magiquiz.com/cdn-cgi/image/width=1000,quality=85,fit=scale-down,format=auto,onerror=redirect/https://static.magiquiz.com/wp-content/uploads/2017/01/churchmass.jpg",
@@ -374,20 +374,20 @@
       "question" : "What is considered the holiest part of Mass? ",
       "answers" : [ {
         "answer" : "The Concluding Rite",
-        "itemId" : "75895ab9-ffa7-4c40-b77c-8ff8377683d5",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "75895ab9-ffa7-4c40-b77c-8ff8377683d5"
       }, {
         "answer" : "The Consecration",
-        "itemId" : "89048a99-698d-c601-5415-973ca8eaa621",
-        "correctAnswer" : null
+        "isCorrectAnswer" : true,
+        "itemId" : "89048a99-698d-c601-5415-973ca8eaa621"
       }, {
         "answer" : "The homily",
-        "itemId" : "9e863a9c-d8a0-4dfb-5a97-32ef5fa0b191",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "9e863a9c-d8a0-4dfb-5a97-32ef5fa0b191"
       }, {
         "answer" : "The Liturgy of the Word",
-        "itemId" : "16c2a390-979b-c3fd-1d55-6407d9f9f0e6",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "16c2a390-979b-c3fd-1d55-6407d9f9f0e6"
       } ]
     }, {
       "image" : "https://static.magiquiz.com/cdn-cgi/image/width=1000,quality=85,fit=scale-down,format=auto,onerror=redirect/https://static.magiquiz.com/wp-content/uploads/2017/01/candles.png",
@@ -395,20 +395,20 @@
       "question" : "There is a requirement that all candles used in Mass must be a certain percentage beeswax. What percentage?",
       "answers" : [ {
         "answer" : "14%",
-        "itemId" : "d25f21cc-e840-8d85-e82d-a7d2baf8d52b",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "d25f21cc-e840-8d85-e82d-a7d2baf8d52b"
       }, {
         "answer" : "27%",
-        "itemId" : "1cc525a1-1f4a-b9b9-a01a-34d0f7d8c505",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "1cc525a1-1f4a-b9b9-a01a-34d0f7d8c505"
       }, {
         "answer" : "51%",
-        "itemId" : "ea131ef2-adcc-17de-edbc-94cfa84b123c",
-        "correctAnswer" : null
+        "isCorrectAnswer" : true,
+        "itemId" : "ea131ef2-adcc-17de-edbc-94cfa84b123c"
       }, {
         "answer" : "67%",
-        "itemId" : "55b015af-e25f-ec9e-d304-6048602e9bce",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "55b015af-e25f-ec9e-d304-6048602e9bce"
       } ]
     } ]
   } ]
@@ -427,20 +427,20 @@
       "question" : "Which is the best definition of meretricious? ",
       "answers" : [ {
         "answer" : "Valuable and satisfying",
-        "itemId" : "23d1d371-2b24-74c2-72f5-d8648d7af3c5",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "23d1d371-2b24-74c2-72f5-d8648d7af3c5"
       }, {
         "answer" : "Of falsified origin",
-        "itemId" : "1fd57696-8c1c-372d-9748-1467bcc88052",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "1fd57696-8c1c-372d-9748-1467bcc88052"
       }, {
         "answer" : "Filled with delight and wonder ",
-        "itemId" : "cf32f36d-e49b-2333-cacb-3e41788013d7",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "cf32f36d-e49b-2333-cacb-3e41788013d7"
       }, {
         "answer" : "Tawdrily and falsely attractive ",
-        "itemId" : "434c5480-e333-d1ba-2825-24c60fbe37ad",
-        "correctAnswer" : null
+        "isCorrectAnswer" : true,
+        "itemId" : "434c5480-e333-d1ba-2825-24c60fbe37ad"
       } ]
     }, {
       "image" : "",
@@ -448,20 +448,20 @@
       "question" : "Which is the best definition of supine? ",
       "answers" : [ {
         "answer" : "Lying on the back or with the face upward ",
-        "itemId" : "052f862b-d766-4fe8-657f-6e93e9be380c",
-        "correctAnswer" : null
+        "isCorrectAnswer" : true,
+        "itemId" : "052f862b-d766-4fe8-657f-6e93e9be380c"
       }, {
         "answer" : "Exciting and adventurous",
-        "itemId" : "fa4f5250-67de-dd3d-9421-cfe2100a2983",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "fa4f5250-67de-dd3d-9421-cfe2100a2983"
       }, {
         "answer" : "Placating or mollifying behavior",
-        "itemId" : "4e915f52-ee28-876e-08bf-e4a4c1416db3",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "4e915f52-ee28-876e-08bf-e4a4c1416db3"
       }, {
         "answer" : "Easily annoyed or angered",
-        "itemId" : "7712b51e-0735-ae4b-45cb-be231f064634",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "7712b51e-0735-ae4b-45cb-be231f064634"
       } ]
     }, {
       "image" : "",
@@ -469,20 +469,20 @@
       "question" : "Which is a synonym of probity? ",
       "answers" : [ {
         "answer" : "Misanthropy ",
-        "itemId" : "6139393e-2007-84f7-3720-fb5dec373301",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "6139393e-2007-84f7-3720-fb5dec373301"
       }, {
         "answer" : "Virtuousness",
-        "itemId" : "a9d158ca-8867-1f42-7982-578806f8abee",
-        "correctAnswer" : null
+        "isCorrectAnswer" : true,
+        "itemId" : "a9d158ca-8867-1f42-7982-578806f8abee"
       }, {
         "answer" : "Mendacity",
-        "itemId" : "8962bc36-7a5f-d00e-df20-bcbb00513954",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "8962bc36-7a5f-d00e-df20-bcbb00513954"
       }, {
         "answer" : "Emergence ",
-        "itemId" : "f5ba742e-5a23-c509-b51f-ab7b30b24330",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "f5ba742e-5a23-c509-b51f-ab7b30b24330"
       } ]
     }, {
       "image" : "",
@@ -490,20 +490,20 @@
       "question" : "Which is the best definition of expiate? ",
       "answers" : [ {
         "answer" : "To lose vigor or health",
-        "itemId" : "9ba38365-1c80-83da-3f63-5b2b83ece161",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "9ba38365-1c80-83da-3f63-5b2b83ece161"
       }, {
         "answer" : "To renounce ",
-        "itemId" : "bd7c513f-95c4-2445-5986-8b4300dc6d93",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "bd7c513f-95c4-2445-5986-8b4300dc6d93"
       }, {
         "answer" : "To return or remove (as a plate) ",
-        "itemId" : "919cb4c0-8220-f887-9858-d402d4222cf2",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "919cb4c0-8220-f887-9858-d402d4222cf2"
       }, {
         "answer" : "To make amends for ",
-        "itemId" : "7aaccd6e-0ffc-139c-4f25-b38a9e6e806d",
-        "correctAnswer" : null
+        "isCorrectAnswer" : true,
+        "itemId" : "7aaccd6e-0ffc-139c-4f25-b38a9e6e806d"
       } ]
     }, {
       "image" : "",
@@ -511,20 +511,20 @@
       "question" : "Which is a synonym of alacrity? ",
       "answers" : [ {
         "answer" : "Scrupulousness ",
-        "itemId" : "37f70079-3e50-b9d5-8a2b-2e0031416cd0",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "37f70079-3e50-b9d5-8a2b-2e0031416cd0"
       }, {
         "answer" : "Promptness ",
-        "itemId" : "3b24e094-6370-6768-5bae-2f8f4d5bcc01",
-        "correctAnswer" : null
+        "isCorrectAnswer" : true,
+        "itemId" : "3b24e094-6370-6768-5bae-2f8f4d5bcc01"
       }, {
         "answer" : "Wrath ",
-        "itemId" : "ec72de57-b15c-3a6b-e543-27f0e2bedd37",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "ec72de57-b15c-3a6b-e543-27f0e2bedd37"
       }, {
         "answer" : "Belligerence",
-        "itemId" : "354cbad7-71ac-5fbb-fbb3-3d346b3c04d1",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "354cbad7-71ac-5fbb-fbb3-3d346b3c04d1"
       } ]
     }, {
       "image" : "",
@@ -532,20 +532,20 @@
       "question" : "Which is a synonym of indolent? ",
       "answers" : [ {
         "answer" : "Frenetic ",
-        "itemId" : "80ac255e-2cb8-0a92-eb47-a2892475a628",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "80ac255e-2cb8-0a92-eb47-a2892475a628"
       }, {
         "answer" : "Melancholy ",
-        "itemId" : "c62eaea6-56aa-9a67-0219-8ee0a4ea149b",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "c62eaea6-56aa-9a67-0219-8ee0a4ea149b"
       }, {
         "answer" : "Lazy ",
-        "itemId" : "eec3aed5-884d-ca20-ce58-5b9b5012bd77",
-        "correctAnswer" : null
+        "isCorrectAnswer" : true,
+        "itemId" : "eec3aed5-884d-ca20-ce58-5b9b5012bd77"
       }, {
         "answer" : "Philistine ",
-        "itemId" : "e5af7452-117c-28bf-3384-27e9bd44a25d",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "e5af7452-117c-28bf-3384-27e9bd44a25d"
       } ]
     }, {
       "image" : "",
@@ -553,20 +553,20 @@
       "question" : "Which is a synonym of indefatigable? ",
       "answers" : [ {
         "answer" : "Slovenly ",
-        "itemId" : "facb221b-55dc-9d8d-847c-083881b969f6",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "facb221b-55dc-9d8d-847c-083881b969f6"
       }, {
         "answer" : "Tireless ",
-        "itemId" : "2a668535-7bfb-3798-3f8b-936fa9c58d34",
-        "correctAnswer" : null
+        "isCorrectAnswer" : true,
+        "itemId" : "2a668535-7bfb-3798-3f8b-936fa9c58d34"
       }, {
         "answer" : "Proper ",
-        "itemId" : "6edd8fa0-44ff-d569-5baf-6338bda4d7f6",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "6edd8fa0-44ff-d569-5baf-6338bda4d7f6"
       }, {
         "answer" : "Enervated ",
-        "itemId" : "2fb01cb6-f7a3-8699-4307-de6dd9383bc3",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "2fb01cb6-f7a3-8699-4307-de6dd9383bc3"
       } ]
     }, {
       "image" : "",
@@ -574,20 +574,20 @@
       "question" : "Which is a synonym of phlegmatic? ",
       "answers" : [ {
         "answer" : "Hot-blooded ",
-        "itemId" : "7c9f6f2c-be34-6dd6-94ab-4d7fdef442ca",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "7c9f6f2c-be34-6dd6-94ab-4d7fdef442ca"
       }, {
         "answer" : "Higgledy-piggledy ",
-        "itemId" : "a7ff5b8e-cee2-e746-fcd6-69f6ff58fe28",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "a7ff5b8e-cee2-e746-fcd6-69f6ff58fe28"
       }, {
         "answer" : "Impulsive",
-        "itemId" : "60f75b1f-2d63-6946-ac5b-ae13d8423cfb",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "60f75b1f-2d63-6946-ac5b-ae13d8423cfb"
       }, {
         "answer" : "Stoic",
-        "itemId" : "94979d28-e16d-f7cb-9326-ea9f840826ca",
-        "correctAnswer" : null
+        "isCorrectAnswer" : true,
+        "itemId" : "94979d28-e16d-f7cb-9326-ea9f840826ca"
       } ]
     }, {
       "image" : "",
@@ -595,20 +595,20 @@
       "question" : "Which is a synonym of bellicose? ",
       "answers" : [ {
         "answer" : "Alluring",
-        "itemId" : "95b790d3-701e-cfdf-35cc-e863212513b9",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "95b790d3-701e-cfdf-35cc-e863212513b9"
       }, {
         "answer" : "Constructive",
-        "itemId" : "1889fe84-ab62-80c3-d26b-77d081843665",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "1889fe84-ab62-80c3-d26b-77d081843665"
       }, {
         "answer" : "Repellent",
-        "itemId" : "d3c2288e-b4e7-193d-be36-665f95cb1d44",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "d3c2288e-b4e7-193d-be36-665f95cb1d44"
       }, {
         "answer" : "Warlike",
-        "itemId" : "07ea9913-ade5-d7e4-e764-ed8798a8cce2",
-        "correctAnswer" : null
+        "isCorrectAnswer" : true,
+        "itemId" : "07ea9913-ade5-d7e4-e764-ed8798a8cce2"
       } ]
     }, {
       "image" : "",
@@ -616,20 +616,20 @@
       "question" : "Which is a synonym of imbroglio? ",
       "answers" : [ {
         "answer" : "Inhibition",
-        "itemId" : "51279415-8c41-550e-9c01-53243f3009e8",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "51279415-8c41-550e-9c01-53243f3009e8"
       }, {
         "answer" : "Frolic",
-        "itemId" : "4a2848a5-c1a1-f0b9-ce0d-bacb56c04a40",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "4a2848a5-c1a1-f0b9-ce0d-bacb56c04a40"
       }, {
         "answer" : "Nonchalance",
-        "itemId" : "19d699f0-1791-c0a1-b43b-64d5c7e135ce",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "19d699f0-1791-c0a1-b43b-64d5c7e135ce"
       }, {
         "answer" : "Embroilment",
-        "itemId" : "86b76154-2930-49a5-df1f-81b80f5fe44d",
-        "correctAnswer" : null
+        "isCorrectAnswer" : true,
+        "itemId" : "86b76154-2930-49a5-df1f-81b80f5fe44d"
       } ]
     }, {
       "image" : "",
@@ -637,20 +637,20 @@
       "question" : "Which is a synonym of vituperate? ",
       "answers" : [ {
         "answer" : "Placate",
-        "itemId" : "4cf7d555-83d7-9948-f72a-c6b249bb0b92",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "4cf7d555-83d7-9948-f72a-c6b249bb0b92"
       }, {
         "answer" : "Berate",
-        "itemId" : "e66fb486-9d4a-a294-86c1-fc23a96c4215",
-        "correctAnswer" : null
+        "isCorrectAnswer" : true,
+        "itemId" : "e66fb486-9d4a-a294-86c1-fc23a96c4215"
       }, {
         "answer" : "Energize",
-        "itemId" : "74d7d7cb-7bb8-e077-5c69-2e5f4923f8d1",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "74d7d7cb-7bb8-e077-5c69-2e5f4923f8d1"
       }, {
         "answer" : "Exaggerate",
-        "itemId" : "93a2a768-606f-0a77-2140-a3aaac4f1be6",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "93a2a768-606f-0a77-2140-a3aaac4f1be6"
       } ]
     }, {
       "image" : "",
@@ -658,20 +658,20 @@
       "question" : "Which is a synonym of picayune? ",
       "answers" : [ {
         "answer" : "Gilded",
-        "itemId" : "c05fd87b-200a-6b30-7267-cb0a32018262",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "c05fd87b-200a-6b30-7267-cb0a32018262"
       }, {
         "answer" : "Triviality",
-        "itemId" : "79844ebe-dae1-8dfe-c6e8-cf2b8a45e1f3",
-        "correctAnswer" : null
+        "isCorrectAnswer" : true,
+        "itemId" : "79844ebe-dae1-8dfe-c6e8-cf2b8a45e1f3"
       }, {
         "answer" : "Adventurous",
-        "itemId" : "329a01c7-edf3-488e-394e-4a3a0ab7fa1d",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "329a01c7-edf3-488e-394e-4a3a0ab7fa1d"
       }, {
         "answer" : "Long-winded",
-        "itemId" : "150404ae-b7b7-412b-843c-c5afd26e57ac",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "150404ae-b7b7-412b-843c-c5afd26e57ac"
       } ]
     } ]
   } ]
@@ -690,20 +690,20 @@
       "question" : "Which of these terms means you knocked down all of the pins in bowling on the first frame? ",
       "answers" : [ {
         "answer" : "Split",
-        "itemId" : "f34d2674-3975-a505-2e26-61e7b110cfcb",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "f34d2674-3975-a505-2e26-61e7b110cfcb"
       }, {
         "answer" : "Set",
-        "itemId" : "6de781f3-9bd9-0280-e6e7-1b05b1279c25",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "6de781f3-9bd9-0280-e6e7-1b05b1279c25"
       }, {
         "answer" : "Strike",
-        "itemId" : "8b891694-5017-1262-bffc-33ea74e359f2",
-        "correctAnswer" : null
+        "isCorrectAnswer" : true,
+        "itemId" : "8b891694-5017-1262-bffc-33ea74e359f2"
       }, {
         "answer" : "Spare",
-        "itemId" : "7fe2c550-ef72-1e90-c105-c545d4df9f8c",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "7fe2c550-ef72-1e90-c105-c545d4df9f8c"
       } ]
     }, {
       "image" : "https://img.buzzfeed.com/buzzfeed-static/static/2019-08/12/19/enhanced/00c5e5885353/enhanced-5017-1565637215-2.jpg",
@@ -711,20 +711,20 @@
       "question" : "Which position in soccer is allowed to touch the ball?",
       "answers" : [ {
         "answer" : "Forward",
-        "itemId" : "03e00340-fdd3-ce87-3764-c59c47aefdaf",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "03e00340-fdd3-ce87-3764-c59c47aefdaf"
       }, {
         "answer" : "Goalkeeper",
-        "itemId" : "d6c3c0dd-7b68-4b06-7be0-647d8cae5a88",
-        "correctAnswer" : null
+        "isCorrectAnswer" : true,
+        "itemId" : "d6c3c0dd-7b68-4b06-7be0-647d8cae5a88"
       }, {
         "answer" : "Defender",
-        "itemId" : "cbe799ca-dc34-25c4-e709-82ea244e5323",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "cbe799ca-dc34-25c4-e709-82ea244e5323"
       }, {
         "answer" : "Midfielder",
-        "itemId" : "4cf8d743-b903-47aa-9049-5629b255575f",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "4cf8d743-b903-47aa-9049-5629b255575f"
       } ]
     }, {
       "image" : "https://img.buzzfeed.com/buzzfeed-static/static/2019-08/12/19/enhanced/1278179435de/enhanced-7298-1565637226-1.jpg",
@@ -732,20 +732,20 @@
       "question" : "Which of these is not a position in American football?",
       "answers" : [ {
         "answer" : "Shortstop",
-        "itemId" : "792eda3e-8fd9-3b60-60ce-4656a798ea21",
-        "correctAnswer" : null
+        "isCorrectAnswer" : true,
+        "itemId" : "792eda3e-8fd9-3b60-60ce-4656a798ea21"
       }, {
         "answer" : "Linebacker",
-        "itemId" : "0deeed45-6992-974d-e997-72e73e6d8ba2",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "0deeed45-6992-974d-e997-72e73e6d8ba2"
       }, {
         "answer" : "Quarterback",
-        "itemId" : "1a151c5f-3b21-0763-e567-2f1f60508223",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "1a151c5f-3b21-0763-e567-2f1f60508223"
       }, {
         "answer" : "Safety",
-        "itemId" : "cc8c1e89-369d-a2b9-9de5-52699361a32c",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "cc8c1e89-369d-a2b9-9de5-52699361a32c"
       } ]
     }, {
       "image" : "https://img.buzzfeed.com/buzzfeed-static/static/2019-08/12/19/enhanced/26e621951ba6/enhanced-4817-1565637240-1.jpg",
@@ -753,20 +753,20 @@
       "question" : "The person on the back of a horse during a race is called a:",
       "answers" : [ {
         "answer" : "Buddy",
-        "itemId" : "bd606143-a9b9-524a-bbc1-48fba9228e63",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "bd606143-a9b9-524a-bbc1-48fba9228e63"
       }, {
         "answer" : "Springer",
-        "itemId" : "99955a17-6b33-cc61-6316-98a65f1ec757",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "99955a17-6b33-cc61-6316-98a65f1ec757"
       }, {
         "answer" : "Jockey",
-        "itemId" : "b985e958-1710-6ade-f240-1106e42e63e1",
-        "correctAnswer" : null
+        "isCorrectAnswer" : true,
+        "itemId" : "b985e958-1710-6ade-f240-1106e42e63e1"
       }, {
         "answer" : "Equine",
-        "itemId" : "75a318ef-4c0f-f276-ef38-b5effd52de78",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "75a318ef-4c0f-f276-ef38-b5effd52de78"
       } ]
     }, {
       "image" : "https://img.buzzfeed.com/buzzfeed-static/static/2019-08/12/19/enhanced/3d28ed294e17/enhanced-4915-1565637260-2.jpg",
@@ -774,20 +774,20 @@
       "question" : "In baseball, who warms up in the bull pen?",
       "answers" : [ {
         "answer" : "Catchers",
-        "itemId" : "a23a1a16-188e-1311-0b47-88a6e0131785",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "a23a1a16-188e-1311-0b47-88a6e0131785"
       }, {
         "answer" : "Outfielders",
-        "itemId" : "316132ba-5129-984d-824d-7a5e23a55a33",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "316132ba-5129-984d-824d-7a5e23a55a33"
       }, {
         "answer" : "Pitchers",
-        "itemId" : "f8161330-540f-b186-4cdf-b19b397d7350",
-        "correctAnswer" : null
+        "isCorrectAnswer" : true,
+        "itemId" : "f8161330-540f-b186-4cdf-b19b397d7350"
       }, {
         "answer" : "Batters",
-        "itemId" : "75f8cbe7-07db-0ec8-982d-b3a5a22800e4",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "75f8cbe7-07db-0ec8-982d-b3a5a22800e4"
       } ]
     }, {
       "image" : "https://img.buzzfeed.com/buzzfeed-static/static/2019-08/12/19/enhanced/c123b72dfb66/enhanced-4184-1565637269-1.jpg",
@@ -795,20 +795,20 @@
       "question" : "In basketball, how many points could one basket be worth?",
       "answers" : [ {
         "answer" : "3",
-        "itemId" : "7d6074d5-373d-4a3a-eebe-604c4007c1a5",
-        "correctAnswer" : null
+        "isCorrectAnswer" : true,
+        "itemId" : "7d6074d5-373d-4a3a-eebe-604c4007c1a5"
       }, {
         "answer" : "4",
-        "itemId" : "4d992c87-ee4b-f197-08ba-b40ba13cae03",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "4d992c87-ee4b-f197-08ba-b40ba13cae03"
       }, {
         "answer" : "6",
-        "itemId" : "0f10e43f-5ec6-2ac1-6bb9-2a812dba5d7f",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "0f10e43f-5ec6-2ac1-6bb9-2a812dba5d7f"
       }, {
         "answer" : "7",
-        "itemId" : "58261c6f-23df-fe58-2888-5ba20090cfe7",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "58261c6f-23df-fe58-2888-5ba20090cfe7"
       } ]
     }, {
       "image" : "https://img.buzzfeed.com/buzzfeed-static/static/2019-08/12/19/enhanced/93f917b088d3/enhanced-8026-1565637278-14.jpg",
@@ -816,20 +816,20 @@
       "question" : "Which of these is not a type of penalty in ice hockey?",
       "answers" : [ {
         "answer" : "Minor",
-        "itemId" : "aa894959-b47c-c8a0-b87a-07b5b9a94e2c",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "aa894959-b47c-c8a0-b87a-07b5b9a94e2c"
       }, {
         "answer" : "Moderate",
-        "itemId" : "a1c3fd2a-6c14-3cb3-de7f-0486b85be62b",
-        "correctAnswer" : null
+        "isCorrectAnswer" : true,
+        "itemId" : "a1c3fd2a-6c14-3cb3-de7f-0486b85be62b"
       }, {
         "answer" : "Major",
-        "itemId" : "027c0366-9f1b-a4fd-2150-61f5d1c34994",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "027c0366-9f1b-a4fd-2150-61f5d1c34994"
       }, {
         "answer" : "Misconduct",
-        "itemId" : "351af9af-7b7f-7624-4152-db4546fc6cef",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "351af9af-7b7f-7624-4152-db4546fc6cef"
       } ]
     }, {
       "image" : "https://img.buzzfeed.com/buzzfeed-static/static/2019-08/12/19/enhanced/0bb421d06465/enhanced-5006-1565637891-1.jpg",
@@ -837,20 +837,20 @@
       "question" : "In billiards, which is the last ball that gets shot into a pocket?",
       "answers" : [ {
         "answer" : "1",
-        "itemId" : "5f8d61e7-b564-8d5a-76bf-98cc865fd1e2",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "5f8d61e7-b564-8d5a-76bf-98cc865fd1e2"
       }, {
         "answer" : "14",
-        "itemId" : "fe904a6d-ea38-5a5d-f1d3-583d68e4a29c",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "fe904a6d-ea38-5a5d-f1d3-583d68e4a29c"
       }, {
         "answer" : "10",
-        "itemId" : "8501a63a-ae40-340a-e175-767c1e8812ec",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "8501a63a-ae40-340a-e175-767c1e8812ec"
       }, {
         "answer" : "  8",
-        "itemId" : "3d00fe9f-c1f4-76fc-1c21-9d5aa36262fb",
-        "correctAnswer" : null
+        "isCorrectAnswer" : true,
+        "itemId" : "3d00fe9f-c1f4-76fc-1c21-9d5aa36262fb"
       } ]
     }, {
       "image" : "https://img.buzzfeed.com/buzzfeed-static/static/2019-08/12/19/enhanced/eb3177a62015/enhanced-4880-1565637881-1.jpg",
@@ -858,12 +858,12 @@
       "question" : "What is a \"TKO\" in boxing?",
       "answers" : [ {
         "answer" : "Technical knock-out!",
-        "itemId" : "ea296809-c983-803b-2a6a-0f12e4f0cf1a",
-        "correctAnswer" : null
+        "isCorrectAnswer" : true,
+        "itemId" : "ea296809-c983-803b-2a6a-0f12e4f0cf1a"
       }, {
         "answer" : "Tekken-o",
-        "itemId" : "c7ca4fb6-1c7e-54dd-81c3-d2a85d4e5be5",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "c7ca4fb6-1c7e-54dd-81c3-d2a85d4e5be5"
       } ]
     }, {
       "image" : "https://img.buzzfeed.com/buzzfeed-static/static/2019-08/12/19/enhanced/ad4a6fb68db6/enhanced-4957-1565637873-1.jpg",
@@ -871,20 +871,20 @@
       "question" : "Which of these is not a line on a tennis court?",
       "answers" : [ {
         "answer" : "Baseline",
-        "itemId" : "5363645b-41e2-a173-58c7-c673cb2f41dd",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "5363645b-41e2-a173-58c7-c673cb2f41dd"
       }, {
         "answer" : "  Service line",
-        "itemId" : "68e04e06-ba41-4063-5c4a-51ba8bbe0669",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "68e04e06-ba41-4063-5c4a-51ba8bbe0669"
       }, {
         "answer" : "  Wrack line",
-        "itemId" : "ba9ef542-027b-7c43-0dee-0ce6f3a456c1",
-        "correctAnswer" : null
+        "isCorrectAnswer" : true,
+        "itemId" : "ba9ef542-027b-7c43-0dee-0ce6f3a456c1"
       }, {
         "answer" : "  Singles sideline",
-        "itemId" : "811ee0c8-0db7-68d7-fe36-973bf199c53f",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "811ee0c8-0db7-68d7-fe36-973bf199c53f"
       } ]
     }, {
       "image" : "https://img.buzzfeed.com/buzzfeed-static/static/2019-08/12/19/enhanced/2db297d0518e/enhanced-8080-1565637849-7.jpg",
@@ -892,20 +892,20 @@
       "question" : "How many players are on the court at one time during a standard volleyball game?",
       "answers" : [ {
         "answer" : "10",
-        "itemId" : "9cc0d1ea-7fd9-e8d9-c492-ea6ecc09b28c",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "9cc0d1ea-7fd9-e8d9-c492-ea6ecc09b28c"
       }, {
         "answer" : "12",
-        "itemId" : "d6284ed4-619b-65b8-e381-6b42866c7500",
-        "correctAnswer" : null
+        "isCorrectAnswer" : true,
+        "itemId" : "d6284ed4-619b-65b8-e381-6b42866c7500"
       }, {
         "answer" : "14",
-        "itemId" : "11955e3e-12b7-5eb2-2162-9ae4ce77e081",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "11955e3e-12b7-5eb2-2162-9ae4ce77e081"
       }, {
         "answer" : "16",
-        "itemId" : "c40b800e-9b47-8a0c-dfbe-e1b6decaa457",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "c40b800e-9b47-8a0c-dfbe-e1b6decaa457"
       } ]
     }, {
       "image" : "https://img.buzzfeed.com/buzzfeed-static/static/2019-08/12/19/enhanced/8278c26e9bf9/enhanced-855-1565637851-1.jpg",
@@ -913,20 +913,20 @@
       "question" : "Which event is not included in a triathlon?",
       "answers" : [ {
         "answer" : "Rowing",
-        "itemId" : "fdce212d-9a26-88ed-d6ca-fe5e3a388158",
-        "correctAnswer" : null
+        "isCorrectAnswer" : true,
+        "itemId" : "fdce212d-9a26-88ed-d6ca-fe5e3a388158"
       }, {
         "answer" : "Swimming",
-        "itemId" : "67b18e2c-5dab-9902-3c34-96a3154263cf",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "67b18e2c-5dab-9902-3c34-96a3154263cf"
       }, {
         "answer" : "Biking",
-        "itemId" : "388a878f-d22f-64f6-f52e-ed4d1161118f",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "388a878f-d22f-64f6-f52e-ed4d1161118f"
       }, {
         "answer" : "Running",
-        "itemId" : "72220aaf-7658-0daf-a91a-b3c9e21c11c1",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "72220aaf-7658-0daf-a91a-b3c9e21c11c1"
       } ]
     }, {
       "image" : "https://img.buzzfeed.com/buzzfeed-static/static/2019-08/12/19/enhanced/dd868037f305/enhanced-4947-1565637773-1.jpg",
@@ -934,20 +934,20 @@
       "question" : "What is the object the rackets hit in badminton?",
       "answers" : [ {
         "answer" : "  Cue ball",
-        "itemId" : "64379493-f228-f2d5-5470-c68f7712adf7",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "64379493-f228-f2d5-5470-c68f7712adf7"
       }, {
         "answer" : "Minton",
-        "itemId" : "5035ff84-6632-76b0-1e15-994acbbc8674",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "5035ff84-6632-76b0-1e15-994acbbc8674"
       }, {
         "answer" : "Optimus",
-        "itemId" : "3dacc737-33d4-4dfc-3186-057a9efd5fb9",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "3dacc737-33d4-4dfc-3186-057a9efd5fb9"
       }, {
         "answer" : "Shuttlecock",
-        "itemId" : "f4d6912b-b633-80af-babc-c13ed0793485",
-        "correctAnswer" : null
+        "isCorrectAnswer" : true,
+        "itemId" : "f4d6912b-b633-80af-babc-c13ed0793485"
       } ]
     }, {
       "image" : "https://img.buzzfeed.com/buzzfeed-static/static/2019-08/12/19/enhanced/3d28ed294e17/enhanced-4948-1565637767-1.jpg",
@@ -955,20 +955,20 @@
       "question" : "Rugby differs from American football in many ways including:",
       "answers" : [ {
         "answer" : "Rugby players don't wear heavy protective equipment like football players do.",
-        "itemId" : "f7e307b5-7ca3-a35a-d871-187c9158cfcd",
-        "correctAnswer" : null
+        "isCorrectAnswer" : true,
+        "itemId" : "f7e307b5-7ca3-a35a-d871-187c9158cfcd"
       }, {
         "answer" : "Rugby is non-contant.",
-        "itemId" : "9ddcadbd-0905-1815-ee50-3862eb38d6df",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "9ddcadbd-0905-1815-ee50-3862eb38d6df"
       }, {
         "answer" : "Rugby is played on a court, not a field.",
-        "itemId" : "74888b0c-ece0-e358-d484-79b7aea8597d",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "74888b0c-ece0-e358-d484-79b7aea8597d"
       }, {
         "answer" : "Rugby is played with a circular ball.",
-        "itemId" : "1338e9a4-e3c3-b7c4-1ad8-3067e71c0e11",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "1338e9a4-e3c3-b7c4-1ad8-3067e71c0e11"
       } ]
     }, {
       "image" : "https://img.buzzfeed.com/buzzfeed-static/static/2019-08/12/19/enhanced/c123b72dfb66/enhanced-4210-1565637759-1.jpg",
@@ -976,20 +976,20 @@
       "question" : "Which of these is not currently an Olympic sport?",
       "answers" : [ {
         "answer" : "Taekwondo",
-        "itemId" : "417bbb9a-b2e0-6c31-acbd-f6bfea7fdb40",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "417bbb9a-b2e0-6c31-acbd-f6bfea7fdb40"
       }, {
         "answer" : "Cricket",
-        "itemId" : "8e5ec25b-91e5-d701-e9cd-4dce58989b2f",
-        "correctAnswer" : null
+        "isCorrectAnswer" : true,
+        "itemId" : "8e5ec25b-91e5-d701-e9cd-4dce58989b2f"
       }, {
         "answer" : "Judo",
-        "itemId" : "71a95f1a-a613-ce93-df58-e257cb4eea2d",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "71a95f1a-a613-ce93-df58-e257cb4eea2d"
       }, {
         "answer" : "Handball",
-        "itemId" : "557c70a6-43b5-0e66-9ca7-0fa754cdbf77",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "557c70a6-43b5-0e66-9ca7-0fa754cdbf77"
       } ]
     } ]
   }, {
@@ -1003,20 +1003,20 @@
       "question" : "When were the first recorded Olympics held?",
       "answers" : [ {
         "answer" : "825 BC",
-        "itemId" : "c4958bba-030b-bc20-74e1-2ebdbd503baa",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "c4958bba-030b-bc20-74e1-2ebdbd503baa"
       }, {
         "answer" : "776 BC",
-        "itemId" : "9b99d61e-4318-78ea-8519-4a812cbae2fa",
-        "correctAnswer" : null
+        "isCorrectAnswer" : true,
+        "itemId" : "9b99d61e-4318-78ea-8519-4a812cbae2fa"
       }, {
         "answer" : "320 BC",
-        "itemId" : "10d91244-537d-93d6-4c12-6b7e78cc59b7",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "10d91244-537d-93d6-4c12-6b7e78cc59b7"
       }, {
         "answer" : "80 AD",
-        "itemId" : "90969d98-e1a0-488d-4f00-ce6bcc37702b",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "90969d98-e1a0-488d-4f00-ce6bcc37702b"
       } ]
     }, {
       "image" : "",
@@ -1024,20 +1024,20 @@
       "question" : "The term \"Beamer\" is associated with:",
       "answers" : [ {
         "answer" : "Football",
-        "itemId" : "8be3ce96-10f0-0e8d-4d40-0cc12d673654",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "8be3ce96-10f0-0e8d-4d40-0cc12d673654"
       }, {
         "answer" : "Hockey",
-        "itemId" : "91d97dac-3612-a1c8-14d3-b7050750c631",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "91d97dac-3612-a1c8-14d3-b7050750c631"
       }, {
         "answer" : "Cricket",
-        "itemId" : "e68c2b17-afdf-845a-52bb-3096fad65a83",
-        "correctAnswer" : null
+        "isCorrectAnswer" : true,
+        "itemId" : "e68c2b17-afdf-845a-52bb-3096fad65a83"
       }, {
         "answer" : "Chess",
-        "itemId" : "e15fd728-390f-5879-51ff-285b5dc16dfe",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "e15fd728-390f-5879-51ff-285b5dc16dfe"
       } ]
     }, {
       "image" : "",
@@ -1045,20 +1045,20 @@
       "question" : "Of which country is bull-fighting the national game?",
       "answers" : [ {
         "answer" : "Spain",
-        "itemId" : "27db18a1-7ce9-064d-0bbc-d322b3ce76af",
-        "correctAnswer" : null
+        "isCorrectAnswer" : true,
+        "itemId" : "27db18a1-7ce9-064d-0bbc-d322b3ce76af"
       }, {
         "answer" : "Portugal",
-        "itemId" : "4c7d0bd1-8e50-e5d6-0504-cd17dfae903b",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "4c7d0bd1-8e50-e5d6-0504-cd17dfae903b"
       }, {
         "answer" : "Hungary",
-        "itemId" : "2c25721f-a3d1-500d-4b6d-8b505bac2c90",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "2c25721f-a3d1-500d-4b6d-8b505bac2c90"
       }, {
         "answer" : "Poland",
-        "itemId" : "59f9854d-f056-f187-7481-8dbc902853e3",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "59f9854d-f056-f187-7481-8dbc902853e3"
       } ]
     }, {
       "image" : "",
@@ -1066,20 +1066,20 @@
       "question" : "In which game the term \"Putting\" is used?",
       "answers" : [ {
         "answer" : "Hockey",
-        "itemId" : "0ecbc9b2-f0a1-e0a6-8025-b31b9d297dc0",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "0ecbc9b2-f0a1-e0a6-8025-b31b9d297dc0"
       }, {
         "answer" : "Chess",
-        "itemId" : "a8b2451e-6bc1-abbf-7b41-13050c6e3421",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "a8b2451e-6bc1-abbf-7b41-13050c6e3421"
       }, {
         "answer" : "Golf",
-        "itemId" : "4ba7146c-60b7-22a2-6395-8900e4573f51",
-        "correctAnswer" : null
+        "isCorrectAnswer" : true,
+        "itemId" : "4ba7146c-60b7-22a2-6395-8900e4573f51"
       }, {
         "answer" : "Billiards",
-        "itemId" : "a9d24eea-36c4-3ac2-8325-47c76bf8fc3a",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "a9d24eea-36c4-3ac2-8325-47c76bf8fc3a"
       } ]
     }, {
       "image" : "",
@@ -1087,20 +1087,20 @@
       "question" : "Which of the following term is not associated with Football?",
       "answers" : [ {
         "answer" : "Penalty Kick",
-        "itemId" : "ca2ebd7c-ff8c-8303-3d51-582135b313ba",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "ca2ebd7c-ff8c-8303-3d51-582135b313ba"
       }, {
         "answer" : "Free Kick",
-        "itemId" : "90da0a6e-22e5-ebf6-e204-d6efd5a2eaea",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "90da0a6e-22e5-ebf6-e204-d6efd5a2eaea"
       }, {
         "answer" : "Penalty Stroke",
-        "itemId" : "ac03575c-e0e8-f826-bb02-05d44b57b4fa",
-        "correctAnswer" : null
+        "isCorrectAnswer" : true,
+        "itemId" : "ac03575c-e0e8-f826-bb02-05d44b57b4fa"
       }, {
         "answer" : "OffSide",
-        "itemId" : "28d7f543-0e0f-bc89-86b1-11b09ccd7a3d",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "28d7f543-0e0f-bc89-86b1-11b09ccd7a3d"
       } ]
     }, {
       "image" : "",
@@ -1108,20 +1108,20 @@
       "question" : "When were the Commonwealth Games organised for the first time?",
       "answers" : [ {
         "answer" : "1948",
-        "itemId" : "36cba39b-0be8-2bfa-a4cf-b3575062f63a",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "36cba39b-0be8-2bfa-a4cf-b3575062f63a"
       }, {
         "answer" : "1938",
-        "itemId" : "82ffc57a-5f22-c0aa-205f-c391961b1e10",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "82ffc57a-5f22-c0aa-205f-c391961b1e10"
       }, {
         "answer" : "1934",
-        "itemId" : "f37fbf89-6668-3413-d414-110aa44c9eb1",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "f37fbf89-6668-3413-d414-110aa44c9eb1"
       }, {
         "answer" : "1930",
-        "itemId" : "80114873-808b-41e6-4c20-808200c8dbe2",
-        "correctAnswer" : null
+        "isCorrectAnswer" : true,
+        "itemId" : "80114873-808b-41e6-4c20-808200c8dbe2"
       } ]
     }, {
       "image" : "",
@@ -1129,20 +1129,20 @@
       "question" : "The term \"Butterfly Stroke\" is referred to in which sport?",
       "answers" : [ {
         "answer" : "Tennis",
-        "itemId" : "6381c913-2384-6920-e82d-f4f33aea482f",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "6381c913-2384-6920-e82d-f4f33aea482f"
       }, {
         "answer" : "Volleyball",
-        "itemId" : "76411155-9216-dfbd-5958-448a50641d04",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "76411155-9216-dfbd-5958-448a50641d04"
       }, {
         "answer" : "Wrestling",
-        "itemId" : "51b81cb1-db7a-45c7-2b48-e63377308a9f",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "51b81cb1-db7a-45c7-2b48-e63377308a9f"
       }, {
         "answer" : "Swimming",
-        "itemId" : "66160529-1416-db56-cd62-c353a34a8daf",
-        "correctAnswer" : null
+        "isCorrectAnswer" : true,
+        "itemId" : "66160529-1416-db56-cd62-c353a34a8daf"
       } ]
     }, {
       "image" : "",
@@ -1150,20 +1150,20 @@
       "question" : "Free throw is associated with:",
       "answers" : [ {
         "answer" : "Volleyball",
-        "itemId" : "59c95350-b734-32ca-d0e1-cd753eeb8e4d",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "59c95350-b734-32ca-d0e1-cd753eeb8e4d"
       }, {
         "answer" : "Football",
-        "itemId" : "5cc5d9d9-09e5-840d-079e-5a1a838e9179",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "5cc5d9d9-09e5-840d-079e-5a1a838e9179"
       }, {
         "answer" : "Basket Ball",
-        "itemId" : "ff5dfc9b-7e23-7c47-786e-08d098458605",
-        "correctAnswer" : null
+        "isCorrectAnswer" : true,
+        "itemId" : "ff5dfc9b-7e23-7c47-786e-08d098458605"
       }, {
         "answer" : "Cricket",
-        "itemId" : "fba30cf4-c8cc-eee3-27a3-82a33c56f2fe",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "fba30cf4-c8cc-eee3-27a3-82a33c56f2fe"
       } ]
     }, {
       "image" : "",
@@ -1171,20 +1171,20 @@
       "question" : "In which sports is the participant called pugilist?",
       "answers" : [ {
         "answer" : "Wrestling",
-        "itemId" : "5ac87762-524c-a5a4-5b22-ba8d7ae37058",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "5ac87762-524c-a5a4-5b22-ba8d7ae37058"
       }, {
         "answer" : "Boxing",
-        "itemId" : "d6d0d597-0ab8-67a9-efc5-c036996967e3",
-        "correctAnswer" : null
+        "isCorrectAnswer" : true,
+        "itemId" : "d6d0d597-0ab8-67a9-efc5-c036996967e3"
       }, {
         "answer" : "Javelin throw",
-        "itemId" : "1c39e1d6-cf13-a54d-927a-aee4eb37d041",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "1c39e1d6-cf13-a54d-927a-aee4eb37d041"
       }, {
         "answer" : "Sprinter",
-        "itemId" : "ce306ccd-874f-da63-e548-ff947b705ba3",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "ce306ccd-874f-da63-e548-ff947b705ba3"
       } ]
     }, {
       "image" : "",
@@ -1192,20 +1192,20 @@
       "question" : "With which one of the following sports is Fernando Alonso associated?",
       "answers" : [ {
         "answer" : "Formula 1",
-        "itemId" : "bbc471d7-b534-9cf9-9a88-721ce54a3454",
-        "correctAnswer" : null
+        "isCorrectAnswer" : true,
+        "itemId" : "bbc471d7-b534-9cf9-9a88-721ce54a3454"
       }, {
         "answer" : "Billiards",
-        "itemId" : "ede35700-33ce-422a-0ba0-4fe2bac15427",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "ede35700-33ce-422a-0ba0-4fe2bac15427"
       }, {
         "answer" : "Snooker",
-        "itemId" : "0af1e613-c663-7ef1-1471-9d2ed0dd53c9",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "0af1e613-c663-7ef1-1471-9d2ed0dd53c9"
       }, {
         "answer" : "Tennis",
-        "itemId" : "af674603-d9b7-6ed7-a5a5-1e4fe8562e33",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "af674603-d9b7-6ed7-a5a5-1e4fe8562e33"
       } ]
     }, {
       "image" : "",
@@ -1213,20 +1213,20 @@
       "question" : "Which of the following International Tennis Tournaments is held on grass court?",
       "answers" : [ {
         "answer" : "US Open",
-        "itemId" : "109cc98e-b2f5-a0db-07df-4827f7fe94b7",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "109cc98e-b2f5-a0db-07df-4827f7fe94b7"
       }, {
         "answer" : "French Open",
-        "itemId" : "04f32d28-737f-552e-4902-af8c2df24c64",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "04f32d28-737f-552e-4902-af8c2df24c64"
       }, {
         "answer" : "Wimbledon",
-        "itemId" : "02338d7e-8b8d-92ae-b7d3-a444d24294ec",
-        "correctAnswer" : null
+        "isCorrectAnswer" : true,
+        "itemId" : "02338d7e-8b8d-92ae-b7d3-a444d24294ec"
       }, {
         "answer" : "Australian Open",
-        "itemId" : "c8affff3-640b-3a8c-2827-786b8770535e",
-        "correctAnswer" : null
+        "isCorrectAnswer" : false,
+        "itemId" : "c8affff3-640b-3a8c-2827-786b8770535e"
       } ]
     } ]
   } ]
