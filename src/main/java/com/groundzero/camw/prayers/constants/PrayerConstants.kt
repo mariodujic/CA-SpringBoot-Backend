@@ -1,3 +1,3 @@
 package com.groundzero.camw.prayers.constants
 
-const val PRAYERS_ENGLISH_COLLECTION = "en-prayers"
+const val PRAYER_EN_COLLECTION = "en-prayers"

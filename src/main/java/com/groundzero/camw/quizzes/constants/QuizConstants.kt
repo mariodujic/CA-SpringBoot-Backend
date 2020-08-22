@@ -1,3 +1,3 @@
 package com.groundzero.camw.quizzes.constants
 
-const val QUIZZES_ENGLISH_COLLECTION = "en-quizzes"
+const val QUIZ_EN_COLLECTION = "en-quizzes"
