@@ -2,6 +2,8 @@ package com.groundzero.camw.data
 
 import com.groundzero.camw.prayers.constants.PRAYERS_ENGLISH_COLLECTION
 import com.groundzero.camw.prayers.data.Prayer
+import com.groundzero.camw.thoughts.constants.THOUGHTS_ENGLISH_COLLECTION
+import com.groundzero.camw.thoughts.data.Thought
 import com.groundzero.camw.utils.JsonUtils
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Component
@@ -18,7 +20,12 @@ class WriteJsonService {
     fun writeJson() {
         readNetwork.readDatabase<Prayer>()?.let {
             jsonUtils.writeJson(getDatabaseJsonPath(PRAYERS_ENGLISH_COLLECTION), it)
-            println("Json written successfully")
+            println("Json prayers written successfully")
+        }
+
+        readNetwork.readDatabase<Thought>()?.let {
+            jsonUtils.writeJson(getDatabaseJsonPath(THOUGHTS_ENGLISH_COLLECTION), it)
+            println("Json thoughts written successfully")
         }
     }
 

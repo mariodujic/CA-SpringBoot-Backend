@@ -3,6 +3,8 @@ package com.groundzero.camw.data
 import com.google.cloud.firestore.QueryDocumentSnapshot
 import com.groundzero.camw.prayers.constants.PRAYERS_ENGLISH_COLLECTION
 import com.groundzero.camw.prayers.data.Prayer
+import com.groundzero.camw.thoughts.constants.THOUGHTS_ENGLISH_COLLECTION
+import com.groundzero.camw.thoughts.data.Thought
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Component
 
@@ -16,6 +18,7 @@ class ReadNetworkService {
 
         when (T::class) {
             Prayer::class -> return getDataAsList(PRAYERS_ENGLISH_COLLECTION)
+            Thought::class -> return getDataAsList(THOUGHTS_ENGLISH_COLLECTION)
         }
         return null
     }
@@ -31,7 +34,7 @@ class ReadNetworkService {
     }
 
     private fun getCollection(collectionKey: String): List<QueryDocumentSnapshot> {
-        val apiFuture = firebaseDatabase.getFirestore().collection(collectionKey).get()
+        val apiFuture = firebaseDatabase.firestore.collection(collectionKey).get()
         val querySnapshot = apiFuture.get()
         return querySnapshot.documents
     }

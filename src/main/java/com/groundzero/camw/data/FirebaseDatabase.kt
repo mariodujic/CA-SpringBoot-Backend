@@ -11,15 +11,18 @@ import java.io.FileInputStream
 @Component
 class FirebaseDatabase {
 
-    fun getFirestore(): Firestore {
-        FirebaseApp.initializeApp(getFirebaseOptions())
-        return FirestoreClient.getFirestore()
+    init {
+        initializeFirebase()
     }
 
-    private fun getFirebaseOptions() = FirebaseOptions.Builder()
+    val firestore: Firestore = FirestoreClient.getFirestore()
+
+    private fun initializeFirebase() = FirebaseOptions.Builder()
             .setCredentials(GoogleCredentials.fromStream(getFileInput()))
             .setDatabaseUrl(DATABASE_URL)
-            .build()
+            .build().also {
+                FirebaseApp.initializeApp(it)
+            }
 
     private fun getFileInput() = FileInputStream(KEY)
 
