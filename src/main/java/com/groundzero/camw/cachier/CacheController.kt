@@ -15,7 +15,7 @@ class CacheController : CommandLineRunner {
     private lateinit var repository: CacheRepository
 
     override fun run(vararg args: String?) {
-        updateQuizzes()
+        // updateQuizzes()
     }
 
     private fun updateQuizzes() = repository.readNetworkQuizzes()?.let { repository.writeJsonQuizzes(it).getJsonLog(QUIZ_EN_COLLECTION) }
