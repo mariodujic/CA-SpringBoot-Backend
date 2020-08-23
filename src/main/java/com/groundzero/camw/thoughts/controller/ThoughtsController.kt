@@ -1,4 +1,4 @@
-package com.groundzero.camw.prayers.controller
+package com.groundzero.camw.thoughts.controller
 
 import com.groundzero.camw.cachier.CacheRepository
 import com.groundzero.camw.network.NetworkResponse
@@ -9,15 +9,15 @@ import org.springframework.web.bind.annotation.RestController
 
 
 @RestController
-@RequestMapping("/prayers")
-class PrayersController {
+@RequestMapping("/thoughts")
+class ThoughtsController {
 
     @Autowired
     lateinit var cacheRepository: CacheRepository
 
     @GetMapping
-    fun getPrayers(): NetworkResponse {
-        cacheRepository.readNetworkPrayers()?.let {
+    fun getThoughts(): NetworkResponse {
+        cacheRepository.readNetworkThoughts()?.let {
             return NetworkResponse.Success(200, "Success", it)
         }
         return NetworkResponse.Error(404, "Error")
