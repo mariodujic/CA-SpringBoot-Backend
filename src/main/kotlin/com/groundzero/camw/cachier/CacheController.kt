@@ -8,15 +8,11 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.CommandLineRunner
 import org.springframework.stereotype.Component
 
 @Component
-class CacheController : CommandLineRunner {
-
-    @Autowired
-    private lateinit var repository: CacheRepository
+class CacheController(private val repository: CacheRepository) : CommandLineRunner {
 
     override fun run(vararg args: String?) {
         CoroutineScope(IO).launch {

@@ -1,18 +1,11 @@
 package com.groundzero.camw.data
 
 import com.google.cloud.firestore.QueryDocumentSnapshot
-import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.stereotype.Component
 
-@Component
-class ReadNetworkService {
-
-    @Autowired
-    private lateinit var firebaseDatabase: FirebaseDatabase
-
+abstract class WriteJson(private val firebaseDatabase: FirebaseDatabase) {
     internal inline fun <reified T> readDatabase(collectionKey: String): List<T> = getDataAsList(collectionKey)
 
-    private inline fun <reified T> getDataAsList(collectionKey: String): List<T> {
+    internal inline fun <reified T> getDataAsList(collectionKey: String): List<T> {
         val prayerList = mutableListOf<T>()
 
         for (i in getCollection(collectionKey)) {
