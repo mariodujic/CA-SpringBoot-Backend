@@ -1,6 +1,7 @@
 package com.groundzero.camw.quizzes.controller
 
 import com.groundzero.camw.cachier.CacheRepository
+import com.groundzero.camw.common.DistributorRepository
 import com.groundzero.camw.network.NetworkResponse
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.GetMapping
@@ -12,11 +13,11 @@ import org.springframework.web.bind.annotation.RestController
 class QuizController {
 
     @Autowired
-    lateinit var cacheRepository: CacheRepository
+    lateinit var distributorRepository: DistributorRepository
 
     @GetMapping
     fun getQuizzes(): NetworkResponse {
-        cacheRepository.readNetworkQuizzes()?.let {
+        distributorRepository.getQuizzes()?.let {
             return NetworkResponse.Success(200, "Success", it)
         }
         return NetworkResponse.Error(404, "Error")
