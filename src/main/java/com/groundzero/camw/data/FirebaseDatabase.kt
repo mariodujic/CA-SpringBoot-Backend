@@ -28,6 +28,6 @@ class FirebaseDatabase {
 
     companion object {
         private const val DATABASE_URL = "https://catholic-prayerbook.firebaseio.com"
-        private const val KEY = "catholic-prayerbook-firebase-adminsdk-vh3gk-41b68d26b9.json"
+        private const val KEY = "catholic-prayerbook-firebase-adminsdk-vh3gk-2f5e943dcd.json"
     }
 }
