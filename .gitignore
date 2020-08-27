@@ -125,6 +125,8 @@ fabric.properties
 
 # Keys
 catholic-prayerbook-firebase-adminsdk-vh3gk-2f5e943dcd.json
+# Properties
+src/main/resources/secret.properties
 
 ### Maven ###
 target/

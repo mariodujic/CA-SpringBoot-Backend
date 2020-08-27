@@ -1,6 +1,7 @@
 package com.groundzero.camw.security
 
-import org.springframework.beans.factory.annotation.Value
+import com.groundzero.camw.cachier.CacheController
+import com.groundzero.camw.utils.PropertiesUtils
 import org.springframework.stereotype.Component
 import org.springframework.web.filter.OncePerRequestFilter
 import javax.servlet.FilterChain
@@ -8,15 +9,15 @@ import javax.servlet.http.HttpServletRequest
 import javax.servlet.http.HttpServletResponse
 
 @Component
-class SecretAuthenticationFilter(
-        @Value("\${data.auth.key}") private val dataKey: String,
-        @Value("\${data.auth.secret}") private val dataSecret: String
-) : OncePerRequestFilter() {
+class SecretAuthenticationFilter : OncePerRequestFilter() {
 
     override fun doFilterInternal(request: HttpServletRequest, response: HttpServletResponse, chain: FilterChain) {
 
-        val auth = request.getHeader(dataKey)
-        if (dataSecret != auth) {
+        val key = PropertiesUtils.getAuthenticationCredentials<SecretAuthenticationFilter>("key")
+        val secret = PropertiesUtils.getAuthenticationCredentials<SecretAuthenticationFilter>("secret")
+
+        val auth = request.getHeader(key)
+        if (secret != auth) {
             throw SecurityException()
         }
         chain.doFilter(request, response)
