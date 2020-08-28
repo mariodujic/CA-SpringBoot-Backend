@@ -17,10 +17,10 @@ class CacheController(private val repository: CacheRepository) : CommandLineRunn
     override fun run(vararg args: String?) {
         CoroutineScope(IO).launch {
             while (true) {
-                delay(LOCAL_DATA_UPDATE_DELAY_MIL)
                 updatePrayers()
                 updateThoughts()
                 updateQuizzes()
+                delay(LOCAL_DATA_UPDATE_DELAY_MIL)
             }
         }
     }
