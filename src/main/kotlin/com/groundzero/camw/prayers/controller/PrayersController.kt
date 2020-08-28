@@ -14,7 +14,6 @@ class PrayersController(private val distributorRepository: DistributorRepository
     @GetMapping
     fun getPrayers(): NetworkResponse {
         distributorRepository.getPrayers()?.let {
-            println(it)
             return NetworkResponse.Success(200, "Success", it)
         }
         return NetworkResponse.Error(404, "Error")

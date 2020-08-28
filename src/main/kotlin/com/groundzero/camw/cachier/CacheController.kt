@@ -30,6 +30,6 @@ class CacheController(private val repository: CacheRepository) : CommandLineRunn
     private fun updateThoughts() = repository.readNetworkThoughts()?.let { repository.writeJsonThoughts(it).getJsonLog(THOUGHT_EN_COLLECTION) }
 
     companion object {
-        private const val LOCAL_DATA_UPDATE_DELAY_MIL = 3_600_000L // 60 min
+        private const val LOCAL_DATA_UPDATE_DELAY_MIL = 5_000L // 60 min
     }
 }
