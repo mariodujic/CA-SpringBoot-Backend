@@ -1,6 +1,5 @@
 package com.groundzero.camw.security
 
-import com.groundzero.camw.utils.PropertiesUtils
 import org.springframework.stereotype.Component
 import org.springframework.web.filter.OncePerRequestFilter
 import javax.servlet.FilterChain
@@ -12,13 +11,15 @@ class SecretAuthenticationFilter : OncePerRequestFilter() {
 
     override fun doFilterInternal(request: HttpServletRequest, response: HttpServletResponse, chain: FilterChain) {
 
-        val key = PropertiesUtils.getPropertyValue<SecretAuthenticationFilter>("secret.properties", "key")
-        val secret = PropertiesUtils.getPropertyValue<SecretAuthenticationFilter>("secret.properties", "secret")
-
-        val auth = request.getHeader(key)
-        if (secret != auth) {
+        val auth = request.getHeader(AUTHENTICATION_KEY)
+        if (AUTHENTICATION_SECRET != auth) {
             throw SecurityException()
         }
         chain.doFilter(request, response)
+    }
+
+    companion object {
+        private const val AUTHENTICATION_KEY = "CA-Auth"
+        private const val AUTHENTICATION_SECRET = "camw-application-data-ahfkk23lgp339"
     }
 }
