@@ -1,18 +1,18 @@
 package com.groundzero.camw.quizzes.controller
 
-import com.groundzero.camw.common.DistributorRepository
 import com.groundzero.camw.network.NetworkResponse
+import com.groundzero.camw.quizzes.data.QuizRepository
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
 @RequestMapping("/quizzes")
-class QuizController(private val distributorRepository: DistributorRepository) {
+class QuizController(private val repository: QuizRepository) {
 
     @GetMapping("/en")
     fun getQuizzesEnglish(): NetworkResponse {
-        distributorRepository.getQuizzesEnglish()?.let {
+        repository.getQuizzesEnglish()?.let {
             return NetworkResponse.Success(200, "Success", it)
         }
         return NetworkResponse.Error(404, "Error")
@@ -20,7 +20,7 @@ class QuizController(private val distributorRepository: DistributorRepository) {
 
     @GetMapping("/hr")
     fun getQuizzesCroatian(): NetworkResponse {
-        distributorRepository.getQuizzesCroatian()?.let {
+        repository.getQuizzesCroatian()?.let {
             return NetworkResponse.Success(200, "Success", it)
         }
         return NetworkResponse.Error(404, "Error")
