@@ -10,9 +10,17 @@ import org.springframework.web.bind.annotation.RestController
 @RequestMapping("/quizzes")
 class QuizController(private val distributorRepository: DistributorRepository) {
 
-    @GetMapping
-    fun getQuizzes(): NetworkResponse {
-        distributorRepository.getQuizzes()?.let {
+    @GetMapping("/en")
+    fun getQuizzesEnglish(): NetworkResponse {
+        distributorRepository.getQuizzesEnglish()?.let {
+            return NetworkResponse.Success(200, "Success", it)
+        }
+        return NetworkResponse.Error(404, "Error")
+    }
+
+    @GetMapping("/hr")
+    fun getQuizzesCroatian(): NetworkResponse {
+        distributorRepository.getQuizzesCroatian()?.let {
             return NetworkResponse.Success(200, "Success", it)
         }
         return NetworkResponse.Error(404, "Error")

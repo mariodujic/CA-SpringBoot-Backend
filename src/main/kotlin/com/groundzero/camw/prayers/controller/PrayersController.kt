@@ -6,14 +6,21 @@ import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 
-
 @RestController
 @RequestMapping("/prayers")
 class PrayersController(private val distributorRepository: DistributorRepository) {
 
-    @GetMapping
-    fun getPrayers(): NetworkResponse {
-        distributorRepository.getPrayers()?.let {
+    @GetMapping("/en")
+    fun getPrayersEnglish(): NetworkResponse {
+        distributorRepository.getPrayersEnglish()?.let {
+            return NetworkResponse.Success(200, "Success", it)
+        }
+        return NetworkResponse.Error(404, "Error")
+    }
+
+    @GetMapping("/hr")
+    fun getPrayersCroatian(): NetworkResponse {
+        distributorRepository.getPrayersCroatian()?.let {
             return NetworkResponse.Success(200, "Success", it)
         }
         return NetworkResponse.Error(404, "Error")
