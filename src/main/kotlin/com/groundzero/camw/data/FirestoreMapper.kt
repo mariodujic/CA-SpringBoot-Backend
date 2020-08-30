@@ -3,13 +3,9 @@ package com.groundzero.camw.data
 import com.google.cloud.firestore.QueryDocumentSnapshot
 import org.springframework.stereotype.Component
 
-/**
- * 'inline' modifier is not allowed on virtual members
- */
 @Component
-class FirestoreMapper : FirestoreMapperImpl()
-
-open class FirestoreMapperImpl {
+@Suppress("declaration_cant_be_inlined")
+class FirestoreMapper {
 
     inline fun <reified T> getDataAsList(collection: List<QueryDocumentSnapshot>): List<T> {
         val prayerList = mutableListOf<T>()

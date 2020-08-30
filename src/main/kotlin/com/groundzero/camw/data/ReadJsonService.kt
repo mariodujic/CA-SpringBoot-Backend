@@ -5,12 +5,8 @@ import com.groundzero.camw.utils.SerializationUtils
 import org.springframework.stereotype.Component
 import java.io.File
 
-/**
- * 'inline' modifier is not allowed on virtual members
- */
 @Component
-class ReadJson(override val serialization: SerializationUtils) : ReadJsonImpl(serialization)
-
-open class ReadJsonImpl(open val serialization: SerializationUtils) {
+@Suppress("declaration_cant_be_inlined")
+class ReadJsonService(val serialization: SerializationUtils) {
     fun <T> readJson(path: String): List<T>? = serialization.mapper.readValue(File(path))
 }

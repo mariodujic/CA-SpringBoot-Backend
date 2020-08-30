@@ -18,7 +18,7 @@ import org.springframework.stereotype.Component
 @Component
 class CacheService(
         private val readNetworkService: ReadNetworkService,
-        private val writeJson: WriteJsonService
+        private val writeJsonService: WriteJsonService
 ) : Cache {
 
     override fun updateQuizzes() {
@@ -38,7 +38,7 @@ class CacheService(
 
     private inline fun <reified T> updateData(collectionKey: String) {
         with(collectionKey) {
-            readNetworkService.readDatabase<T>(this)?.let { writeJson.writeJson(getJsonStoragePath(this), it).getJsonLog(this) }
+            readNetworkService.readDatabase<T>(this)?.let { writeJsonService.writeJson(getJsonStoragePath(this), it).getJsonLog(this) }
         }
     }
 }
