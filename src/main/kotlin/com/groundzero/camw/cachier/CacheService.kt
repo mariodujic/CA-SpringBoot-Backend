@@ -17,7 +17,7 @@ import org.springframework.stereotype.Component
 
 @Component
 class CacheService(
-        private val readNetwork: ReadNetworkService,
+        private val readNetworkService: ReadNetworkService,
         private val writeJson: WriteJsonService
 ) : Cache {
 
@@ -38,7 +38,7 @@ class CacheService(
 
     private inline fun <reified T> updateData(collectionKey: String) {
         with(collectionKey) {
-            readNetwork.readDatabase<T>(this)?.let { writeJson.writeJson(getJsonStoragePath(this), it).getJsonLog(this) }
+            readNetworkService.readDatabase<T>(this)?.let { writeJson.writeJson(getJsonStoragePath(this), it).getJsonLog(this) }
         }
     }
 }
