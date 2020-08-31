@@ -8,12 +8,12 @@ import org.springframework.stereotype.Component
 class FirestoreMapper {
 
     inline fun <reified T> getDataAsList(collection: List<QueryDocumentSnapshot>): List<T> {
-        val prayerList = mutableListOf<T>()
+        val dataList = mutableListOf<T>()
 
         for (i in collection) {
             val data = i.toObject(T::class.java)
-            prayerList.add(data)
+            dataList.add(data)
         }
-        return prayerList
+        return dataList
     }
 }
