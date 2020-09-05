@@ -18,9 +18,25 @@ class QuizController(private val repository: QuizRepository) {
         return NetworkResponse.Error(404, "Error")
     }
 
+    @GetMapping("/en-staging")
+    fun getQuizzesEnglishStaging(): NetworkResponse {
+        repository.getQuizzesEnglishStaging()?.let {
+            return NetworkResponse.Success(200, "Success", it)
+        }
+        return NetworkResponse.Error(404, "Error")
+    }
+
     @GetMapping("/hr")
     fun getQuizzesCroatian(): NetworkResponse {
         repository.getQuizzesCroatian()?.let {
+            return NetworkResponse.Success(200, "Success", it)
+        }
+        return NetworkResponse.Error(404, "Error")
+    }
+
+    @GetMapping("/hr-staging")
+    fun getQuizzesCroatianStaging(): NetworkResponse {
+        repository.getQuizzesCroatianStaging()?.let {
             return NetworkResponse.Success(200, "Success", it)
         }
         return NetworkResponse.Error(404, "Error")

@@ -18,9 +18,25 @@ class PrayersController(private val repository: PrayersRepository) {
         return NetworkResponse.Error(404, "Error")
     }
 
+    @GetMapping("/en-staging")
+    fun getPrayersEnglishStaging(): NetworkResponse {
+        repository.getPrayersEnglishStaging()?.let {
+            return NetworkResponse.Success(200, "Success", it)
+        }
+        return NetworkResponse.Error(404, "Error")
+    }
+
     @GetMapping("/hr")
     fun getPrayersCroatian(): NetworkResponse {
         repository.getPrayersCroatian()?.let {
+            return NetworkResponse.Success(200, "Success", it)
+        }
+        return NetworkResponse.Error(404, "Error")
+    }
+
+    @GetMapping("/hr-staging")
+    fun getPrayersCroatianStaging(): NetworkResponse {
+        repository.getPrayersCroatianStaging()?.let {
             return NetworkResponse.Success(200, "Success", it)
         }
         return NetworkResponse.Error(404, "Error")

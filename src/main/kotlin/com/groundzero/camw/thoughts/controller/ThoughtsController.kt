@@ -18,9 +18,25 @@ class ThoughtsController(private val repository: ThoughtsRepository) {
         return NetworkResponse.Error(404, "Error")
     }
 
+    @GetMapping("/en-staging")
+    fun getThoughtsEnglishStaging(): NetworkResponse {
+        repository.getThoughtsEnglishStaging()?.let {
+            return NetworkResponse.Success(200, "Success", it)
+        }
+        return NetworkResponse.Error(404, "Error")
+    }
+
     @GetMapping("/hr")
     fun getThoughtsCroatian(): NetworkResponse {
         repository.getThoughtsCroatian()?.let {
+            return NetworkResponse.Success(200, "Success", it)
+        }
+        return NetworkResponse.Error(404, "Error")
+    }
+
+    @GetMapping("/hr-staging")
+    fun getThoughtsCroatianStaging(): NetworkResponse {
+        repository.getThoughtsCroatianStaging()?.let {
             return NetworkResponse.Success(200, "Success", it)
         }
         return NetworkResponse.Error(404, "Error")
