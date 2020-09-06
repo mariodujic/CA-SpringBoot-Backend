@@ -3,11 +3,15 @@ package com.groundzero.camw.data
 import org.springframework.stereotype.Component
 
 @Component
-class MiddlewareMapper<T : NetworkModel> {
+class ItemMapper<T : NetworkModel> {
 
-    fun <T> addItem(item: T, list: List<T>?): List<T> = list?.let {
+    fun addItem(item: T, list: List<T>?): List<T> = list?.let {
         it.toMutableList().apply {
-            this.add(item)
+            if (itemExists(item, list)) {
+                return replaceItem(item, list)
+            } else {
+                this.add(item)
+            }
         }
     } ?: mutableListOf(item)
 

@@ -1,10 +1,9 @@
 package com.groundzero.camw.prayers.controller
 
 import com.groundzero.camw.network.NetworkResponse
+import com.groundzero.camw.prayers.data.Prayer
 import com.groundzero.camw.prayers.data.PrayersRepository
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RestController
+import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping("/prayers")
@@ -24,6 +23,12 @@ class PrayersController(private val repository: PrayersRepository) {
             return NetworkResponse.Success(200, "Success", it)
         }
         return NetworkResponse.Error(404, "Error")
+    }
+
+    @PostMapping("/en-staging")
+    fun addPrayersEnglishStaging(@RequestBody prayer: Prayer): NetworkResponse {
+        repository.addPrayerEnglishStaging(prayer)
+        return NetworkResponse.Success<Prayer>(200, "Success", mutableListOf())
     }
 
     @GetMapping("/hr")

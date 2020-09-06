@@ -18,7 +18,6 @@ import com.groundzero.camw.thoughts.constants.THOUGHT_HR_COLLECTION
 import com.groundzero.camw.thoughts.constants.THOUGHT_HR_COLLECTION_STAGING
 import com.groundzero.camw.thoughts.data.Thought
 import com.groundzero.camw.utils.getJsonLog
-import com.groundzero.camw.utils.getJsonStoragePath
 import org.springframework.stereotype.Component
 
 @Component
@@ -50,7 +49,7 @@ class CacheService(
 
     private inline fun <reified T> updateData(collectionKey: String) {
         with(collectionKey) {
-            readNetworkService.readDatabase<T>(this)?.let { writeJsonService.writeJson(getJsonStoragePath(this), it).getJsonLog(this) }
+            readNetworkService.readDatabase<T>(this)?.let { writeJsonService.write(this, it).getJsonLog(this) }
         }
     }
 }
