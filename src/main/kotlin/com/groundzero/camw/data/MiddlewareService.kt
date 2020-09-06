@@ -4,18 +4,23 @@ import com.groundzero.camw.utils.getJsonStoragePath
 import org.springframework.stereotype.Component
 
 @Component
-class MiddlewareService<T>(
+class MiddlewareService<in T : NetworkModel>(
         private val readJsonService: ReadJsonService,
-        private val writeJsonService: WriteJsonService
+        private val writeJsonService: WriteJsonService,
+        private val middlewareMapper: MiddlewareMapper<T>
 ) {
     fun addItem(item: T, collectionPath: String) {
-        val items: List<T>? = readJsonService.readJson(getJsonStoragePath(collectionPath))
-        writeJsonService.writeJson(getJsonStoragePath(collectionPath), updateList(item, items))
+
+        with(cachedList(collectionPath)) {
+            if (middlewareMapper.itemExists(item, this)) {
+                middlewareMapper.addItem(item, this)
+            } else {
+                middlewareMapper.replaceItem(item, this!!)
+            }.apply {
+                writeJsonService.writeJson(getJsonStoragePath(collectionPath), this)
+            }
+        }
     }
 
-    private fun <T> updateList(item: T, list: List<T>?): List<T> = list?.let {
-        it.toMutableList().apply {
-            this.add(item)
-        }
-    } ?: mutableListOf(item)
+    private fun cachedList(collectionPath: String): List<T>? = readJsonService.readJson(getJsonStoragePath(collectionPath))
 }
