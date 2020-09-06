@@ -16,5 +16,6 @@ class SecurityConfig(private val filter: SecretAuthenticationFilter) : WebSecuri
         http
                 .addFilterBefore(filter, BasicAuthenticationFilter::class.java)
                 .antMatcher("**")
+                .csrf().disable()
     }
 }
