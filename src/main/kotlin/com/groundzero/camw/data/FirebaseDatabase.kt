@@ -26,6 +26,6 @@ class FirebaseDatabase {
     private fun getFileInput() = FileInputStream(KEY)
 
     companion object {
-        private const val KEY = "catholic-prayerbook-firebase-adminsdk-vh3gk-2f5e943dcd.json"
+        private const val KEY = "catholic-prayerbook-c8450d33660d.json"
     }
 }
