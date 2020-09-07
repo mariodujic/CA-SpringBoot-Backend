@@ -17,6 +17,9 @@ class ThoughtsRepository(private val readJson: ReadJsonService, private val writ
     fun addThought(thought: Thought, dataType: DataType) =
             validateDataPathAndStartAction(dataType, writeJson.write(dataType.path, mapper.addItem(thought, getThoughts(dataType))))
 
+    fun removeThought(thought: Thought, dataType: DataType) =
+            validateDataPathAndStartAction(dataType, writeJson.write(dataType.path, mapper.removeItem(thought, getThoughts(dataType))))
+
     private fun <T> validateDataPathAndStartAction(dataType: DataType, action: T): T = if (dataType.isParentClass(ThoughtDataType::class)) {
         action
     } else throw IllegalArgumentException()

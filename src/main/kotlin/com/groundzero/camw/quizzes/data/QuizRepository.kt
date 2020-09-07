@@ -17,6 +17,9 @@ class QuizRepository(private val readJson: ReadJsonService, private val writeJso
     fun addQuizCategory(quizCategory: QuizCategory, dataType: DataType) =
             validateDataPathAndStartAction(dataType, writeJson.write(dataType.path, mapper.addItem(quizCategory, getQuizCategories(dataType))))
 
+    fun removeQuizCategory(quizCategory: QuizCategory, dataType: DataType) =
+            validateDataPathAndStartAction(dataType, writeJson.write(dataType.path, mapper.removeItem(quizCategory, getQuizCategories(dataType))))
+
     private fun <T> validateDataPathAndStartAction(dataType: DataType, action: T): T = if (dataType.isParentClass(QuizDataType::class)) {
         action
     } else throw IllegalArgumentException()

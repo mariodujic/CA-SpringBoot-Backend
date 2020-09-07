@@ -38,6 +38,12 @@ class PrayersController(private val repository: PrayersRepository) {
         return NetworkResponse.Success<Prayer>(200, "Success", mutableListOf())
     }
 
+    @DeleteMapping("/en-staging")
+    fun removePrayersEnglishStaging(@RequestBody prayer: Prayer): NetworkResponse {
+        repository.removePrayer(prayer, PrayerDataType.EnglishStaging())
+        return NetworkResponse.Success<Prayer>(200, "Success", mutableListOf())
+    }
+
     @GetMapping("/hr")
     fun getPrayersCroatian(): NetworkResponse {
         repository.getPrayers(PrayerDataType.Croatian())?.let {

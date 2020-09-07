@@ -17,6 +17,9 @@ class PrayersRepository(private val readJson: ReadJsonService, private val write
     fun addPrayer(prayer: Prayer, dataType: DataType) =
             validateDataPathAndStartAction(dataType, writeJson.write(dataType.path, mapper.addItem(prayer, getPrayers(dataType))))
 
+    fun removePrayer(prayer: Prayer, dataType: DataType) =
+            validateDataPathAndStartAction(dataType, writeJson.write(dataType.path, mapper.removeItem(prayer, getPrayers(dataType))))
+
     private fun <T> validateDataPathAndStartAction(dataType: DataType, action: T): T = if (dataType.isParentClass(PrayerDataType::class)) {
         action
     } else throw IllegalArgumentException()
