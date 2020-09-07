@@ -1,6 +1,7 @@
 package com.groundzero.camw.quizzes.controller
 
 import com.groundzero.camw.network.NetworkResponse
+import com.groundzero.camw.quizzes.constants.QuizDataType
 import com.groundzero.camw.quizzes.data.QuizRepository
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping
@@ -12,7 +13,7 @@ class QuizController(private val repository: QuizRepository) {
 
     @GetMapping("/en")
     fun getQuizzesEnglish(): NetworkResponse {
-        repository.getQuizzesEnglish()?.let {
+        repository.getQuizCategories(QuizDataType.English())?.let {
             return NetworkResponse.Success(200, "Success", it)
         }
         return NetworkResponse.Error(404, "Error")
@@ -20,7 +21,7 @@ class QuizController(private val repository: QuizRepository) {
 
     @GetMapping("/en-staging")
     fun getQuizzesEnglishStaging(): NetworkResponse {
-        repository.getQuizzesEnglishStaging()?.let {
+        repository.getQuizCategories(QuizDataType.EnglishStaging())?.let {
             return NetworkResponse.Success(200, "Success", it)
         }
         return NetworkResponse.Error(404, "Error")
@@ -28,7 +29,7 @@ class QuizController(private val repository: QuizRepository) {
 
     @GetMapping("/hr")
     fun getQuizzesCroatian(): NetworkResponse {
-        repository.getQuizzesCroatian()?.let {
+        repository.getQuizCategories(QuizDataType.Croatian())?.let {
             return NetworkResponse.Success(200, "Success", it)
         }
         return NetworkResponse.Error(404, "Error")
@@ -36,7 +37,7 @@ class QuizController(private val repository: QuizRepository) {
 
     @GetMapping("/hr-staging")
     fun getQuizzesCroatianStaging(): NetworkResponse {
-        repository.getQuizzesCroatianStaging()?.let {
+        repository.getQuizCategories(QuizDataType.CroatianStaging())?.let {
             return NetworkResponse.Success(200, "Success", it)
         }
         return NetworkResponse.Error(404, "Error")

@@ -1,6 +1,7 @@
 package com.groundzero.camw.thoughts.controller
 
 import com.groundzero.camw.network.NetworkResponse
+import com.groundzero.camw.thoughts.constants.ThoughtDataType
 import com.groundzero.camw.thoughts.data.ThoughtsRepository
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping
@@ -12,7 +13,7 @@ class ThoughtsController(private val repository: ThoughtsRepository) {
 
     @GetMapping("/en")
     fun getThoughtsEnglish(): NetworkResponse {
-        repository.getThoughtsEnglish()?.let {
+        repository.getThoughts(ThoughtDataType.English())?.let {
             return NetworkResponse.Success(200, "Success", it)
         }
         return NetworkResponse.Error(404, "Error")
@@ -20,7 +21,7 @@ class ThoughtsController(private val repository: ThoughtsRepository) {
 
     @GetMapping("/en-staging")
     fun getThoughtsEnglishStaging(): NetworkResponse {
-        repository.getThoughtsEnglishStaging()?.let {
+        repository.getThoughts(ThoughtDataType.EnglishStaging())?.let {
             return NetworkResponse.Success(200, "Success", it)
         }
         return NetworkResponse.Error(404, "Error")
@@ -28,7 +29,7 @@ class ThoughtsController(private val repository: ThoughtsRepository) {
 
     @GetMapping("/hr")
     fun getThoughtsCroatian(): NetworkResponse {
-        repository.getThoughtsCroatian()?.let {
+        repository.getThoughts(ThoughtDataType.Croatian())?.let {
             return NetworkResponse.Success(200, "Success", it)
         }
         return NetworkResponse.Error(404, "Error")
@@ -36,7 +37,7 @@ class ThoughtsController(private val repository: ThoughtsRepository) {
 
     @GetMapping("/hr-staging")
     fun getThoughtsCroatianStaging(): NetworkResponse {
-        repository.getThoughtsCroatianStaging()?.let {
+        repository.getThoughts(ThoughtDataType.CroatianStaging())?.let {
             return NetworkResponse.Success(200, "Success", it)
         }
         return NetworkResponse.Error(404, "Error")

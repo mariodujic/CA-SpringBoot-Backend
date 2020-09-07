@@ -33,18 +33,18 @@ class CacheService(
         updateData<QuizCategory>(QUIZ_HR_COLLECTION_STAGING)
     }
 
-    override fun updatePrayers() {
+    override fun updatePrayers() {/*
         updateData<Prayer>(PRAYER_EN_COLLECTION)
         updateData<Prayer>(PRAYER_HR_COLLECTION)
         updateData<Prayer>(PRAYER_EN_COLLECTION_STAGING)
-        updateData<Prayer>(PRAYER_HR_COLLECTION_STAGING)
+        updateData<Prayer>(PRAYER_HR_COLLECTION_STAGING)*/
     }
 
-    override fun updateThoughts() {
+    override fun updateThoughts() {/*
         updateData<Thought>(THOUGHT_EN_COLLECTION)
         updateData<Thought>(THOUGHT_HR_COLLECTION)
         updateData<Thought>(THOUGHT_EN_COLLECTION_STAGING)
-        updateData<Thought>(THOUGHT_HR_COLLECTION_STAGING)
+        updateData<Thought>(THOUGHT_HR_COLLECTION_STAGING)*/
     }
 
     private inline fun <reified T> updateData(collectionKey: String) {

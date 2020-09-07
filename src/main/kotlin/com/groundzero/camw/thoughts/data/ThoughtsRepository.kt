@@ -1,17 +1,23 @@
 package com.groundzero.camw.thoughts.data
 
+import com.groundzero.camw.data.DataType
+import com.groundzero.camw.data.ItemMapper
 import com.groundzero.camw.data.ReadJsonService
-import com.groundzero.camw.thoughts.constants.THOUGHT_EN_COLLECTION
-import com.groundzero.camw.thoughts.constants.THOUGHT_EN_COLLECTION_STAGING
-import com.groundzero.camw.thoughts.constants.THOUGHT_HR_COLLECTION
-import com.groundzero.camw.thoughts.constants.THOUGHT_HR_COLLECTION_STAGING
+import com.groundzero.camw.data.WriteJsonService
+import com.groundzero.camw.thoughts.constants.ThoughtDataType
+import com.groundzero.camw.utils.isParentClass
 import org.springframework.stereotype.Component
 
 @Component
-class ThoughtsRepository(private val readJson: ReadJsonService) {
+class ThoughtsRepository(private val readJson: ReadJsonService, private val writeJson: WriteJsonService, private val mapper: ItemMapper<Thought>) {
 
-    fun getThoughtsEnglish() = readJson.read<Thought>(THOUGHT_EN_COLLECTION)
-    fun getThoughtsEnglishStaging() = readJson.read<Thought>(THOUGHT_EN_COLLECTION_STAGING)
-    fun getThoughtsCroatian() = readJson.read<Thought>(THOUGHT_HR_COLLECTION)
-    fun getThoughtsCroatianStaging() = readJson.read<Thought>(THOUGHT_HR_COLLECTION_STAGING)
+    fun getThoughts(dataType: DataType): List<Thought>? =
+            validateDataPathAndStartAction(dataType, readJson.read(dataType.path))
+
+    fun addThought(thought: Thought, dataType: DataType) =
+            validateDataPathAndStartAction(dataType, writeJson.write(dataType.path, mapper.addItem(thought, getThoughts(dataType))))
+
+    private fun <T> validateDataPathAndStartAction(dataType: DataType, action: T): T = if (dataType.isParentClass(ThoughtDataType::class)) {
+        action
+    } else throw IllegalArgumentException()
 }
