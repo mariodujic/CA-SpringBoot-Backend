@@ -10,7 +10,7 @@ class WriteJsonService(private val serialization: SerializationUtils) {
 
     fun <T> write(path: String, list: List<T>): Boolean {
         return try {
-            serialization.mapper.writeValue(File((getJsonStoragePath(path))), list)
+            serialization.mapper.writeValue(File(getJsonStoragePath(path)), list)
             true
         } catch (e: Exception) {
             false
