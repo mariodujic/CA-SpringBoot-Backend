@@ -1,4 +1,4 @@
-package com.groundzero.camw.data
+package com.groundzero.camw.service
 
 import com.groundzero.camw.utils.SerializationUtils
 import com.groundzero.camw.utils.getJsonStoragePath

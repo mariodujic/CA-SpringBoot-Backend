@@ -2,8 +2,8 @@ package com.groundzero.camw.prayers.data
 
 import com.groundzero.camw.data.DataType
 import com.groundzero.camw.data.ItemMapper
-import com.groundzero.camw.data.ReadJsonService
-import com.groundzero.camw.data.WriteJsonService
+import com.groundzero.camw.service.ReadJsonService
+import com.groundzero.camw.service.WriteJsonService
 import com.groundzero.camw.prayers.constants.PrayerDataType
 import com.groundzero.camw.utils.isParentClass
 import org.springframework.stereotype.Component

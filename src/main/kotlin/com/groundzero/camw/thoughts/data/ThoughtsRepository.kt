@@ -2,8 +2,8 @@ package com.groundzero.camw.thoughts.data
 
 import com.groundzero.camw.data.DataType
 import com.groundzero.camw.data.ItemMapper
-import com.groundzero.camw.data.ReadJsonService
-import com.groundzero.camw.data.WriteJsonService
+import com.groundzero.camw.service.ReadJsonService
+import com.groundzero.camw.service.WriteJsonService
 import com.groundzero.camw.thoughts.constants.ThoughtDataType
 import com.groundzero.camw.utils.isParentClass
 import org.springframework.stereotype.Component
