@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping("/thoughts")
-class ThoughtsController(private val repository: BaseRepository<Thought>) : BaseController<Thought>(repository) {
+class ThoughtsController(repository: BaseRepository<Thought>) : BaseController<Thought>(repository) {
 
     @GetMapping("/en")
     fun getThoughtsEnglish() = getItemsResponse(ThoughtDataType.English())

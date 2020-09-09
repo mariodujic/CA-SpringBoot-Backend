@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping("/prayers")
-class PrayersController(private val repository: BaseRepository<Prayer>) : BaseController<Prayer>(repository) {
+class PrayersController(repository: BaseRepository<Prayer>) : BaseController<Prayer>(repository) {
 
     @GetMapping("/en")
     fun getPrayerEnglish() = getItemsResponse(PrayerDataType.English())
@@ -23,26 +23,26 @@ class PrayersController(private val repository: BaseRepository<Prayer>) : BaseCo
     fun getPrayersCroatianStaging() = getItemsResponse(PrayerDataType.CroatianStaging())
 
     @DeleteMapping("/en")
-    fun removePrayersEnglish(@RequestBody prayer: Prayer) = removeItemResponse(prayer, PrayerDataType.English())
+    fun removePrayerEnglish(@RequestBody prayer: Prayer) = removeItemResponse(prayer, PrayerDataType.English())
 
     @DeleteMapping("/en-staging")
-    fun removePrayersEnglishStaging(@RequestBody prayer: Prayer) = removeItemResponse(prayer, PrayerDataType.EnglishStaging())
+    fun removePrayerEnglishStaging(@RequestBody prayer: Prayer) = removeItemResponse(prayer, PrayerDataType.EnglishStaging())
 
     @DeleteMapping("/hr")
-    fun removePrayersCroatian(@RequestBody prayer: Prayer) = removeItemResponse(prayer, PrayerDataType.Croatian())
+    fun removePrayerCroatian(@RequestBody prayer: Prayer) = removeItemResponse(prayer, PrayerDataType.Croatian())
 
     @DeleteMapping("/hr-staging")
-    fun removePrayersCroatianStaging(@RequestBody prayer: Prayer) = removeItemResponse(prayer, PrayerDataType.CroatianStaging())
+    fun removePrayerCroatianStaging(@RequestBody prayer: Prayer) = removeItemResponse(prayer, PrayerDataType.CroatianStaging())
 
     @PostMapping("/en")
-    fun addPrayersEnglish(@RequestBody prayer: Prayer) = addItemResponse(prayer, PrayerDataType.English())
+    fun addPrayerEnglish(@RequestBody prayer: Prayer) = addItemResponse(prayer, PrayerDataType.English())
 
     @PostMapping("/en-staging")
-    fun addPrayersEnglishStaging(@RequestBody prayer: Prayer) = addItemResponse(prayer, PrayerDataType.EnglishStaging())
+    fun addPrayerEnglishStaging(@RequestBody prayer: Prayer) = addItemResponse(prayer, PrayerDataType.EnglishStaging())
 
     @PostMapping("/hr")
-    fun addPrayersCroatian(@RequestBody prayer: Prayer) = addItemResponse(prayer, PrayerDataType.Croatian())
+    fun addPrayerCroatian(@RequestBody prayer: Prayer) = addItemResponse(prayer, PrayerDataType.Croatian())
 
     @PostMapping("/hr-staging")
-    fun addPrayersCroatianStaging(@RequestBody prayer: Prayer) = addItemResponse(prayer, PrayerDataType.CroatianStaging())
+    fun addPrayerCroatianStaging(@RequestBody prayer: Prayer) = addItemResponse(prayer, PrayerDataType.CroatianStaging())
 }

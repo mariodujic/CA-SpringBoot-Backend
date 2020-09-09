@@ -8,19 +8,19 @@ import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping("/quizzes")
-class QuizController(private val repository: BaseRepository<QuizCategory>) : BaseController<QuizCategory>(repository) {
+class QuizController(repository: BaseRepository<QuizCategory>) : BaseController<QuizCategory>(repository) {
 
     @GetMapping("/en")
-    fun getQuizzesEnglish() = getItemsResponse(QuizDataType.English())
+    fun getQuizCategoriesEnglish() = getItemsResponse(QuizDataType.English())
 
     @GetMapping("/en-staging")
-    fun getQuizzesEnglishStaging() = getItemsResponse(QuizDataType.EnglishStaging())
+    fun getQuizCategoriesEnglishStaging() = getItemsResponse(QuizDataType.EnglishStaging())
 
     @GetMapping("/hr")
-    fun getQuizzesCroatian() = getItemsResponse(QuizDataType.Croatian())
+    fun getQuizCategoriesCroatian() = getItemsResponse(QuizDataType.Croatian())
 
     @GetMapping("/hr-staging")
-    fun getQuizzesCroatianStaging() = getItemsResponse(QuizDataType.CroatianStaging())
+    fun getQuizCategoriesCroatianStaging() = getItemsResponse(QuizDataType.CroatianStaging())
 
     @DeleteMapping("/en")
     fun removeQuizCategoryEnglish(@RequestBody quizCategory: QuizCategory) = removeItemResponse(quizCategory, QuizDataType.English())
