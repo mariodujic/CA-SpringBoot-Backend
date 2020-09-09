@@ -1,6 +1,6 @@
 package com.groundzero.camw.prayers.constants
 
-import com.groundzero.camw.data.DataType
+import com.groundzero.camw.core.data.DataType
 
 sealed class PrayerDataType {
     class English : DataType.English(PRAYER_EN_COLLECTION)

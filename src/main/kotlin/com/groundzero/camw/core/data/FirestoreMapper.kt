@@ -1,4 +1,4 @@
-package com.groundzero.camw.data
+package com.groundzero.camw.core.data
 
 import com.google.cloud.firestore.QueryDocumentSnapshot
 import org.springframework.stereotype.Component

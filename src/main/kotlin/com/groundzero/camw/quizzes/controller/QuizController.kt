@@ -1,66 +1,48 @@
 package com.groundzero.camw.quizzes.controller
 
-import com.groundzero.camw.data.DataType
-import com.groundzero.camw.network.NetworkResponse
+import com.groundzero.camw.core.base.BaseController
+import com.groundzero.camw.core.base.BaseRepository
 import com.groundzero.camw.quizzes.constants.QuizDataType
 import com.groundzero.camw.quizzes.data.QuizCategory
-import com.groundzero.camw.quizzes.data.QuizRepository
 import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping("/quizzes")
-class QuizController(private val repository: QuizRepository) {
+class QuizController(private val repository: BaseRepository<QuizCategory>) : BaseController<QuizCategory>(repository) {
 
     @GetMapping("/en")
-    fun getQuizzesEnglish() = getQuizzesResponse(QuizDataType.English())
+    fun getQuizzesEnglish() = getItemsResponse(QuizDataType.English())
 
     @GetMapping("/en-staging")
-    fun getQuizzesEnglishStaging() = getQuizzesResponse(QuizDataType.EnglishStaging())
+    fun getQuizzesEnglishStaging() = getItemsResponse(QuizDataType.EnglishStaging())
 
     @GetMapping("/hr")
-    fun getQuizzesCroatian() = getQuizzesResponse(QuizDataType.Croatian())
+    fun getQuizzesCroatian() = getItemsResponse(QuizDataType.Croatian())
 
     @GetMapping("/hr-staging")
-    fun getQuizzesCroatianStaging() = getQuizzesResponse(QuizDataType.CroatianStaging())
-
-    private fun getQuizzesResponse(type: DataType): NetworkResponse {
-        repository.getQuizCategories(type)?.let {
-            return NetworkResponse.Success(200, "Success", it)
-        }
-        return NetworkResponse.Error(404, "Error")
-    }
+    fun getQuizzesCroatianStaging() = getItemsResponse(QuizDataType.CroatianStaging())
 
     @DeleteMapping("/en")
-    fun removeQuizCategoryEnglish(@RequestBody quizCategory: QuizCategory) = removeQuizResponse(quizCategory, QuizDataType.English())
+    fun removeQuizCategoryEnglish(@RequestBody quizCategory: QuizCategory) = removeItemResponse(quizCategory, QuizDataType.English())
 
     @DeleteMapping("/en-staging")
-    fun removeQuizCategoryEnglishStaging(@RequestBody quizCategory: QuizCategory) = removeQuizResponse(quizCategory, QuizDataType.EnglishStaging())
+    fun removeQuizCategoryEnglishStaging(@RequestBody quizCategory: QuizCategory) = removeItemResponse(quizCategory, QuizDataType.EnglishStaging())
 
     @DeleteMapping("/hr")
-    fun removeQuizCategoryCroatian(@RequestBody quizCategory: QuizCategory) = removeQuizResponse(quizCategory, QuizDataType.Croatian())
+    fun removeQuizCategoryCroatian(@RequestBody quizCategory: QuizCategory) = removeItemResponse(quizCategory, QuizDataType.Croatian())
 
     @DeleteMapping("/hr-staging")
-    fun removeQuizCategoryCroatianStaging(@RequestBody quizCategory: QuizCategory) = removeQuizResponse(quizCategory, QuizDataType.CroatianStaging())
-
-    private fun removeQuizResponse(@RequestBody quizCategory: QuizCategory, type: DataType): NetworkResponse {
-        repository.removeQuizCategory(quizCategory, type)
-        return NetworkResponse.Success<QuizCategory>(200, "Success", mutableListOf())
-    }
+    fun removeQuizCategoryCroatianStaging(@RequestBody quizCategory: QuizCategory) = removeItemResponse(quizCategory, QuizDataType.CroatianStaging())
 
     @PostMapping("/en")
-    fun addQuizCategoryEnglish(@RequestBody quizCategory: QuizCategory) = addQuizCategoryResponse(quizCategory, QuizDataType.English())
+    fun addQuizCategoryEnglish(@RequestBody quizCategory: QuizCategory) = addItemResponse(quizCategory, QuizDataType.English())
 
     @PostMapping("/en-staging")
-    fun addQuizCategoryEnglishStaging(@RequestBody quizCategory: QuizCategory) = addQuizCategoryResponse(quizCategory, QuizDataType.EnglishStaging())
+    fun addQuizCategoryEnglishStaging(@RequestBody quizCategory: QuizCategory) = addItemResponse(quizCategory, QuizDataType.EnglishStaging())
 
     @PostMapping("/hr")
-    fun addQuizCategoryCroatian(@RequestBody quizCategory: QuizCategory) = addQuizCategoryResponse(quizCategory, QuizDataType.Croatian())
+    fun addQuizCategoryCroatian(@RequestBody quizCategory: QuizCategory) = addItemResponse(quizCategory, QuizDataType.Croatian())
 
     @PostMapping("/hr-staging")
-    fun addQuizCategoryCroatianStaging(@RequestBody quizCategory: QuizCategory) = addQuizCategoryResponse(quizCategory, QuizDataType.CroatianStaging())
-
-    private fun addQuizCategoryResponse(quizCategory: QuizCategory, type: DataType): NetworkResponse {
-        repository.addQuizCategory(quizCategory, type)
-        return NetworkResponse.Success<QuizCategory>(200, "Success", mutableListOf())
-    }
+    fun addQuizCategoryCroatianStaging(@RequestBody quizCategory: QuizCategory) = addItemResponse(quizCategory, QuizDataType.CroatianStaging())
 }

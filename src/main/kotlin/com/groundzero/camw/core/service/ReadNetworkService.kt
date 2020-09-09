@@ -1,7 +1,7 @@
-package com.groundzero.camw.service
+package com.groundzero.camw.core.service
 
 import com.google.cloud.firestore.QueryDocumentSnapshot
-import com.groundzero.camw.data.FirestoreMapper
+import com.groundzero.camw.core.data.FirestoreMapper
 import org.springframework.stereotype.Component
 
 @Component

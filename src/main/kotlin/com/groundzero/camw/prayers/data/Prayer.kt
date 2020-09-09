@@ -1,6 +1,6 @@
 package com.groundzero.camw.prayers.data
 
-import com.groundzero.camw.data.NetworkModel
+import com.groundzero.camw.core.data.NetworkModel
 
 data class Prayer(
         override val itemId: String? = null,

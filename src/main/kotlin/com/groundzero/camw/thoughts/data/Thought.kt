@@ -1,6 +1,6 @@
 package com.groundzero.camw.thoughts.data
 
-import com.groundzero.camw.data.NetworkModel
+import com.groundzero.camw.core.data.NetworkModel
 
 data class Thought(
         override val itemId: String? = null,

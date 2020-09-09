@@ -1,24 +1,25 @@
 package com.groundzero.camw.quizzes.data
 
-import com.groundzero.camw.data.DataType
-import com.groundzero.camw.data.ItemMapper
-import com.groundzero.camw.service.ReadJsonService
-import com.groundzero.camw.service.WriteJsonService
+import com.groundzero.camw.core.base.BaseRepository
+import com.groundzero.camw.core.data.DataType
+import com.groundzero.camw.core.data.ItemMapper
 import com.groundzero.camw.quizzes.constants.QuizDataType
+import com.groundzero.camw.core.service.ReadJsonService
+import com.groundzero.camw.core.service.WriteJsonService
 import com.groundzero.camw.utils.isParentClass
 import org.springframework.stereotype.Component
 
 @Component
-class QuizRepository(private val readJson: ReadJsonService, private val writeJson: WriteJsonService, private val mapper: ItemMapper<QuizCategory>) {
+class QuizRepository(private val readJson: ReadJsonService, private val writeJson: WriteJsonService, private val mapper: ItemMapper<QuizCategory>) : BaseRepository<QuizCategory> {
 
-    fun getQuizCategories(dataType: DataType): List<QuizCategory>? =
+    override fun getItems(dataType: DataType): List<QuizCategory>? =
             validateDataPathAndStartAction(dataType, readJson.read(dataType.path))
 
-    fun addQuizCategory(quizCategory: QuizCategory, dataType: DataType) =
-            validateDataPathAndStartAction(dataType, writeJson.write(dataType.path, mapper.addItem(quizCategory, getQuizCategories(dataType))))
+    override fun addItem(quizCategory: QuizCategory, dataType: DataType) =
+            validateDataPathAndStartAction(dataType, writeJson.write(dataType.path, mapper.addItem(quizCategory, getItems(dataType))))
 
-    fun removeQuizCategory(quizCategory: QuizCategory, dataType: DataType) =
-            validateDataPathAndStartAction(dataType, writeJson.write(dataType.path, mapper.removeItem(quizCategory, getQuizCategories(dataType))))
+    override fun removeItem(quizCategory: QuizCategory, dataType: DataType) =
+            validateDataPathAndStartAction(dataType, writeJson.write(dataType.path, mapper.removeItem(quizCategory, getItems(dataType))))
 
     private fun <T> validateDataPathAndStartAction(dataType: DataType, action: T): T = if (dataType.isParentClass(QuizDataType::class)) {
         action

@@ -1,4 +1,4 @@
-package com.groundzero.camw.data
+package com.groundzero.camw.core.data
 
 interface NetworkModel {
     val itemId: String?

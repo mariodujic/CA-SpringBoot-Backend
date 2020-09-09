@@ -1,6 +1,6 @@
 package com.groundzero.camw.quizzes.constants
 
-import com.groundzero.camw.data.DataType
+import com.groundzero.camw.core.data.DataType
 
 sealed class QuizDataType {
     class English : DataType.English(QUIZ_EN_COLLECTION)

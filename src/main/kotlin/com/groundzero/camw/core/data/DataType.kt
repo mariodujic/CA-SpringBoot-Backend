@@ -1,4 +1,4 @@
-package com.groundzero.camw.data
+package com.groundzero.camw.core.data
 
 sealed class DataType(val path: String) {
     open class English(path: String) : DataType(path)

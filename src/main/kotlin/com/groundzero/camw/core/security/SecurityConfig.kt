@@ -1,4 +1,4 @@
-package com.groundzero.camw.security
+package com.groundzero.camw.core.security
 
 import org.springframework.context.annotation.Configuration
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity

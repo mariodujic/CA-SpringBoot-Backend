@@ -1,6 +1,6 @@
 package com.groundzero.camw.thoughts.constants
 
-import com.groundzero.camw.data.DataType
+import com.groundzero.camw.core.data.DataType
 
 sealed class ThoughtDataType {
     class English : DataType.English(THOUGHT_EN_COLLECTION)

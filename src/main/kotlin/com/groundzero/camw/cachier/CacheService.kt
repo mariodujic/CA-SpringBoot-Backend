@@ -1,7 +1,7 @@
 package com.groundzero.camw.cachier
 
-import com.groundzero.camw.service.ReadNetworkService
-import com.groundzero.camw.service.WriteJsonService
+import com.groundzero.camw.core.service.ReadNetworkService
+import com.groundzero.camw.core.service.WriteJsonService
 import com.groundzero.camw.quizzes.constants.QUIZ_EN_COLLECTION
 import com.groundzero.camw.quizzes.constants.QUIZ_EN_COLLECTION_STAGING
 import com.groundzero.camw.quizzes.constants.QUIZ_HR_COLLECTION
