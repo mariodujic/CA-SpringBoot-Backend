@@ -5,6 +5,6 @@ import com.groundzero.camw.core.data.DataType
 interface BaseRepository<T> {
 
     fun getItems(dataType: DataType): List<T>?
-    fun addItem(prayer: T, dataType: DataType): Boolean
-    fun removeItem(prayer: T, dataType: DataType): Boolean
+    fun addItem(item: T, dataType: DataType): Boolean
+    fun removeItem(item: T, dataType: DataType): Boolean
 }

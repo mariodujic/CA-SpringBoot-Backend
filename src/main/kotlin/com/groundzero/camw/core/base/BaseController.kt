@@ -16,11 +16,11 @@ open class BaseController<T>(private val baseRepository: BaseRepository<T>) {
 
     fun removeItemResponse(@RequestBody item: T, type: DataType): NetworkResponse {
         baseRepository.removeItem(item, type)
-        return NetworkResponse.Success<Prayer>(200, "Success", mutableListOf())
+        return NetworkResponse.Success<T>(200, "Success", mutableListOf())
     }
 
     fun addItemResponse(item: T, type: DataType): NetworkResponse {
         baseRepository.addItem(item, type)
-        return NetworkResponse.Success<Prayer>(200, "Success", mutableListOf())
+        return NetworkResponse.Success<T>(200, "Success", mutableListOf())
     }
 }
