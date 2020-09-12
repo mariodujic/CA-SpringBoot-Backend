@@ -11,38 +11,38 @@ import org.springframework.web.bind.annotation.*
 class ThoughtsController(repository: BaseRepository<Thought>) : BaseController<Thought>(repository) {
 
     @GetMapping("/en")
-    fun getThoughtsEnglish() = getItemsResponse(ThoughtDataType.English())
+    fun getThoughtsEnglish() = getItemsResponse(ThoughtDataType.English)
 
     @GetMapping("/en-staging")
-    fun getThoughtsEnglishStaging() = getItemsResponse(ThoughtDataType.EnglishStaging())
+    fun getThoughtsEnglishStaging() = getItemsResponse(ThoughtDataType.EnglishStaging)
 
     @GetMapping("/hr")
-    fun getThoughtsCroatian() = getItemsResponse(ThoughtDataType.Croatian())
+    fun getThoughtsCroatian() = getItemsResponse(ThoughtDataType.Croatian)
 
     @GetMapping("/hr-staging")
-    fun getThoughtsCroatianStaging() = getItemsResponse(ThoughtDataType.CroatianStaging())
+    fun getThoughtsCroatianStaging() = getItemsResponse(ThoughtDataType.CroatianStaging)
 
     @DeleteMapping("/en")
-    fun removeThoughtEnglish(@RequestBody thought: Thought) = removeItemResponse(thought, ThoughtDataType.English())
+    fun removeThoughtEnglish(@RequestBody thought: Thought) = removeItemResponse(thought, ThoughtDataType.English)
 
     @DeleteMapping("/en-staging")
-    fun removeThoughtEnglishStaging(@RequestBody thought: Thought) = removeItemResponse(thought, ThoughtDataType.EnglishStaging())
+    fun removeThoughtEnglishStaging(@RequestBody thought: Thought) = removeItemResponse(thought, ThoughtDataType.EnglishStaging)
 
     @DeleteMapping("/hr")
-    fun removeThoughtCroatian(@RequestBody thought: Thought) = removeItemResponse(thought, ThoughtDataType.Croatian())
+    fun removeThoughtCroatian(@RequestBody thought: Thought) = removeItemResponse(thought, ThoughtDataType.Croatian)
 
     @DeleteMapping("/hr-staging")
-    fun removeThoughtCroatianStaging(@RequestBody thought: Thought) = removeItemResponse(thought, ThoughtDataType.CroatianStaging())
+    fun removeThoughtCroatianStaging(@RequestBody thought: Thought) = removeItemResponse(thought, ThoughtDataType.CroatianStaging)
 
     @PostMapping("/en")
-    fun addThoughtEnglish(@RequestBody thought: Thought) = addItemResponse(thought, ThoughtDataType.English())
+    fun addThoughtEnglish(@RequestBody thought: Thought) = addItemResponse(thought, ThoughtDataType.English)
 
     @PostMapping("/en-staging")
-    fun addThoughtEnglishStaging(@RequestBody thought: Thought) = addItemResponse(thought, ThoughtDataType.EnglishStaging())
+    fun addThoughtEnglishStaging(@RequestBody thought: Thought) = addItemResponse(thought, ThoughtDataType.EnglishStaging)
 
     @PostMapping("/hr")
-    fun addThoughtCroatian(@RequestBody thought: Thought) = addItemResponse(thought, ThoughtDataType.Croatian())
+    fun addThoughtCroatian(@RequestBody thought: Thought) = addItemResponse(thought, ThoughtDataType.Croatian)
 
     @PostMapping("/hr-staging")
-    fun addThoughtCroatianStaging(@RequestBody thought: Thought) = addItemResponse(thought, ThoughtDataType.CroatianStaging())
+    fun addThoughtCroatianStaging(@RequestBody thought: Thought) = addItemResponse(thought, ThoughtDataType.CroatianStaging)
 }
