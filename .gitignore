@@ -126,7 +126,8 @@ fabric.properties
 # Keys
 catholic-prayerbook-c8450d33660d.json
 # Properties
-src/main/resources/database
+src/main/resources/database/**
+!src/main/resources/database/**/.gitkeep
 
 ### Maven ###
 target/
