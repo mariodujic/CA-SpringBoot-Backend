@@ -1,5 +1,12 @@
 package com.groundzero.camw.messaging.data
 
+import java.util.*
+
 data class Message(
-        val email: String
+        val id: String = UUID.randomUUID().toString(),
+        val email: String,
+        val author: String,
+        val topic: String,
+        val image: String = "",
+        val messageType: Int
 )
