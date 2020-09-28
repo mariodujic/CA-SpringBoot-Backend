@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component
 
 @Component
 @Suppress("declaration_cant_be_inlined")
-class ReadNetworkService(
+class NetworkService(
         private val firestoreService: FirestoreService,
         private val firestoreMapper: FirestoreMapper
 ) {
