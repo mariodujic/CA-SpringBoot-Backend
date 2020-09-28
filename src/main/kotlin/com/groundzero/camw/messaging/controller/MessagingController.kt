@@ -21,9 +21,7 @@ class MessagingController(
         val verified = authenticationService.authenticateUser(message.email)
 
         return if (verified) {
-            // messages is a placeholder
-            messagingService.addMessage("messages", message)
-
+            // TODO
             NetworkResponse.Success<Nothing>(200, "Successfully authenticated", emptyList())
         } else {
             NetworkResponse.Error(401, "Unauthorized user")
