@@ -8,5 +8,7 @@ data class Message(
         val author: String,
         val topic: String,
         val image: String = "",
-        val messageType: Int
+        val messageType: Int,
+        val title: String,
+        val text: String
 )

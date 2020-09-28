@@ -1,6 +1,6 @@
 package com.groundzero.camw.cachier
 
-import com.groundzero.camw.core.service.ReadNetworkService
+import com.groundzero.camw.core.service.NetworkService
 import com.groundzero.camw.core.service.WriteJsonService
 import com.groundzero.camw.quizzes.constants.QUIZ_EN_COLLECTION
 import com.groundzero.camw.quizzes.constants.QUIZ_EN_COLLECTION_STAGING
@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component
 
 @Component
 class CacheService(
-        private val readNetworkService: ReadNetworkService,
+        private val networkService: NetworkService,
         private val writeJsonService: WriteJsonService
 ) : Cache {
 
@@ -39,7 +39,7 @@ class CacheService(
 
     private inline fun <reified T> updateData(collectionKey: String) {
         with(collectionKey) {
-            readNetworkService.readDatabase<T>(this)?.let { writeJsonService.write(this, it).getJsonLog(this) }
+            networkService.readDatabase<T>(this)?.let { writeJsonService.write(this, it).getJsonLog(this) }
         }
     }
 }
