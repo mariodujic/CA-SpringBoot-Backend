@@ -11,9 +11,11 @@ import org.springframework.stereotype.Component
 @Component
 class MessagingRepository(
         private val firebaseAuth: FirebaseAuthProvider,
-        private val firestoreProvider: FirestoreProvider
+        private val firestoreProvider: FirestoreProvider,
+        private val messageToThoughtMapper: MessageToThoughtMapper
 ) {
 
     fun authenticateUser(email: String): UserRecord = firebaseAuth.firebaseAuth.getUserByEmail(email)
-    fun addMessage(collectionKey: String, message: Message): ApiFuture<DocumentReference> = firestoreProvider.firestore.collection(collectionKey).add(message)
+    fun addMessage(collectionKey: String, message: Message): ApiFuture<DocumentReference> =
+            firestoreProvider.firestore.collection(collectionKey).add(messageToThoughtMapper.map(message))
 }
