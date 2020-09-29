@@ -28,7 +28,9 @@ class MessagingService(
             MessageType.THOUGHT -> sendThoughtMessage(item.topic, notificationMessageToThoughtMapper.map(item))
         }
     }
-
+    /**
+     * When user opens a thought type notification, content will be read from the realtime database.
+     */
     private fun sendThoughtMessage(collectionKey: String, thought: Thought) {
         repository.updateRealTimeDatabaseThought(collectionKey, thought, realtimeThoughtListener {
             /**
@@ -36,7 +38,8 @@ class MessagingService(
              */
             sendNotification(topic = collectionKey, thought)
             /**
-             * When user opens a thought type notification, content will be read from the realtime database.
+             * Adding thought to an origin database. This database is a data backup. If middleware stops working
+             * users will be redirected to get data from the Firestore.
              */
             repository.addMessageToFirestore(collectionKey, thought)
         })
