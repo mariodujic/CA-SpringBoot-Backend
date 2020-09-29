@@ -2,7 +2,7 @@ package com.groundzero.camw.messaging.data
 
 import java.util.*
 
-data class Message(
+data class NotificationMessage(
         val id: String = UUID.randomUUID().toString(),
         val email: String,
         val author: String,

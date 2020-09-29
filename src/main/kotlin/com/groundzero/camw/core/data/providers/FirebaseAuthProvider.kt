@@ -1,4 +1,4 @@
-package com.groundzero.camw.core.data
+package com.groundzero.camw.core.data.providers
 
 import com.google.firebase.auth.FirebaseAuth
 import org.springframework.stereotype.Component
