@@ -7,6 +7,7 @@ import com.groundzero.camw.core.data.NullableMapper
 import com.groundzero.camw.core.data.providers.FirebaseMessagingProvider
 import com.groundzero.camw.messaging.data.MessageType
 import com.groundzero.camw.messaging.data.NotificationMessage
+import com.groundzero.camw.messaging.data.ThoughtNotification
 import com.groundzero.camw.messaging.repository.MessagingRepository
 import com.groundzero.camw.thoughts.data.Thought
 import com.groundzero.camw.utils.asMap
@@ -17,6 +18,7 @@ class MessagingService(
         private val messagingProvider: FirebaseMessagingProvider,
         private val repository: MessagingRepository,
         private val notificationMessageToThoughtMapper: Mapper<NotificationMessage, Thought>,
+        private val thoughtToThoughtNotificationMapper: Mapper<Thought, ThoughtNotification>,
         private val notificationMessageToTypeMapper: NullableMapper<NotificationMessage, MessageType>,
 ) {
     /**
@@ -28,6 +30,7 @@ class MessagingService(
             MessageType.THOUGHT -> sendThoughtMessage(item.topic, notificationMessageToThoughtMapper.map(item))
         }
     }
+
     /**
      * When user opens a thought type notification, content will be read from the realtime database.
      */
@@ -49,10 +52,11 @@ class MessagingService(
             DatabaseReference.CompletionListener { _, reference -> if (reference != null) action() }
 
     private fun sendNotification(topic: String, thought: Thought) {
+        val thoughtNotification = thoughtToThoughtNotificationMapper.map(thought)
         val message = Message.builder()
-                .putAllData(thought.asMap())
+                .putAllData(thoughtNotification.asMap())
                 .setTopic(topic)
                 .build()
-        messagingProvider.messaging.send(message)
+        println(messagingProvider.messaging.send(message))
     }
 }
