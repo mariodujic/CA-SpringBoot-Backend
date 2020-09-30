@@ -1,12 +1,9 @@
 package com.groundzero.camw
 
 import com.groundzero.camw.core.base.BaseRepository
-import com.groundzero.camw.prayers.constants.PrayerDataType
-import com.groundzero.camw.prayers.controller.PrayersController
-import com.groundzero.camw.prayers.data.Prayer
-import com.groundzero.camw.thoughts.constants.ThoughtDataType
-import com.groundzero.camw.thoughts.controller.ThoughtsController
-import com.groundzero.camw.thoughts.data.Thought
+import com.groundzero.camw.features.prayers.constants.PrayerDataType
+import com.groundzero.camw.features.prayers.controller.PrayersController
+import com.groundzero.camw.features.prayers.data.Prayer
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test

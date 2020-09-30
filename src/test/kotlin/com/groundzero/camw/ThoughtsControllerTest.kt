@@ -1,9 +1,9 @@
 package com.groundzero.camw
 
 import com.groundzero.camw.core.base.BaseRepository
-import com.groundzero.camw.thoughts.constants.ThoughtDataType
-import com.groundzero.camw.thoughts.controller.ThoughtsController
-import com.groundzero.camw.thoughts.data.Thought
+import com.groundzero.camw.features.thoughts.constants.ThoughtDataType
+import com.groundzero.camw.features.thoughts.controller.ThoughtsController
+import com.groundzero.camw.features.thoughts.data.Thought
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test

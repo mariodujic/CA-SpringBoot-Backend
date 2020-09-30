@@ -1,11 +1,9 @@
 package com.groundzero.camw
 
 import com.groundzero.camw.core.base.BaseRepository
-import com.groundzero.camw.quizzes.constants.QuizDataType
-import com.groundzero.camw.quizzes.controller.QuizController
-import com.groundzero.camw.quizzes.data.QuizCategory
-import com.groundzero.camw.thoughts.constants.ThoughtDataType
-import com.groundzero.camw.thoughts.data.Thought
+import com.groundzero.camw.features.quizzes.constants.QuizDataType
+import com.groundzero.camw.features.quizzes.controller.QuizController
+import com.groundzero.camw.features.quizzes.data.QuizCategory
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
