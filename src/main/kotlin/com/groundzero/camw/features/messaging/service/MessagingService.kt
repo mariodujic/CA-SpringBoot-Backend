@@ -5,9 +5,7 @@ import com.google.firebase.messaging.Message
 import com.groundzero.camw.core.data.Mapper
 import com.groundzero.camw.core.data.NullableMapper
 import com.groundzero.camw.core.data.providers.FirebaseMessagingProvider
-import com.groundzero.camw.features.messaging.data.MessageType
-import com.groundzero.camw.features.messaging.data.NotificationRequest
-import com.groundzero.camw.features.messaging.data.ThoughtNotificationResponse
+import com.groundzero.camw.features.messaging.data.*
 import com.groundzero.camw.features.messaging.repository.MessagingRepository
 import com.groundzero.camw.features.thoughts.data.Thought
 import com.groundzero.camw.utils.asMap
@@ -17,17 +15,19 @@ import org.springframework.stereotype.Component
 class MessagingService(
         private val messagingProvider: FirebaseMessagingProvider,
         private val repository: MessagingRepository,
-        private val notificationRequestToThoughtMapper: Mapper<NotificationRequest, Thought>,
-        private val thoughtToThoughtNotificationResponseMapper: Mapper<Thought, ThoughtNotificationResponse>,
+        private val notificationRequestToThoughtDomainMapper: Mapper<NotificationRequest, Thought>,
+        private val notificationRequestToInformationNotificationResponseMapper: Mapper<NotificationRequest, InformationNotificationResponse>,
+        private val notificationRequestToUpdateNotificationResponseMapper: Mapper<NotificationRequest, UpdateNotificationResponse>,
+        private val thoughtDomainToThoughtNotificationResponseMapper: Mapper<Thought, ThoughtNotificationResponse>,
         private val notificationRequestToTypeMapper: NullableMapper<NotificationRequest, MessageType>,
 ) {
-    /**
-     * TODO implement more notification types
-     */
+
     fun sendMessage(item: NotificationRequest) {
         val type = notificationRequestToTypeMapper.map(item)
         when (type) {
-            MessageType.THOUGHT -> sendThoughtMessage(item.topic, notificationRequestToThoughtMapper.map(item))
+            MessageType.THOUGHT -> sendThoughtMessage(item.topic, notificationRequestToThoughtDomainMapper.map(item))
+            MessageType.INFORMATION -> sendInformationNotification(item.topic, notificationRequestToInformationNotificationResponseMapper.map(item))
+            MessageType.UPDATE -> sendUpdateNotification(item.topic, notificationRequestToUpdateNotificationResponseMapper.map(item))
         }
     }
 
@@ -39,7 +39,7 @@ class MessagingService(
             /**
              * Notification send to a user device.
              */
-            sendNotification(topic = collectionKey, thought)
+            sendThoughtNotification(topic = collectionKey, thought)
             /**
              * Adding thought to an origin database. This database is a data backup. If middleware stops working
              * users will be redirected to get data from the Firestore.
@@ -51,12 +51,22 @@ class MessagingService(
     private fun realtimeThoughtListener(action: () -> Unit) =
             DatabaseReference.CompletionListener { _, reference -> if (reference != null) action() }
 
-    private fun sendNotification(topic: String, thought: Thought) {
-        val thoughtNotification = thoughtToThoughtNotificationResponseMapper.map(thought)
-        val message = Message.builder()
-                .putAllData(thoughtNotification.asMap())
-                .setTopic(topic)
-                .build()
-        println(messagingProvider.messaging.send(message))
+    private fun sendThoughtNotification(topic: String, thought: Thought) {
+        val thoughtNotification = thoughtDomainToThoughtNotificationResponseMapper.map(thought)
+        sendMessage(topic, thoughtNotification)
     }
+
+    private fun sendInformationNotification(topic: String, notification: InformationNotificationResponse) =
+            sendMessage(topic, notification)
+
+    private fun sendUpdateNotification(topic: String, notification: UpdateNotificationResponse) =
+            sendMessage(topic, notification)
+
+    private inline fun <reified T> sendMessage(topic: String, data: T) =
+            messagingProvider.messaging.send(getMessage(topic, data))
+
+    private inline fun <reified T> getMessage(topic: String, data: T) = Message.builder()
+            .putAllData(data!!.asMap())
+            .setTopic(topic)
+            .build()
 }
