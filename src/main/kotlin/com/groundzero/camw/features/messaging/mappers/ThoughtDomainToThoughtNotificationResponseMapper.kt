@@ -6,7 +6,7 @@ import com.groundzero.camw.features.thoughts.data.Thought
 import org.springframework.stereotype.Component
 
 @Component
-class ThoughtToNotificationMapper : Mapper<Thought, ThoughtNotificationResponse> {
+class ThoughtDomainToThoughtNotificationResponseMapper : Mapper<Thought, ThoughtNotificationResponse> {
 
     override fun map(data: Thought): ThoughtNotificationResponse =
             ThoughtNotificationResponse(

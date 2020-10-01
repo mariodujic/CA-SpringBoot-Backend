@@ -26,8 +26,8 @@ class MessagingService(
         val type = notificationRequestToTypeMapper.map(item)
         when (type) {
             MessageType.THOUGHT -> sendThoughtMessage(item.topic, notificationRequestToThoughtDomainMapper.map(item))
-            MessageType.INFORMATION -> sendInformationNotification(item.topic, notificationRequestToInformationNotificationResponseMapper.map(item))
-            MessageType.UPDATE -> sendUpdateNotification(item.topic, notificationRequestToUpdateNotificationResponseMapper.map(item))
+            MessageType.INFORMATION -> sendMessage(item.topic, notificationRequestToInformationNotificationResponseMapper.map(item))
+            MessageType.UPDATE -> sendMessage(item.topic, notificationRequestToUpdateNotificationResponseMapper.map(item))
         }
     }
 
@@ -55,12 +55,6 @@ class MessagingService(
         val thoughtNotification = thoughtDomainToThoughtNotificationResponseMapper.map(thought)
         sendMessage(topic, thoughtNotification)
     }
-
-    private fun sendInformationNotification(topic: String, notification: InformationNotificationResponse) =
-            sendMessage(topic, notification)
-
-    private fun sendUpdateNotification(topic: String, notification: UpdateNotificationResponse) =
-            sendMessage(topic, notification)
 
     private inline fun <reified T> sendMessage(topic: String, data: T) =
             messagingProvider.messaging.send(getMessage(topic, data))

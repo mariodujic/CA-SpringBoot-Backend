@@ -7,7 +7,7 @@ import com.groundzero.camw.utils.DateUtils
 import org.springframework.stereotype.Component
 
 @Component
-class MessageToThoughtMapper : Mapper<NotificationRequest, Thought> {
+class MessageToThoughtDomainMapper : Mapper<NotificationRequest, Thought> {
 
     override fun map(data: NotificationRequest): Thought = Thought(
             itemId = data.id,
