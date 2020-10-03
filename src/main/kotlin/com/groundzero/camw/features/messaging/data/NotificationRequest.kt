@@ -8,7 +8,7 @@ data class NotificationRequest(
         val author: String,
         val topic: String,
         val image: String = "",
-        val messageType: Int,
+        val notificationType: Int,
         val title: String,
         val subtitle: String = "",
         val text: String,

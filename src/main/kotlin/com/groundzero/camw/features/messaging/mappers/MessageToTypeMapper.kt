@@ -7,5 +7,5 @@ import org.springframework.stereotype.Component
 
 @Component
 class MessageToTypeMapper : NullableMapper<NotificationRequest, MessageType> {
-    override fun map(data: NotificationRequest): MessageType? = MessageType.getEnum(data.messageType)
+    override fun map(data: NotificationRequest): MessageType? = MessageType.getEnum(data.notificationType)
 }
