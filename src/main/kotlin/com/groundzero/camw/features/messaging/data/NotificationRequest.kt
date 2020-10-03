@@ -1,9 +1,7 @@
 package com.groundzero.camw.features.messaging.data
 
-import java.util.*
-
 data class NotificationRequest(
-        val id: String = UUID.randomUUID().toString(),
+        val itemId: String,
         val email: String,
         val author: String,
         val topic: String,

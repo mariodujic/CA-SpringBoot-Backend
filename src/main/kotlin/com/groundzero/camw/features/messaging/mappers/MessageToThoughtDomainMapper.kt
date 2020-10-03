@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component
 class MessageToThoughtDomainMapper : Mapper<NotificationRequest, Thought> {
 
     override fun map(data: NotificationRequest): Thought = Thought(
-            itemId = data.id,
+            itemId = data.itemId,
             author = data.author,
             date = DateUtils.currentDate(),
             image = data.image,

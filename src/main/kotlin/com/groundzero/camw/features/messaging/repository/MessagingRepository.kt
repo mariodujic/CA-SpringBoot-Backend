@@ -14,8 +14,8 @@ class MessagingRepository(
         private val realtimeDatabase: FirebaseRealtimeDatabaseProvider
 ) {
 
-    fun addMessageToFirestore(collectionKey: String, thought: Thought): ApiFuture<DocumentReference> =
-            firestoreProvider.firestore.collection(collectionKey).add(thought)
+    fun addMessageToFirestore(collectionKey: String, thought: Thought) =
+            firestoreProvider.firestore.collection(collectionKey).document(thought.itemId!!).set(thought)
 
     fun updateRealTimeDatabaseThought(collectionKey: String, thought: Thought, listener: DatabaseReference.CompletionListener) =
             realtimeDatabase.realtimeDatabase.child(collectionKey).child(THOUGHT_LATEST_KEY).setValue(thought, listener)
