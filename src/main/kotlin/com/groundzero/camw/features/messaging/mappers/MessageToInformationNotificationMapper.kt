@@ -13,7 +13,6 @@ class MessageToInformationNotificationMapper : Mapper<NotificationRequest, Infor
     override fun map(data: NotificationRequest): InformationNotificationResponse = InformationNotificationResponse(
             notificationType = 1,
             title = data.title,
-            subtitle = data.subtitle,
             text = data.text,
             url = data.url
     )

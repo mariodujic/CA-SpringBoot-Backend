@@ -10,7 +10,6 @@ data class NotificationRequest(
         val image: String = "",
         val notificationType: Int,
         val title: String,
-        val subtitle: String = "",
         val text: String,
         val url: String = "",
         val version: Float = 0f
