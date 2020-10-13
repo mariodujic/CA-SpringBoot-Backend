@@ -12,6 +12,11 @@ import com.groundzero.camw.features.quizzes.constants.QUIZ_EN_COLLECTION_STAGING
 import com.groundzero.camw.features.quizzes.constants.QUIZ_HR_COLLECTION
 import com.groundzero.camw.features.quizzes.constants.QUIZ_HR_COLLECTION_STAGING
 import com.groundzero.camw.features.quizzes.data.QuizCategory
+import com.groundzero.camw.features.saints.constants.SAINTS_EN_COLLECTION
+import com.groundzero.camw.features.saints.constants.SAINTS_EN_COLLECTION_STAGING
+import com.groundzero.camw.features.saints.constants.SAINTS_HR_COLLECTION
+import com.groundzero.camw.features.saints.constants.SAINTS_HR_COLLECTION_STAGING
+import com.groundzero.camw.features.saints.data.Saint
 import com.groundzero.camw.features.thoughts.constants.THOUGHT_EN_COLLECTION
 import com.groundzero.camw.features.thoughts.constants.THOUGHT_EN_COLLECTION_STAGING
 import com.groundzero.camw.features.thoughts.constants.THOUGHT_HR_COLLECTION
@@ -45,6 +50,13 @@ class CacheService(
         updateData<Thought>(THOUGHT_HR_COLLECTION)
         updateData<Thought>(THOUGHT_EN_COLLECTION_STAGING)
         updateData<Thought>(THOUGHT_HR_COLLECTION_STAGING)
+    }
+
+    override fun updateSaints() {
+        updateData<Saint>(SAINTS_EN_COLLECTION)
+        updateData<Saint>(SAINTS_HR_COLLECTION)
+        updateData<Saint>(SAINTS_EN_COLLECTION_STAGING)
+        updateData<Saint>(SAINTS_HR_COLLECTION_STAGING)
     }
 
     private inline fun <reified T> updateData(collectionKey: String) {

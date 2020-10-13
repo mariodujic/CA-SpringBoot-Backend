@@ -4,4 +4,5 @@ interface Cache {
     fun updateQuizzes()
     fun updatePrayers()
     fun updateThoughts()
+    fun updateSaints()
 }

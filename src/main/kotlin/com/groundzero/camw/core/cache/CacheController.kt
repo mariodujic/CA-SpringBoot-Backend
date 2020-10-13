@@ -16,6 +16,7 @@ class CacheController(private val cache: Cache) : CommandLineRunner {
                 cache.updateQuizzes()
                 cache.updatePrayers()
                 cache.updateThoughts()
+                cache.updateSaints()
                 delay(LOCAL_DATA_UPDATE_DELAY_MIL)
             }
         }
