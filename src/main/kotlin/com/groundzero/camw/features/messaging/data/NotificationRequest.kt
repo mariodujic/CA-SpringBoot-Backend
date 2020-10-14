@@ -4,7 +4,6 @@ data class NotificationRequest(
         val itemId: String,
         val email: String,
         val author: String,
-        val topic: String,
         val image: String = "",
         val notificationType: Int,
         val title: String,
