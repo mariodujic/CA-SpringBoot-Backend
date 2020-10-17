@@ -61,7 +61,11 @@ class CacheService(
 
     private inline fun <reified T> updateData(collectionKey: String) {
         with(collectionKey) {
-            networkService.readDatabase<T>(this)?.let { writeJsonService.write(this, it).getJsonLog(this) }
+            networkService.readDatabase<T>(this)?.let {
+                writeJsonService.write(this, it).getJsonLog(this).also { logMessage ->
+                    println(logMessage)
+                }
+            }
         }
     }
 }
