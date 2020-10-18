@@ -23,6 +23,6 @@ class CacheController(private val cache: Cache) : CommandLineRunner {
     }
 
     companion object {
-        private const val LOCAL_DATA_UPDATE_DELAY_MIL = 3_600_000L // 60 min
+        private const val LOCAL_DATA_UPDATE_DELAY_MIL = 10_800_000L // 60 min
     }
 }
