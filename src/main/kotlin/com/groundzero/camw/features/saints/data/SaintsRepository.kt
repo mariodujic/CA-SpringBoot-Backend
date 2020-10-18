@@ -10,10 +10,17 @@ import com.groundzero.camw.utils.isParentClass
 import org.springframework.stereotype.Component
 
 @Component
-class SaintsRepository(private val readJson: ReadJsonService, private val writeJson: WriteJsonService, private val mapper: ItemMapper<Saint>) : BaseRepository<Saint> {
+class SaintsRepository(
+        private val readJson: ReadJsonService,
+        private val writeJson: WriteJsonService,
+        private val mapper: ItemMapper<Saint>,
+        private val saintsSort: SaintsSort
+) : BaseRepository<Saint> {
 
-    override fun getItems(dataType: DataType): List<Saint>? =
-            validateDataPathAndStartAction(dataType, readJson.read(dataType.path))
+    override fun getItems(dataType: DataType): List<Saint>? {
+        val saints: List<Saint>? = validateDataPathAndStartAction(dataType, readJson.read(dataType.path))
+        return saintsSort.map(saints)
+    }
 
     override fun addItem(saint: Saint, dataType: DataType) =
             validateDataPathAndStartAction(dataType, writeJson.write(dataType.path, mapper.addItem(saint, getItems(dataType))))
