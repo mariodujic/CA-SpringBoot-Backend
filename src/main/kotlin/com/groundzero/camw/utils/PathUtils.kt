@@ -5,4 +5,4 @@ import kotlin.reflect.KClass
 
 fun getJsonStoragePath(collectionKey: String) = "src/main/resources/database/$collectionKey.json"
 
-fun DataType.isParentClass(kClass: KClass<*>) = kClass.nestedClasses.contains(this::class)
+fun DataType.isSubclassOf(kClass: KClass<*>) = kClass.nestedClasses.contains(this::class)

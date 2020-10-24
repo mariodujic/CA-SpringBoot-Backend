@@ -6,7 +6,7 @@ import com.groundzero.camw.core.data.ItemMapper
 import com.groundzero.camw.core.service.ReadJsonService
 import com.groundzero.camw.core.service.WriteJsonService
 import com.groundzero.camw.features.saints.constants.SaintsDataType
-import com.groundzero.camw.utils.isParentClass
+import com.groundzero.camw.utils.isSubclassOf
 import org.springframework.stereotype.Component
 
 @Component
@@ -28,7 +28,7 @@ class SaintsRepository(
     override fun removeItem(saint: Saint, dataType: DataType) =
             validateDataPathAndStartAction(dataType, writeJson.write(dataType.path, mapper.removeItem(saint, getItems(dataType))))
 
-    private fun <T> validateDataPathAndStartAction(dataType: DataType, action: T): T = if (dataType.isParentClass(SaintsDataType::class)) {
+    private fun <T> validateDataPathAndStartAction(dataType: DataType, action: T): T = if (dataType.isSubclassOf(SaintsDataType::class)) {
         action
     } else throw IllegalArgumentException()
 }

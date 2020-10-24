@@ -6,7 +6,7 @@ import com.groundzero.camw.core.data.ItemMapper
 import com.groundzero.camw.features.quizzes.constants.QuizDataType
 import com.groundzero.camw.core.service.ReadJsonService
 import com.groundzero.camw.core.service.WriteJsonService
-import com.groundzero.camw.utils.isParentClass
+import com.groundzero.camw.utils.isSubclassOf
 import org.springframework.stereotype.Component
 
 @Component
@@ -21,7 +21,7 @@ class QuizRepository(private val readJson: ReadJsonService, private val writeJso
     override fun removeItem(quizCategory: QuizCategory, dataType: DataType) =
             validateDataPathAndStartAction(dataType, writeJson.write(dataType.path, mapper.removeItem(quizCategory, getItems(dataType))))
 
-    private fun <T> validateDataPathAndStartAction(dataType: DataType, action: T): T = if (dataType.isParentClass(QuizDataType::class)) {
+    private fun <T> validateDataPathAndStartAction(dataType: DataType, action: T): T = if (dataType.isSubclassOf(QuizDataType::class)) {
         action
     } else throw IllegalArgumentException()
 }

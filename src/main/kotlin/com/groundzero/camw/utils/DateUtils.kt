@@ -5,7 +5,7 @@ import java.util.*
 
 object DateUtils {
 
-    fun currentDate(): String = SimpleDateFormat(DATE_FORMAT).format(Date())
+    fun currentDate(date: Date): String = SimpleDateFormat(DATE_FORMAT).format(date)
 
     private const val DATE_FORMAT = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
 }

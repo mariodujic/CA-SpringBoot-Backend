@@ -1,8 +1,5 @@
-package com.groundzero.camw
+package com.groundzero.camw.utils
 
-import com.groundzero.camw.utils.JSON_WRITTEN_FALSE
-import com.groundzero.camw.utils.JSON_WRITTEN_TRUE
-import com.groundzero.camw.utils.getJsonLog
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 

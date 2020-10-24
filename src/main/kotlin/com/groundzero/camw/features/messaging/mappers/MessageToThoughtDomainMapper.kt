@@ -5,6 +5,7 @@ import com.groundzero.camw.features.messaging.data.NotificationRequest
 import com.groundzero.camw.features.thoughts.data.Thought
 import com.groundzero.camw.utils.DateUtils
 import org.springframework.stereotype.Component
+import java.util.*
 
 @Component
 class MessageToThoughtDomainMapper : Mapper<NotificationRequest, Thought> {
@@ -12,7 +13,7 @@ class MessageToThoughtDomainMapper : Mapper<NotificationRequest, Thought> {
     override fun map(data: NotificationRequest): Thought = Thought(
             itemId = data.itemId,
             author = data.author,
-            date = DateUtils.currentDate(),
+            date = DateUtils.currentDate(Date()),
             image = data.image,
             text = data.text,
             title = data.title
