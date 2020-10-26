@@ -13,10 +13,11 @@ class CacheController(private val cache: Cache) : CommandLineRunner {
     override fun run(vararg args: String?) {
         CoroutineScope(IO).launch {
             while (true) {
-                cache.updateQuizzes()
+             /*   cache.updateQuizzes()
                 cache.updatePrayers()
                 cache.updateThoughts()
-                cache.updateSaints()
+                cache.updateSaints()*/
+                cache.updateInformation()
                 delay(LOCAL_DATA_UPDATE_DELAY_MIL)
             }
         }
