@@ -1,14 +1,14 @@
 package com.groundzero.camw.features.information.data
 
-import com.fasterxml.jackson.annotation.JsonProperty
+import com.groundzero.camw.core.data.NetworkModel
+import com.groundzero.camw.utils.getUUID
 
 data class InformationBlock(
+        override val itemId: String = getUUID(),
         val title: String = "",
         val text: String = "",
-        @JsonProperty("information_type")
         val informationType: Int? = null,
         val link: String = "",
         val image: String = "",
-        @JsonProperty("button_text")
         val buttonText: String = ""
-)
+) : NetworkModel
