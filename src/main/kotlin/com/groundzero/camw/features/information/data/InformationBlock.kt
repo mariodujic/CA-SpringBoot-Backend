@@ -36,5 +36,7 @@ data class InformationBlock(
         /**
          * Client InformationBlock list will be sorted by this index.
          */
-        val sortIndex: Int = 0
+        val sortIndex: Int = 0,
+        val paddingTop: Boolean = false,
+        val paddingBottom: Boolean = false
 ) : NetworkModel
