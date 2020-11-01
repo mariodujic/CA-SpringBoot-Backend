@@ -31,7 +31,7 @@ class MessagingController(
     fun sendCroatianStagingMessage(@RequestBody notificationRequest: NotificationRequest): NetworkResponse = sendMessage(notificationRequest, ThoughtDataType.CroatianStaging)
 
     private fun sendMessage(notificationRequest: NotificationRequest, dataType: DataType): NetworkResponse {
-        val verified = authenticationService.authenticateUser(notificationRequest.email)
+        val verified = authenticationService.authenticateUser(notificationRequest.authentication)
 
         return if (verified) {
             messagingService.sendMessage(notificationRequest, dataType)
