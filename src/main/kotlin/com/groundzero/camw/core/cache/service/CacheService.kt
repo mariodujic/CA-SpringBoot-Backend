@@ -1,6 +1,6 @@
-package com.groundzero.camw.core.cache
+package com.groundzero.camw.core.cache.service
 
-interface Cache {
+interface CacheService {
     fun updateQuizzes()
     fun updatePrayers()
     fun updateThoughts()

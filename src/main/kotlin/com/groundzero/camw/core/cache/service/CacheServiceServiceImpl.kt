@@ -1,4 +1,4 @@
-package com.groundzero.camw.core.cache
+package com.groundzero.camw.core.cache.service
 
 import com.groundzero.camw.core.service.NetworkService
 import com.groundzero.camw.core.service.WriteJsonService
@@ -34,11 +34,11 @@ import kotlinx.coroutines.launch
 import org.springframework.stereotype.Component
 
 @Component
-class CacheService(
+class CacheServiceServiceImpl(
         private val networkService: NetworkService,
         private val writeJsonService: WriteJsonService,
         private val dataSnapshotToInformationBlockListMapper: DataSnapshotToInformationBlockListMapper
-) : Cache {
+) : CacheService {
 
     override fun updateQuizzes() {
         updateDataFromFirestore<QuizCategory>(QUIZ_EN_COLLECTION)
