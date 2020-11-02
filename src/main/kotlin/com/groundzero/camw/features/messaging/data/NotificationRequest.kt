@@ -1,10 +1,7 @@
 package com.groundzero.camw.features.messaging.data
 
-import com.groundzero.camw.features.authentication.AuthenticationRequest
-
 data class NotificationRequest(
         val itemId: String,
-        val authentication: AuthenticationRequest,
         val author: String,
         val image: String = "",
         val notificationType: Int,
