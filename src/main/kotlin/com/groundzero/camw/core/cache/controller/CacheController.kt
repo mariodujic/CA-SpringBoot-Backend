@@ -14,10 +14,10 @@ class CacheController(private val cacheService: CacheService) : CommandLineRunne
     override fun run(vararg args: String?) {
         CoroutineScope(IO).launch {
             while (true) {
-                cacheService.updateQuizzes()
+               /* cacheService.updateQuizzes()
                 cacheService.updatePrayers()
                 cacheService.updateThoughts()
-                cacheService.updateSaints()
+                cacheService.updateSaints()*/
                 cacheService.updateInformation()
                 delay(LOCAL_DATA_UPDATE_DELAY_MIL)
             }
