@@ -21,8 +21,8 @@ class SecretAuthenticationFilter : OncePerRequestFilter() {
     private fun validSecret(request: HttpServletRequest) = AUTHENTICATION_SECRET == request.getHeader(AUTHENTICATION_KEY)
 
 
-    companion object {
-        private const val AUTHENTICATION_KEY = "CA-Auth"
-        private const val AUTHENTICATION_SECRET = "camw-application-data-ahfkk23lgp339"
+    private companion object {
+        const val AUTHENTICATION_KEY = "CA-Auth"
+        const val AUTHENTICATION_SECRET = "camw-application-data-ahfkk23lgp339"
     }
 }
