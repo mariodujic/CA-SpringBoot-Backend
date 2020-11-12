@@ -6,4 +6,5 @@ interface CacheService {
     fun updateThoughts()
     fun updateSaints()
     fun updateInformation()
+    fun updateAdConfig()
 }

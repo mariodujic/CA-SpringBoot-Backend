@@ -1,8 +1,8 @@
 package com.groundzero.camw
 
-import com.groundzero.camw.core.base.BaseRepository
+import com.groundzero.camw.core.base.BaseContentRepository
 import com.groundzero.camw.features.prayers.constants.PrayerDataType
-import com.groundzero.camw.features.prayers.controller.PrayersController
+import com.groundzero.camw.features.prayers.controller.PrayersContentController
 import com.groundzero.camw.features.prayers.data.Prayer
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.BeforeEach
@@ -24,10 +24,10 @@ class PrayersControllerTest {
     private lateinit var mvc: MockMvc
 
     @Mock
-    private lateinit var repository: BaseRepository<Prayer>
+    private lateinit var contentRepository: BaseContentRepository<Prayer>
 
     @InjectMocks
-    private lateinit var prayersController: PrayersController
+    private lateinit var prayersController: PrayersContentController
 
     @BeforeEach
     fun setUp() {
@@ -37,25 +37,25 @@ class PrayersControllerTest {
 
     @Test
     fun `en prayers should return correct data`() {
-        `when`(repository.getItems(PrayerDataType.English)).thenReturn(mutableListOf(MOCK_PRAYER_EN))
+        `when`(contentRepository.getItems(PrayerDataType.English)).thenReturn(mutableListOf(MOCK_PRAYER_EN))
         assertTrue(getResponse("/prayers/en").contains(MOCK_PRAYER_EN.itemId.toString()))
     }
 
     @Test
     fun `en staging prayers should return correct data`() {
-        `when`(repository.getItems(PrayerDataType.EnglishStaging)).thenReturn(mutableListOf(MOCK_PRAYER_EN_STAGING))
+        `when`(contentRepository.getItems(PrayerDataType.EnglishStaging)).thenReturn(mutableListOf(MOCK_PRAYER_EN_STAGING))
         assertTrue(getResponse("/prayers/en-staging").contains(MOCK_PRAYER_EN_STAGING.itemId.toString()))
     }
 
     @Test
     fun `hr prayers should return correct data`() {
-        `when`(repository.getItems(PrayerDataType.Croatian)).thenReturn(mutableListOf(MOCK_PRAYER_HR))
+        `when`(contentRepository.getItems(PrayerDataType.Croatian)).thenReturn(mutableListOf(MOCK_PRAYER_HR))
         assertTrue(getResponse("/prayers/hr").contains(MOCK_PRAYER_HR.itemId.toString()))
     }
 
     @Test
     fun `hr staging prayers should return correct data`() {
-        `when`(repository.getItems(PrayerDataType.CroatianStaging)).thenReturn(mutableListOf(MOCK_PRAYER_HR_STAGING))
+        `when`(contentRepository.getItems(PrayerDataType.CroatianStaging)).thenReturn(mutableListOf(MOCK_PRAYER_HR_STAGING))
         assertTrue(getResponse("/prayers/hr-staging").contains(MOCK_PRAYER_HR_STAGING.itemId.toString()))
     }
 

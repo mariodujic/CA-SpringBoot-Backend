@@ -1,8 +1,8 @@
 package com.groundzero.camw
 
-import com.groundzero.camw.core.base.BaseRepository
+import com.groundzero.camw.core.base.BaseContentRepository
 import com.groundzero.camw.features.thoughts.constants.ThoughtDataType
-import com.groundzero.camw.features.thoughts.controller.ThoughtsController
+import com.groundzero.camw.features.thoughts.controller.ThoughtsContentController
 import com.groundzero.camw.features.thoughts.data.Thought
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.BeforeEach
@@ -24,10 +24,10 @@ class ThoughtsControllerTest {
     private lateinit var mvc: MockMvc
 
     @Mock
-    private lateinit var repository: BaseRepository<Thought>
+    private lateinit var contentRepository: BaseContentRepository<Thought>
 
     @InjectMocks
-    private lateinit var thoughtsController: ThoughtsController
+    private lateinit var thoughtsController: ThoughtsContentController
 
     @BeforeEach
     fun setUp() {
@@ -37,25 +37,25 @@ class ThoughtsControllerTest {
 
     @Test
     fun `en thoughts should return correct data`() {
-        `when`(repository.getItems(ThoughtDataType.English)).thenReturn(mutableListOf(MOCK_THOUGHT_EN))
+        `when`(contentRepository.getItems(ThoughtDataType.English)).thenReturn(mutableListOf(MOCK_THOUGHT_EN))
         assertTrue(getResponse("/thoughts/en").contains(MOCK_THOUGHT_EN.itemId.toString()))
     }
 
     @Test
     fun `en staging thoughts should return correct data`() {
-        `when`(repository.getItems(ThoughtDataType.EnglishStaging)).thenReturn(mutableListOf(MOCK_THOUGHT_EN_STAGING))
+        `when`(contentRepository.getItems(ThoughtDataType.EnglishStaging)).thenReturn(mutableListOf(MOCK_THOUGHT_EN_STAGING))
         assertTrue(getResponse("/thoughts/en-staging").contains(MOCK_THOUGHT_EN_STAGING.itemId.toString()))
     }
 
     @Test
     fun `hr thoughts should return correct data`() {
-        `when`(repository.getItems(ThoughtDataType.Croatian)).thenReturn(mutableListOf(MOCK_THOUGHT_HR))
+        `when`(contentRepository.getItems(ThoughtDataType.Croatian)).thenReturn(mutableListOf(MOCK_THOUGHT_HR))
         assertTrue(getResponse("/thoughts/hr").contains(MOCK_THOUGHT_HR.itemId.toString()))
     }
 
     @Test
     fun `hr staging thoughts should return correct data`() {
-        `when`(repository.getItems(ThoughtDataType.CroatianStaging)).thenReturn(mutableListOf(MOCK_THOUGHT_HR_STAGING))
+        `when`(contentRepository.getItems(ThoughtDataType.CroatianStaging)).thenReturn(mutableListOf(MOCK_THOUGHT_HR_STAGING))
         assertTrue(getResponse("/thoughts/hr-staging").contains(MOCK_THOUGHT_HR_STAGING.itemId.toString()))
     }
 

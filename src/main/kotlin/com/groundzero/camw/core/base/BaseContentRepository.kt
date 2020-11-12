@@ -2,7 +2,7 @@ package com.groundzero.camw.core.base
 
 import com.groundzero.camw.core.data.DataType
 
-interface BaseRepository<T> {
+interface BaseContentRepository<T> {
 
     fun getItems(dataType: DataType): List<T>?
     fun addItem(item: T, dataType: DataType): Boolean

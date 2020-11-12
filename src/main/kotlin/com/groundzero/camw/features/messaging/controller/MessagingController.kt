@@ -30,6 +30,6 @@ class MessagingController(
 
     private fun sendMessage(notificationRequest: NotificationRequest, dataType: DataType): NetworkResponse {
         messagingService.sendMessage(notificationRequest, dataType)
-        return NetworkResponse.Success<Nothing>(200, "Message sent successfully", emptyList())
+        return NetworkResponse.SuccessList<Nothing>(200, "Message sent successfully", emptyList())
     }
 }

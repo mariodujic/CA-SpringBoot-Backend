@@ -2,11 +2,18 @@ package com.groundzero.camw.core.cache.service
 
 import com.groundzero.camw.core.service.NetworkService
 import com.groundzero.camw.core.service.WriteJsonService
+import com.groundzero.camw.features.adconfig.constants.AD_CONFIG_EN_COLLECTION
+import com.groundzero.camw.features.adconfig.constants.AD_CONFIG_EN_COLLECTION_STAGING
+import com.groundzero.camw.features.adconfig.constants.AD_CONFIG_HR_COLLECTION
+import com.groundzero.camw.features.adconfig.constants.AD_CONFIG_HR_COLLECTION_STAGING
+import com.groundzero.camw.features.adconfig.data.AdConfig
+import com.groundzero.camw.features.adconfig.data.DataSnapshotToAdConfigMapper
 import com.groundzero.camw.features.information.constants.INFORMATION_EN_COLLECTION
 import com.groundzero.camw.features.information.constants.INFORMATION_EN_COLLECTION_STAGING
 import com.groundzero.camw.features.information.constants.INFORMATION_HR_COLLECTION
 import com.groundzero.camw.features.information.constants.INFORMATION_HR_COLLECTION_STAGING
 import com.groundzero.camw.features.information.data.DataSnapshotToInformationBlockListMapper
+import com.groundzero.camw.features.information.data.InformationBlock
 import com.groundzero.camw.features.prayers.constants.PRAYER_EN_COLLECTION
 import com.groundzero.camw.features.prayers.constants.PRAYER_EN_COLLECTION_STAGING
 import com.groundzero.camw.features.prayers.constants.PRAYER_HR_COLLECTION
@@ -34,10 +41,11 @@ import kotlinx.coroutines.launch
 import org.springframework.stereotype.Component
 
 @Component
-class CacheServiceServiceImpl(
+class CacheServiceImpl(
         private val networkService: NetworkService,
         private val writeJsonService: WriteJsonService,
-        private val dataSnapshotToInformationBlockListMapper: DataSnapshotToInformationBlockListMapper
+        private val dataSnapshotToInformationBlockListMapper: DataSnapshotToInformationBlockListMapper,
+        private val dataSnapshotToAdConfigMapper: DataSnapshotToAdConfigMapper
 ) : CacheService {
 
     override fun updateQuizzes() {
@@ -69,24 +77,39 @@ class CacheServiceServiceImpl(
     }
 
     override fun updateInformation() {
-        updateDataFromRealtimeDatabase(INFORMATION_EN_COLLECTION)
-        updateDataFromRealtimeDatabase(INFORMATION_HR_COLLECTION)
-        updateDataFromRealtimeDatabase(INFORMATION_EN_COLLECTION_STAGING)
-        updateDataFromRealtimeDatabase(INFORMATION_HR_COLLECTION_STAGING)
+        updateDataFromRealtimeDatabase<InformationBlock>(INFORMATION_EN_COLLECTION)
+        updateDataFromRealtimeDatabase<InformationBlock>(INFORMATION_HR_COLLECTION)
+        updateDataFromRealtimeDatabase<InformationBlock>(INFORMATION_EN_COLLECTION_STAGING)
+        updateDataFromRealtimeDatabase<InformationBlock>(INFORMATION_HR_COLLECTION_STAGING)
+    }
+
+    override fun updateAdConfig() {
+        updateDataFromRealtimeDatabase<AdConfig>(AD_CONFIG_EN_COLLECTION)
+        updateDataFromRealtimeDatabase<AdConfig>(AD_CONFIG_HR_COLLECTION)
+        updateDataFromRealtimeDatabase<AdConfig>(AD_CONFIG_EN_COLLECTION_STAGING)
+        updateDataFromRealtimeDatabase<AdConfig>(AD_CONFIG_HR_COLLECTION_STAGING)
     }
 
     private inline fun <reified T> updateDataFromFirestore(collectionKey: String) {
         with(collectionKey) {
             networkService.readFirestoreDatabase<T>(this)?.let {
-                writeJsonService.write(this, it).getJsonLog(this)
+                writeJsonService.writeList(this, it).getJsonLog(this)
             }
         }
     }
 
-    private fun updateDataFromRealtimeDatabase(collectionKey: String) {
+    private inline fun <reified T> updateDataFromRealtimeDatabase(collectionKey: String) {
         CoroutineScope(IO).launch {
-            val informationBlocks = dataSnapshotToInformationBlockListMapper.map(networkService.readRealtimeDatabase(collectionKey))
-            writeJsonService.write(collectionKey, informationBlocks).getJsonLog(collectionKey)
+            when (T::class.java) {
+                InformationBlock::class.java -> {
+                    val data = dataSnapshotToInformationBlockListMapper.map(networkService.readRealtimeDatabase(collectionKey))
+                    writeJsonService.writeList(collectionKey, data).getJsonLog(collectionKey)
+                }
+                AdConfig::class.java -> {
+                    val data = dataSnapshotToAdConfigMapper.map(networkService.readRealtimeDatabase(collectionKey))
+                    writeJsonService.write(collectionKey, data).getJsonLog(collectionKey)
+                }
+            }
         }
     }
 }

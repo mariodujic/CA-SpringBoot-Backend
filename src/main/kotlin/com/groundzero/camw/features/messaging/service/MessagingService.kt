@@ -2,14 +2,13 @@ package com.groundzero.camw.features.messaging.service
 
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.messaging.Message
-import com.groundzero.camw.core.base.BaseRepository
+import com.groundzero.camw.core.base.BaseContentRepository
 import com.groundzero.camw.core.data.DataType
 import com.groundzero.camw.core.data.Mapper
 import com.groundzero.camw.core.data.NullableMapper
 import com.groundzero.camw.core.data.providers.FirebaseMessagingProvider
 import com.groundzero.camw.features.messaging.data.*
 import com.groundzero.camw.features.messaging.repository.MessagingRepository
-import com.groundzero.camw.features.thoughts.constants.ThoughtDataType
 import com.groundzero.camw.features.thoughts.data.Thought
 import com.groundzero.camw.utils.asMap
 import org.springframework.stereotype.Component
@@ -18,7 +17,7 @@ import org.springframework.stereotype.Component
 class MessagingService(
         private val messagingProvider: FirebaseMessagingProvider,
         private val repository: MessagingRepository,
-        private val baseRepository: BaseRepository<Thought>,
+        private val baseContentRepository: BaseContentRepository<Thought>,
         private val notificationRequestToThoughtDomainMapper: Mapper<NotificationRequest, Thought>,
         private val notificationRequestToInformationNotificationResponseMapper: Mapper<NotificationRequest, InformationNotificationResponse>,
         private val notificationRequestToUpdateNotificationResponseMapper: Mapper<NotificationRequest, UpdateNotificationResponse>,
@@ -52,7 +51,7 @@ class MessagingService(
             /**
              * Adding thought to a local json storage
              */
-            baseRepository.addItem(thought, dataType)
+            baseContentRepository.addItem(thought, dataType)
         })
     }
 

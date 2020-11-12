@@ -10,7 +10,8 @@ import java.io.FileNotFoundException
 @Component
 @Suppress("declaration_cant_be_inlined")
 class ReadJsonService(val serialization: SerializationUtils) {
-    inline fun <reified T> read(path: String): List<T>? =
+
+    inline fun <reified T> readList(path: String): List<T>? =
             try {
                 serialization.mapper.readValue(
                         File(getJsonStoragePath(path)),
@@ -22,5 +23,12 @@ class ReadJsonService(val serialization: SerializationUtils) {
                  * @see WriteJsonService
                  */
                 mutableListOf()
+            }
+
+    inline fun <reified T> read(path: String): T? =
+            try {
+                serialization.mapper.readValue(File(getJsonStoragePath(path)), T::class.java)
+            } catch (e: FileNotFoundException) {
+                null
             }
 }

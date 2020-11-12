@@ -1,14 +1,14 @@
 package com.groundzero.camw.features.thoughts.controller
 
-import com.groundzero.camw.core.base.BaseController
-import com.groundzero.camw.core.base.BaseRepository
+import com.groundzero.camw.core.base.BaseContentController
+import com.groundzero.camw.core.base.BaseContentRepository
 import com.groundzero.camw.features.thoughts.constants.ThoughtDataType
 import com.groundzero.camw.features.thoughts.data.Thought
 import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping("/thoughts")
-class ThoughtsController(repository: BaseRepository<Thought>) : BaseController<Thought>(repository) {
+class ThoughtsContentController(contentRepository: BaseContentRepository<Thought>) : BaseContentController<Thought>(contentRepository) {
 
     @GetMapping("/en")
     fun getThoughtsEnglish() = getItemsResponse(ThoughtDataType.English)
