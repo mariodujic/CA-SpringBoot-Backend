@@ -2,13 +2,17 @@ package com.groundzero.camw.features.saints.controller
 
 import com.groundzero.camw.core.base.BaseContentController
 import com.groundzero.camw.core.base.BaseContentRepository
+import com.groundzero.camw.core.base.BaseContentValidator
 import com.groundzero.camw.features.saints.constants.SaintsDataType
 import com.groundzero.camw.features.saints.data.Saint
 import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping("/saints")
-class SaintsContentController(contentRepository: BaseContentRepository<Saint>) : BaseContentController<Saint>(contentRepository) {
+class SaintsContentController(
+        contentRepository: BaseContentRepository<Saint>,
+        contentValidator: BaseContentValidator
+) : BaseContentController<Saint>(contentRepository, contentValidator) {
 
     @GetMapping("/en")
     fun getSaintssEnglish() = getItemsResponse(SaintsDataType.English)

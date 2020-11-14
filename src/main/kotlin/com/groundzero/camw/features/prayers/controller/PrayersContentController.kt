@@ -2,13 +2,17 @@ package com.groundzero.camw.features.prayers.controller
 
 import com.groundzero.camw.core.base.BaseContentController
 import com.groundzero.camw.core.base.BaseContentRepository
+import com.groundzero.camw.core.base.BaseContentValidator
 import com.groundzero.camw.features.prayers.constants.PrayerDataType
 import com.groundzero.camw.features.prayers.data.Prayer
 import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping("/prayers")
-class PrayersContentController(contentRepository: BaseContentRepository<Prayer>) : BaseContentController<Prayer>(contentRepository) {
+class PrayersContentController(
+        contentRepository: BaseContentRepository<Prayer>,
+        contentValidator: BaseContentValidator
+) : BaseContentController<Prayer>(contentRepository, contentValidator) {
 
     @GetMapping("/en")
     fun getPrayerEnglish() = getItemsResponse(PrayerDataType.English)

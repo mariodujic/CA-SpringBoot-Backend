@@ -1,6 +1,7 @@
 package com.groundzero.camw
 
 import com.groundzero.camw.core.base.BaseContentRepository
+import com.groundzero.camw.core.base.BaseContentValidator
 import com.groundzero.camw.features.prayers.constants.PrayerDataType
 import com.groundzero.camw.features.prayers.controller.PrayersContentController
 import com.groundzero.camw.features.prayers.data.Prayer
@@ -25,6 +26,9 @@ class PrayersControllerTest {
 
     @Mock
     private lateinit var contentRepository: BaseContentRepository<Prayer>
+
+    @Mock
+    private lateinit var contentValidator: BaseContentValidator
 
     @InjectMocks
     private lateinit var prayersController: PrayersContentController

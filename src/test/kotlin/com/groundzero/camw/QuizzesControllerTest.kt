@@ -1,6 +1,7 @@
 package com.groundzero.camw
 
 import com.groundzero.camw.core.base.BaseContentRepository
+import com.groundzero.camw.core.base.BaseContentValidator
 import com.groundzero.camw.features.quizzes.constants.QuizDataType
 import com.groundzero.camw.features.quizzes.controller.QuizContentController
 import com.groundzero.camw.features.quizzes.data.QuizCategory
@@ -25,6 +26,9 @@ class QuizzesControllerTest {
 
     @Mock
     private lateinit var contentRepository: BaseContentRepository<QuizCategory>
+
+    @Mock
+    private lateinit var contentValidator: BaseContentValidator
 
     @InjectMocks
     private lateinit var quizController: QuizContentController

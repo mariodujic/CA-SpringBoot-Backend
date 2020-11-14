@@ -2,13 +2,17 @@ package com.groundzero.camw.features.quizzes.controller
 
 import com.groundzero.camw.core.base.BaseContentController
 import com.groundzero.camw.core.base.BaseContentRepository
+import com.groundzero.camw.core.base.BaseContentValidator
 import com.groundzero.camw.features.quizzes.constants.QuizDataType
 import com.groundzero.camw.features.quizzes.data.QuizCategory
 import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping("/quizzes")
-class QuizContentController(contentRepository: BaseContentRepository<QuizCategory>) : BaseContentController<QuizCategory>(contentRepository) {
+class QuizContentController(
+        contentRepository: BaseContentRepository<QuizCategory>,
+        contentValidator: BaseContentValidator
+) : BaseContentController<QuizCategory>(contentRepository, contentValidator) {
 
     @GetMapping("/en")
     fun getQuizCategoriesEnglish() = getItemsResponse(QuizDataType.English)

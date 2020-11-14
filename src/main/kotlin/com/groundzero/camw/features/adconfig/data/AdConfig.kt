@@ -17,7 +17,7 @@ data class AdConfig(
         // Content reading bottom banner
         val showSinglePrayerBottomBanner: Boolean = false,
         val showSingleThoughtBottomBanner: Boolean = false,
-        // Interstitial ads
+        // Interstitial ad
         val showExitApplicationInterstitial: Boolean = false,
         val showRandomPrayerInterstitial: Boolean = false,
         val showPrayerListLayoutChangeInterstitial: Boolean = false,
@@ -27,5 +27,10 @@ data class AdConfig(
         val showSearchPrayerListInterstitial: Boolean = false,
         val showSearchThoughtListInterstitial: Boolean = false,
         val showSearchSaintListInterstitial: Boolean = false,
-        val showQuizFinishInterstitial: Boolean = false
+        val showQuizFinishInterstitial: Boolean = false,
+        // Support button interstitial ad
+        val showSinglePrayerSupportByInterstitialAdButton: Boolean = false,
+        val showSingleThoughtSupportByInterstitialAdButton: Boolean = false,
+        val showSingleSaintSupportByInterstitialAdButton: Boolean = false,
+        val showDrawerSupportByInterstitialAdButton: Boolean = false,
 )

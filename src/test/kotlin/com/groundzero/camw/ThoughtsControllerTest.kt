@@ -1,6 +1,7 @@
 package com.groundzero.camw
 
 import com.groundzero.camw.core.base.BaseContentRepository
+import com.groundzero.camw.core.base.BaseContentValidator
 import com.groundzero.camw.features.thoughts.constants.ThoughtDataType
 import com.groundzero.camw.features.thoughts.controller.ThoughtsContentController
 import com.groundzero.camw.features.thoughts.data.Thought
@@ -25,6 +26,9 @@ class ThoughtsControllerTest {
 
     @Mock
     private lateinit var contentRepository: BaseContentRepository<Thought>
+
+    @Mock
+    private lateinit var contentValidator: BaseContentValidator
 
     @InjectMocks
     private lateinit var thoughtsController: ThoughtsContentController
