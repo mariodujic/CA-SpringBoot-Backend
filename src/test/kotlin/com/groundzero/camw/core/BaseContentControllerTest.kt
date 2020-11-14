@@ -5,6 +5,7 @@ import com.groundzero.camw.core.base.BaseContentRepository
 import com.groundzero.camw.core.network.NetworkResponse
 import com.groundzero.camw.features.information.constants.InformationBlockDataType
 import com.groundzero.camw.features.information.data.InformationBlock
+import com.groundzero.camw.utils.code
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith
@@ -93,8 +94,8 @@ class BaseContentControllerTest {
     companion object {
         val MOCK_DATA_TYPE = InformationBlockDataType.Croatian
         val MOCK_DATA = InformationBlock()
-        fun mockSuccessResponse(data: List<InformationBlock>) = NetworkResponse.Success(HttpStatus.OK.value(), "Success", data)
+        fun mockSuccessResponse(data: List<InformationBlock>) = NetworkResponse.Success(code(HttpStatus.OK), "Success", data)
         val MOCK_DATA_LIST = listOf<InformationBlock>()
-        fun mockErrorResponse() = NetworkResponse.Error(HttpStatus.NOT_FOUND.value(), "Error")
+        fun mockErrorResponse() = NetworkResponse.Error(code(HttpStatus.NOT_FOUND), "Error")
     }
 }

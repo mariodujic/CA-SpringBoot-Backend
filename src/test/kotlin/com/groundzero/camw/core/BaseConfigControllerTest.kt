@@ -5,6 +5,7 @@ import com.groundzero.camw.core.base.BaseConfigRepository
 import com.groundzero.camw.core.network.NetworkResponse
 import com.groundzero.camw.features.adconfig.constants.AdConfigDataType
 import com.groundzero.camw.features.adconfig.data.AdConfig
+import com.groundzero.camw.utils.code
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith
@@ -72,7 +73,7 @@ class BaseConfigControllerTest {
     companion object {
         val MOCK_DATA_TYPE = AdConfigDataType.Croatian
         val MOCK_DATA = AdConfig()
-        fun mockSuccessResponse(data: AdConfig) = NetworkResponse.Success(HttpStatus.OK.value(), "Success", data)
-        fun mockErrorResponse() = NetworkResponse.Error(HttpStatus.NOT_FOUND.value(), "Error")
+        fun mockSuccessResponse(data: AdConfig) = NetworkResponse.Success(code(HttpStatus.OK), "Success", data)
+        fun mockErrorResponse() = NetworkResponse.Error(code(HttpStatus.NOT_FOUND), "Error")
     }
 }
