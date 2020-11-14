@@ -14,7 +14,8 @@ open class BaseConfigController<T>(private val baseRepository: BaseConfigReposit
 
     fun addItemResponse(item: T, type: DataType): NetworkResponse {
         return if (baseRepository.addConfig(item, type)) {
-            NetworkResponse.Success<T>(200, "Success")
+            val item = baseRepository.getConfig(type)
+            NetworkResponse.Success<T>(200, "Success", item)
         } else {
             NetworkResponse.Error(404, "Error")
         }
