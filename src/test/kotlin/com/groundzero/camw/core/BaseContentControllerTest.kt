@@ -92,7 +92,7 @@ class BaseContentControllerTest {
     companion object {
         val MOCK_DATA_TYPE = InformationBlockDataType.Croatian
         val MOCK_DATA = InformationBlock()
-        fun mockSuccessResponse(data: List<InformationBlock>) = NetworkResponse.SuccessList(200, "Success", data)
+        fun mockSuccessResponse(data: List<InformationBlock>) = NetworkResponse.Success(200, "Success", data)
         val MOCK_DATA_LIST = listOf<InformationBlock>()
         fun mockErrorResponse() = NetworkResponse.Error(404, "Error")
     }

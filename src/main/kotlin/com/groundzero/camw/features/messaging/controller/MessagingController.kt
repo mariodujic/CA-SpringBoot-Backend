@@ -12,9 +12,7 @@ import org.springframework.web.bind.annotation.RestController
 
 @RestController
 @RequestMapping("/message")
-class MessagingController(
-        private val messagingService: MessagingService
-) {
+class MessagingController(private val messagingService: MessagingService) {
 
     @PostMapping("/en-notifications")
     fun sendEnglishMessage(@RequestBody notificationRequest: NotificationRequest): NetworkResponse = sendMessage(notificationRequest, ThoughtDataType.English)
@@ -30,6 +28,6 @@ class MessagingController(
 
     private fun sendMessage(notificationRequest: NotificationRequest, dataType: DataType): NetworkResponse {
         messagingService.sendMessage(notificationRequest, dataType)
-        return NetworkResponse.SuccessList<Nothing>(200, "Message sent successfully", emptyList())
+        return NetworkResponse.Success<Nothing>(200, "Message sent successfully")
     }
 }

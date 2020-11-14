@@ -8,14 +8,15 @@ open class BaseContentController<T>(private val baseContentRepository: BaseConte
 
     fun getItemsResponse(type: DataType): NetworkResponse {
         baseContentRepository.getItems(type)?.let {
-            return NetworkResponse.SuccessList(200, "Success", it)
+            return NetworkResponse.Success(200, "Success", it)
         }
         return NetworkResponse.Error(404, "Error")
     }
 
     fun removeItemResponse(@RequestBody item: T, type: DataType): NetworkResponse {
         return if (baseContentRepository.removeItem(item, type)) {
-            NetworkResponse.SuccessList<T>(200, "Success", mutableListOf())
+            val items = baseContentRepository.getItems(type)
+            NetworkResponse.Success(200, "Success", items)
         } else {
             NetworkResponse.Error(404, "Error")
         }
@@ -23,7 +24,8 @@ open class BaseContentController<T>(private val baseContentRepository: BaseConte
 
     fun addItemResponse(item: T, type: DataType): NetworkResponse {
         return if (baseContentRepository.addItem(item, type)) {
-            NetworkResponse.SuccessList<T>(200, "Success", mutableListOf())
+            val items = baseContentRepository.getItems(type)
+            NetworkResponse.Success(200, "Success", items)
         } else {
             NetworkResponse.Error(404, "Error")
         }
