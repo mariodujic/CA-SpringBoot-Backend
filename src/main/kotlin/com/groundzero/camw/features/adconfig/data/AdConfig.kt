@@ -32,5 +32,5 @@ data class AdConfig(
         val showSinglePrayerSupportByInterstitialAdButton: Boolean = false,
         val showSingleThoughtSupportByInterstitialAdButton: Boolean = false,
         val showSingleSaintSupportByInterstitialAdButton: Boolean = false,
-        val showDrawerSupportByInterstitialAdButton: Boolean = false,
+        val showDrawerSupportByInterstitialAdButton: Boolean = false
 )
