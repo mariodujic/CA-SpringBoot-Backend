@@ -1,7 +1,5 @@
 package com.groundzero.camw.features.messaging.repository
 
-import com.google.api.core.ApiFuture
-import com.google.cloud.firestore.DocumentReference
 import com.google.firebase.database.DatabaseReference
 import com.groundzero.camw.core.data.providers.FirebaseRealtimeDatabaseProvider
 import com.groundzero.camw.core.data.providers.FirestoreProvider

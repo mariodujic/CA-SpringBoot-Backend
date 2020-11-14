@@ -1,9 +1,6 @@
 package com.groundzero.camw.core.service
 
 import com.google.cloud.firestore.QueryDocumentSnapshot
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.ValueEventListener
 import com.groundzero.camw.core.data.FirestoreMapper
 import com.groundzero.camw.utils.getSnapshotValue
 import org.springframework.stereotype.Component

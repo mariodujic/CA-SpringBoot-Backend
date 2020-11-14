@@ -13,6 +13,7 @@ import org.mockito.Mock
 import org.mockito.Mockito.`when`
 import org.mockito.Mockito.verify
 import org.mockito.junit.jupiter.MockitoExtension
+import org.springframework.http.HttpStatus
 
 @ExtendWith(MockitoExtension::class)
 class BaseContentControllerTest {
@@ -92,8 +93,8 @@ class BaseContentControllerTest {
     companion object {
         val MOCK_DATA_TYPE = InformationBlockDataType.Croatian
         val MOCK_DATA = InformationBlock()
-        fun mockSuccessResponse(data: List<InformationBlock>) = NetworkResponse.Success(200, "Success", data)
+        fun mockSuccessResponse(data: List<InformationBlock>) = NetworkResponse.Success(HttpStatus.OK.value(), "Success", data)
         val MOCK_DATA_LIST = listOf<InformationBlock>()
-        fun mockErrorResponse() = NetworkResponse.Error(404, "Error")
+        fun mockErrorResponse() = NetworkResponse.Error(HttpStatus.NOT_FOUND.value(), "Error")
     }
 }

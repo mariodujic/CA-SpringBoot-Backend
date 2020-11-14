@@ -5,6 +5,7 @@ import com.groundzero.camw.core.network.NetworkResponse
 import com.groundzero.camw.features.messaging.data.NotificationRequest
 import com.groundzero.camw.features.messaging.service.MessagingService
 import com.groundzero.camw.features.thoughts.constants.ThoughtDataType
+import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
@@ -28,6 +29,6 @@ class MessagingController(private val messagingService: MessagingService) {
 
     private fun sendMessage(notificationRequest: NotificationRequest, dataType: DataType): NetworkResponse {
         messagingService.sendMessage(notificationRequest, dataType)
-        return NetworkResponse.Success<Nothing>(200, "Message sent successfully")
+        return NetworkResponse.Success<Nothing>(HttpStatus.OK.value(), "Message sent successfully")
     }
 }

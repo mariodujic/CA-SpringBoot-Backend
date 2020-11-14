@@ -1,8 +1,8 @@
 package com.groundzero.camw.features.messaging.mappers
 
 import com.groundzero.camw.core.data.NullableMapper
-import com.groundzero.camw.features.messaging.data.NotificationRequest
 import com.groundzero.camw.features.messaging.data.MessageType
+import com.groundzero.camw.features.messaging.data.NotificationRequest
 import org.springframework.stereotype.Component
 
 @Component
