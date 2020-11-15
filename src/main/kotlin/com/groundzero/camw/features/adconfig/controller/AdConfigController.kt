@@ -4,9 +4,7 @@ import com.groundzero.camw.core.base.BaseConfigController
 import com.groundzero.camw.core.base.BaseConfigRepository
 import com.groundzero.camw.features.adconfig.constants.AdConfigDataType
 import com.groundzero.camw.features.adconfig.data.AdConfig
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RestController
+import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping("/ad-config")
@@ -23,4 +21,16 @@ class AdConfigController(repository: BaseConfigRepository<AdConfig>) : BaseConfi
 
     @GetMapping("/hr-staging")
     fun getAdConfigsCroatianStaging() = getItemsResponse(AdConfigDataType.CroatianStaging)
+
+    @PostMapping("/en")
+    fun addAdConfigEnglish(@RequestBody adConfig: AdConfig) = addItemResponse(adConfig, AdConfigDataType.English)
+
+    @PostMapping("/en-staging")
+    fun addAdConfigEnglishStaging(@RequestBody adConfig: AdConfig) = addItemResponse(adConfig, AdConfigDataType.EnglishStaging)
+
+    @PostMapping("/hr")
+    fun addAdConfigsCroatian(@RequestBody adConfig: AdConfig) = addItemResponse(adConfig, AdConfigDataType.Croatian)
+
+    @PostMapping("/hr-staging")
+    fun addAdConfigsCroatianStaging(@RequestBody adConfig: AdConfig) = addItemResponse(adConfig, AdConfigDataType.CroatianStaging)
 }
