@@ -8,8 +8,8 @@ import kotlin.reflect.full.memberProperties
 @Component
 @Suppress("declaration_cant_be_inlined")
 class SerializationUtils {
-
-    val mapper = ObjectMapper().apply {
+    private val objectMapper = ObjectMapper()
+    val mapper = objectMapper.apply {
         configure(SerializationFeature.INDENT_OUTPUT, true)
     }
 }
