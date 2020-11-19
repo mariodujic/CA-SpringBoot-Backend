@@ -3,7 +3,6 @@ package com.groundzero.camw.core
 import com.groundzero.camw.core.base.BaseConfigController
 import com.groundzero.camw.core.base.BaseConfigRepository
 import com.groundzero.camw.core.network.NetworkResponse
-import com.groundzero.camw.features.adconfig.constants.AdConfigDataType
 import com.groundzero.camw.features.adconfig.data.AdConfig
 import com.groundzero.camw.utils.code
 import org.junit.jupiter.api.Assertions.assertEquals
