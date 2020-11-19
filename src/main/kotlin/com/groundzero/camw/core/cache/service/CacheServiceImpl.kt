@@ -34,6 +34,10 @@ import com.groundzero.camw.features.thoughts.constants.THOUGHT_EN_COLLECTION_STA
 import com.groundzero.camw.features.thoughts.constants.THOUGHT_HR_COLLECTION
 import com.groundzero.camw.features.thoughts.constants.THOUGHT_HR_COLLECTION_STAGING
 import com.groundzero.camw.features.thoughts.data.Thought
+import com.groundzero.camw.features.userreport.constants.USER_REPORT_EN_COLLECTION
+import com.groundzero.camw.features.userreport.constants.USER_REPORT_EN_COLLECTION_STAGING
+import com.groundzero.camw.features.userreport.constants.USER_REPORT_HR_COLLECTION
+import com.groundzero.camw.features.userreport.constants.USER_REPORT_HR_COLLECTION_STAGING
 import com.groundzero.camw.utils.getJsonLog
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers.IO
@@ -88,6 +92,13 @@ class CacheServiceImpl(
         updateDataFromRealtimeDatabase<AdConfig>(AD_CONFIG_HR_COLLECTION)
         updateDataFromRealtimeDatabase<AdConfig>(AD_CONFIG_EN_COLLECTION_STAGING)
         updateDataFromRealtimeDatabase<AdConfig>(AD_CONFIG_HR_COLLECTION_STAGING)
+    }
+
+    override fun updateUserReports() {
+        updateDataFromFirestore<Saint>(USER_REPORT_EN_COLLECTION)
+        updateDataFromFirestore<Saint>(USER_REPORT_HR_COLLECTION)
+        updateDataFromFirestore<Saint>(USER_REPORT_EN_COLLECTION_STAGING)
+        updateDataFromFirestore<Saint>(USER_REPORT_HR_COLLECTION_STAGING)
     }
 
     private inline fun <reified T> updateDataFromFirestore(collectionKey: String) {

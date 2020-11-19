@@ -4,6 +4,7 @@ import com.groundzero.camw.core.base.BaseConfigRepository
 import com.groundzero.camw.core.data.DataType
 import com.groundzero.camw.core.service.ReadJsonService
 import com.groundzero.camw.core.service.WriteJsonService
+import com.groundzero.camw.features.adconfig.constants.AdConfigDataType
 import com.groundzero.camw.utils.isSubclassOf
 import org.springframework.stereotype.Component
 

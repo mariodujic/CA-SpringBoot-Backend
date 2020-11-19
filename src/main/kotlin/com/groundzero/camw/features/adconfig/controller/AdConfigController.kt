@@ -2,6 +2,7 @@ package com.groundzero.camw.features.adconfig.controller
 
 import com.groundzero.camw.core.base.BaseConfigController
 import com.groundzero.camw.core.base.BaseConfigRepository
+import com.groundzero.camw.features.adconfig.constants.AdConfigDataType
 import com.groundzero.camw.features.adconfig.data.AdConfig
 import org.springframework.web.bind.annotation.*
 

@@ -7,4 +7,5 @@ interface CacheService {
     fun updateSaints()
     fun updateInformation()
     fun updateAdConfig()
+    fun updateUserReports()
 }

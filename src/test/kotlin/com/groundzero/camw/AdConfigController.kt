@@ -2,6 +2,7 @@ package com.groundzero.camw
 
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.groundzero.camw.core.base.BaseConfigRepository
+import com.groundzero.camw.features.adconfig.constants.AdConfigDataType
 import com.groundzero.camw.features.adconfig.controller.AdConfigController
 import com.groundzero.camw.features.adconfig.data.AdConfig
 import org.junit.jupiter.api.Assertions.assertTrue
