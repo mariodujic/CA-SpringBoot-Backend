@@ -15,11 +15,11 @@ class UserReportRepository(private val readJson: ReadJsonService, private val wr
     override fun getItems(dataType: DataType): List<UserReport>? =
             validateDataPathAndStartAction(dataType, readJson.readList(dataType.path))
 
-    override fun addItem(report: UserReport, dataType: DataType) =
-            validateDataPathAndStartAction(dataType, writeJson.writeList(dataType.path, mapper.addItem(report, getItems(dataType))))
+    override fun addItem(item: UserReport, dataType: DataType) =
+            validateDataPathAndStartAction(dataType, writeJson.writeList(dataType.path, mapper.addItem(item, getItems(dataType))))
 
-    override fun removeItem(report: UserReport, dataType: DataType) =
-            validateDataPathAndStartAction(dataType, writeJson.writeList(dataType.path, mapper.removeItem(report, getItems(dataType))))
+    override fun removeItem(item: UserReport, dataType: DataType) =
+            validateDataPathAndStartAction(dataType, writeJson.writeList(dataType.path, mapper.removeItem(item, getItems(dataType))))
 
     private fun <T> validateDataPathAndStartAction(dataType: DataType, action: T): T = if (dataType.isSubclassOf(UserReportDataType::class)) {
         action
