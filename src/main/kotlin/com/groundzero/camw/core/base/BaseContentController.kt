@@ -19,7 +19,7 @@ open class BaseContentController<T : NetworkModel>(
         return NetworkResponse.Error(code(HttpStatus.NOT_FOUND), "Error")
     }
 
-    fun removeItemResponse(@RequestBody item: T, type: DataType): NetworkResponse {
+    open fun removeItemResponse(@RequestBody item: T, type: DataType): NetworkResponse {
         return if (!baseContentValidator.hasItemId(item.itemId)) {
             NetworkResponse.Error(code(HttpStatus.NOT_ACCEPTABLE), "Missing itemId")
         } else if (baseContentRepository.removeItem(item, type)) {
@@ -30,7 +30,7 @@ open class BaseContentController<T : NetworkModel>(
         }
     }
 
-    fun addItemResponse(item: T, type: DataType): NetworkResponse {
+    open fun addItemResponse(item: T, type: DataType): NetworkResponse {
         return if (!baseContentValidator.hasItemId(item.itemId)) {
             NetworkResponse.Error(code(HttpStatus.NOT_ACCEPTABLE), "Missing itemId")
         } else if (baseContentRepository.addItem(item, type)) {

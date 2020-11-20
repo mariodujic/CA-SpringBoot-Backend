@@ -1,8 +1,9 @@
 package com.groundzero.camw.features.userreport.controller
 
-import com.groundzero.camw.core.base.BaseContentController
+import com.groundzero.camw.core.base.BaseContentControllerWithFirestore
 import com.groundzero.camw.core.base.BaseContentRepository
 import com.groundzero.camw.core.base.BaseContentValidator
+import com.groundzero.camw.core.repository.FirestoreRepository
 import com.groundzero.camw.features.userreport.constants.UserReportDataType
 import com.groundzero.camw.features.userreport.data.UserReport
 import org.springframework.web.bind.annotation.*
@@ -11,8 +12,9 @@ import org.springframework.web.bind.annotation.*
 @RequestMapping("/user-report")
 class UserReportController(
         contentRepository: BaseContentRepository<UserReport>,
-        contentValidator: BaseContentValidator
-) : BaseContentController<UserReport>(contentRepository, contentValidator) {
+        contentValidator: BaseContentValidator,
+        firestoreRepository: FirestoreRepository
+) : BaseContentControllerWithFirestore<UserReport>(contentRepository, contentValidator, firestoreRepository) {
 
     @GetMapping("/en")
     fun getUserReportEnglish() = getItemsResponse(UserReportDataType.English)
