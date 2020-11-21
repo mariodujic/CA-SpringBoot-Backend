@@ -35,20 +35,20 @@ class UserReportController(
     fun removeUserReportEnglishStaging(@RequestBody report: UserReport) = removeItemResponse(report, UserReportDataType.EnglishStaging)
 
     @DeleteMapping("/hr")
-    fun removeUserReportCroatian(@RequestBody prayer: UserReport) = removeItemResponse(prayer, UserReportDataType.Croatian)
+    fun removeUserReportCroatian(@RequestBody userReport: UserReport) = removeItemResponse(userReport, UserReportDataType.Croatian)
 
     @DeleteMapping("/hr-staging")
-    fun removeUserReportCroatianStaging(@RequestBody prayer: UserReport) = removeItemResponse(prayer, UserReportDataType.CroatianStaging)
+    fun removeUserReportCroatianStaging(@RequestBody userReport: UserReport) = removeItemResponse(userReport, UserReportDataType.CroatianStaging)
 
     @PostMapping("/en")
-    fun addUserReportEnglish(@RequestBody prayer: UserReport) = addItemResponse(prayer, UserReportDataType.English)
+    fun addUserReportEnglish(@RequestBody userReport: UserReport) = addItemResponse(userReport, UserReportDataType.English)
 
     @PostMapping("/en-staging")
-    fun addUserReportEnglishStaging(@RequestBody prayer: UserReport) = addItemResponse(prayer, UserReportDataType.EnglishStaging)
+    fun addUserReportEnglishStaging(@RequestBody userReport: UserReport) = addItemResponse(userReport, UserReportDataType.EnglishStaging)
 
     @PostMapping("/hr")
-    fun addUserReportCroatian(@RequestBody prayer: UserReport) = addItemResponse(prayer, UserReportDataType.Croatian)
+    fun addUserReportCroatian(@RequestBody userReport: UserReport) = addItemResponse(userReport, UserReportDataType.Croatian)
 
     @PostMapping("/hr-staging")
-    fun addUserReportCroatianStaging(@RequestBody prayer: UserReport) = addItemResponse(prayer, UserReportDataType.CroatianStaging)
+    fun addUserReportCroatianStaging(@RequestBody userReport: UserReport) = addItemResponse(userReport, UserReportDataType.CroatianStaging)
 }

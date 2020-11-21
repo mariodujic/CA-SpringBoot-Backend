@@ -40,7 +40,6 @@ class AdConfigControllerTest {
     @Test
     fun `en ad config should return correct data`() {
         `when`(adConfigRepository.getConfig(AdConfigDataType.English)).thenReturn(MOCK_AD_CONFIG_EN)
-        println(MOCK_AD_CONFIG_EN.showExitApplicationInterstitial.toString())
         assertTrue(getResponse("/ad-config/en").contains(MOCK_AD_CONFIG_EN.showExitApplicationInterstitial.toString()))
 
     }
