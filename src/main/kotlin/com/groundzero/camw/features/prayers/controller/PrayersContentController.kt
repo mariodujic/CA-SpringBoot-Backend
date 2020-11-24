@@ -26,6 +26,12 @@ class PrayersContentController(
     @GetMapping("/hr-staging")
     fun getPrayersCroatianStaging() = getItemsResponse(PrayerDataType.CroatianStaging)
 
+    @GetMapping("/sk")
+    fun getPrayersSlovak() = getItemsResponse(PrayerDataType.Slovak)
+
+    @GetMapping("/sk-staging")
+    fun getPrayersSlovakStaging() = getItemsResponse(PrayerDataType.SlovakStaging)
+
     @DeleteMapping("/en")
     fun removePrayerEnglish(@RequestBody prayer: Prayer) = removeItemResponse(prayer, PrayerDataType.English)
 
@@ -38,6 +44,12 @@ class PrayersContentController(
     @DeleteMapping("/hr-staging")
     fun removePrayerCroatianStaging(@RequestBody prayer: Prayer) = removeItemResponse(prayer, PrayerDataType.CroatianStaging)
 
+    @DeleteMapping("/sk")
+    fun removePrayerSlovak(@RequestBody prayer: Prayer) = removeItemResponse(prayer, PrayerDataType.Slovak)
+
+    @DeleteMapping("/sk-staging")
+    fun removePrayerSlovakStaging(@RequestBody prayer: Prayer) = removeItemResponse(prayer, PrayerDataType.SlovakStaging)
+
     @PostMapping("/en")
     fun addPrayerEnglish(@RequestBody prayer: Prayer) = addItemResponse(prayer, PrayerDataType.English)
 
@@ -49,4 +61,10 @@ class PrayersContentController(
 
     @PostMapping("/hr-staging")
     fun addPrayerCroatianStaging(@RequestBody prayer: Prayer) = addItemResponse(prayer, PrayerDataType.CroatianStaging)
+
+    @PostMapping("/sk")
+    fun addPrayerSlovak(@RequestBody prayer: Prayer) = addItemResponse(prayer, PrayerDataType.Slovak)
+
+    @PostMapping("/sk-staging")
+    fun addPrayerSlovakStaging(@RequestBody prayer: Prayer) = addItemResponse(prayer, PrayerDataType.SlovakStaging)
 }

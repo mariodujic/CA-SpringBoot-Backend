@@ -27,4 +27,10 @@ class InformationBlockContentController(
 
     @GetMapping("/hr-staging")
     fun getInformationBlocksCroatianStaging() = getItemsResponse(InformationBlockDataType.CroatianStaging)
+
+    @GetMapping("/sk")
+    fun getInformationBlocksSlovak() = getItemsResponse(InformationBlockDataType.Slovak)
+
+    @GetMapping("/sk-staging")
+    fun getInformationBlocksSlovakStaging() = getItemsResponse(InformationBlockDataType.SlovakStaging)
 }

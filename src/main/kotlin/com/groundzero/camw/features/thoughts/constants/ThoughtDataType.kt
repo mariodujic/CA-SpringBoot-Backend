@@ -7,4 +7,6 @@ sealed class ThoughtDataType {
     object EnglishStaging : DataType.EnglishStaging(THOUGHT_EN_COLLECTION_STAGING)
     object Croatian : DataType.Croatian(THOUGHT_HR_COLLECTION)
     object CroatianStaging : DataType.CroatianStaging(THOUGHT_HR_COLLECTION_STAGING)
+    object Slovak : DataType.Croatian(THOUGHT_SK_COLLECTION)
+    object SlovakStaging : DataType.CroatianStaging(THOUGHT_SK_COLLECTION_STAGING)
 }

@@ -26,6 +26,12 @@ class ThoughtsContentController(
     @GetMapping("/hr-staging")
     fun getThoughtsCroatianStaging() = getItemsResponse(ThoughtDataType.CroatianStaging)
 
+    @GetMapping("/sk")
+    fun getThoughtsSlovak() = getItemsResponse(ThoughtDataType.Slovak)
+
+    @GetMapping("/sk-staging")
+    fun getThoughtsSlovakStaging() = getItemsResponse(ThoughtDataType.SlovakStaging)
+
     @DeleteMapping("/en")
     fun removeThoughtEnglish(@RequestBody thought: Thought) = removeItemResponse(thought, ThoughtDataType.English)
 
@@ -38,6 +44,12 @@ class ThoughtsContentController(
     @DeleteMapping("/hr-staging")
     fun removeThoughtCroatianStaging(@RequestBody thought: Thought) = removeItemResponse(thought, ThoughtDataType.CroatianStaging)
 
+    @DeleteMapping("/sk")
+    fun removeThoughtSlovak(@RequestBody thought: Thought) = removeItemResponse(thought, ThoughtDataType.Slovak)
+
+    @DeleteMapping("/sk-staging")
+    fun removeThoughtSlovakStaging(@RequestBody thought: Thought) = removeItemResponse(thought, ThoughtDataType.SlovakStaging)
+
     @PostMapping("/en")
     fun addThoughtEnglish(@RequestBody thought: Thought) = addItemResponse(thought, ThoughtDataType.English)
 
@@ -49,4 +61,10 @@ class ThoughtsContentController(
 
     @PostMapping("/hr-staging")
     fun addThoughtCroatianStaging(@RequestBody thought: Thought) = addItemResponse(thought, ThoughtDataType.CroatianStaging)
+
+    @PostMapping("/sk")
+    fun addThoughtSlovak(@RequestBody thought: Thought) = addItemResponse(thought, ThoughtDataType.Slovak)
+
+    @PostMapping("/sk-staging")
+    fun addThoughtSlovakStaging(@RequestBody thought: Thought) = addItemResponse(thought, ThoughtDataType.SlovakStaging)
 }

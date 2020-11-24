@@ -22,6 +22,12 @@ class AdConfigController(repository: BaseConfigRepository<AdConfig>) : BaseConfi
     @GetMapping("/hr-staging")
     fun getAdConfigsCroatianStaging() = getItemsResponse(AdConfigDataType.CroatianStaging)
 
+    @GetMapping("/sk")
+    fun getAdConfigsSlovak() = getItemsResponse(AdConfigDataType.Slovak)
+
+    @GetMapping("/sk-staging")
+    fun getAdConfigsSlovakStaging() = getItemsResponse(AdConfigDataType.SlovakStaging)
+
     @PostMapping("/en")
     fun addAdConfigEnglish(@RequestBody adConfig: AdConfig) = addItemResponse(adConfig, AdConfigDataType.English)
 
@@ -33,4 +39,10 @@ class AdConfigController(repository: BaseConfigRepository<AdConfig>) : BaseConfi
 
     @PostMapping("/hr-staging")
     fun addAdConfigsCroatianStaging(@RequestBody adConfig: AdConfig) = addItemResponse(adConfig, AdConfigDataType.CroatianStaging)
+
+    @PostMapping("/sk")
+    fun addAdConfigsSlovak(@RequestBody adConfig: AdConfig) = addItemResponse(adConfig, AdConfigDataType.Slovak)
+
+    @PostMapping("/sk-staging")
+    fun addAdConfigsSlovakStaging(@RequestBody adConfig: AdConfig) = addItemResponse(adConfig, AdConfigDataType.SlovakStaging)
 }

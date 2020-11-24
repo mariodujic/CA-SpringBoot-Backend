@@ -15,16 +15,22 @@ class SaintsContentController(
 ) : BaseContentController<Saint>(contentRepository, contentValidator) {
 
     @GetMapping("/en")
-    fun getSaintssEnglish() = getItemsResponse(SaintsDataType.English)
+    fun getSaintsEnglish() = getItemsResponse(SaintsDataType.English)
 
     @GetMapping("/en-staging")
-    fun getSaintssEnglishStaging() = getItemsResponse(SaintsDataType.EnglishStaging)
+    fun getSaintsEnglishStaging() = getItemsResponse(SaintsDataType.EnglishStaging)
 
     @GetMapping("/hr")
-    fun getSaintssCroatian() = getItemsResponse(SaintsDataType.Croatian)
+    fun getSaintsCroatian() = getItemsResponse(SaintsDataType.Croatian)
 
     @GetMapping("/hr-staging")
-    fun getSaintssCroatianStaging() = getItemsResponse(SaintsDataType.CroatianStaging)
+    fun getSaintsCroatianStaging() = getItemsResponse(SaintsDataType.CroatianStaging)
+
+    @GetMapping("/sk")
+    fun getSaintsSlovak() = getItemsResponse(SaintsDataType.Slovak)
+
+    @GetMapping("/sk-staging")
+    fun getSaintsSlovakStaging() = getItemsResponse(SaintsDataType.SlovakStaging)
 
     @DeleteMapping("/en")
     fun removeSaintsEnglish(@RequestBody saint: Saint) = removeItemResponse(saint, SaintsDataType.English)
@@ -38,6 +44,12 @@ class SaintsContentController(
     @DeleteMapping("/hr-staging")
     fun removeSaintsCroatianStaging(@RequestBody saint: Saint) = removeItemResponse(saint, SaintsDataType.CroatianStaging)
 
+    @DeleteMapping("/sk")
+    fun removeSaintsSlovak(@RequestBody saint: Saint) = removeItemResponse(saint, SaintsDataType.Slovak)
+
+    @DeleteMapping("/sk-staging")
+    fun removeSaintsSlovakStaging(@RequestBody saint: Saint) = removeItemResponse(saint, SaintsDataType.SlovakStaging)
+
     @PostMapping("/en")
     fun addSaintsEnglish(@RequestBody saint: Saint) = addItemResponse(saint, SaintsDataType.English)
 
@@ -49,4 +61,10 @@ class SaintsContentController(
 
     @PostMapping("/hr-staging")
     fun addSaintsCroatianStaging(@RequestBody saint: Saint) = addItemResponse(saint, SaintsDataType.CroatianStaging)
+
+    @PostMapping("/sk")
+    fun addSaintsSlovak(@RequestBody saint: Saint) = addItemResponse(saint, SaintsDataType.Slovak)
+
+    @PostMapping("/sk-staging")
+    fun addSaintsSlovakStaging(@RequestBody saint: Saint) = addItemResponse(saint, SaintsDataType.SlovakStaging)
 }

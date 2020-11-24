@@ -28,6 +28,12 @@ class UserReportController(
     @GetMapping("/hr-staging")
     fun getUserReportCroatianStaging() = getItemsResponse(UserReportDataType.CroatianStaging)
 
+    @GetMapping("/sk")
+    fun getUserReportSlovak() = getItemsResponse(UserReportDataType.Slovak)
+
+    @GetMapping("/sk-staging")
+    fun getUserReportSlovakStaging() = getItemsResponse(UserReportDataType.SlovakStaging)
+
     @DeleteMapping("/en")
     fun removeUserReportEnglish(@RequestBody report: UserReport) = removeItemResponse(report, UserReportDataType.English)
 
@@ -40,6 +46,12 @@ class UserReportController(
     @DeleteMapping("/hr-staging")
     fun removeUserReportCroatianStaging(@RequestBody userReport: UserReport) = removeItemResponse(userReport, UserReportDataType.CroatianStaging)
 
+    @DeleteMapping("/sk")
+    fun removeUserReportSlovak(@RequestBody userReport: UserReport) = removeItemResponse(userReport, UserReportDataType.Slovak)
+
+    @DeleteMapping("/sk-staging")
+    fun removeUserReportSlovakStaging(@RequestBody userReport: UserReport) = removeItemResponse(userReport, UserReportDataType.SlovakStaging)
+
     @PostMapping("/en")
     fun addUserReportEnglish(@RequestBody userReport: UserReport) = addItemResponse(userReport, UserReportDataType.English)
 
@@ -51,4 +63,10 @@ class UserReportController(
 
     @PostMapping("/hr-staging")
     fun addUserReportCroatianStaging(@RequestBody userReport: UserReport) = addItemResponse(userReport, UserReportDataType.CroatianStaging)
+
+    @PostMapping("/sk")
+    fun addUserReportSlovak(@RequestBody userReport: UserReport) = addItemResponse(userReport, UserReportDataType.Slovak)
+
+    @PostMapping("/sk-staging")
+    fun addUserReportSlovakStaging(@RequestBody userReport: UserReport) = addItemResponse(userReport, UserReportDataType.SlovakStaging)
 }

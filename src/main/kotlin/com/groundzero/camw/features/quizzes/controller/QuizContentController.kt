@@ -26,6 +26,12 @@ class QuizContentController(
     @GetMapping("/hr-staging")
     fun getQuizCategoriesCroatianStaging() = getItemsResponse(QuizDataType.CroatianStaging)
 
+    @GetMapping("/sk")
+    fun getQuizCategoriesSlovak() = getItemsResponse(QuizDataType.Slovak)
+
+    @GetMapping("/sk-staging")
+    fun getQuizCategoriesSlovakStaging() = getItemsResponse(QuizDataType.SlovakStaging)
+
     @DeleteMapping("/en")
     fun removeQuizCategoryEnglish(@RequestBody quizCategory: QuizCategory) = removeItemResponse(quizCategory, QuizDataType.English)
 
@@ -38,6 +44,12 @@ class QuizContentController(
     @DeleteMapping("/hr-staging")
     fun removeQuizCategoryCroatianStaging(@RequestBody quizCategory: QuizCategory) = removeItemResponse(quizCategory, QuizDataType.CroatianStaging)
 
+    @DeleteMapping("/sk")
+    fun removeQuizCategorySlovak(@RequestBody quizCategory: QuizCategory) = removeItemResponse(quizCategory, QuizDataType.Slovak)
+
+    @DeleteMapping("/sk-staging")
+    fun removeQuizCategorySlovakStaging(@RequestBody quizCategory: QuizCategory) = removeItemResponse(quizCategory, QuizDataType.SlovakStaging)
+
     @PostMapping("/en")
     fun addQuizCategoryEnglish(@RequestBody quizCategory: QuizCategory) = addItemResponse(quizCategory, QuizDataType.English)
 
@@ -49,4 +61,10 @@ class QuizContentController(
 
     @PostMapping("/hr-staging")
     fun addQuizCategoryCroatianStaging(@RequestBody quizCategory: QuizCategory) = addItemResponse(quizCategory, QuizDataType.CroatianStaging)
+
+    @PostMapping("/sk")
+    fun addQuizCategorySlovak(@RequestBody quizCategory: QuizCategory) = addItemResponse(quizCategory, QuizDataType.Slovak)
+
+    @PostMapping("/sk-staging")
+    fun addQuizCategorySlovakStaging(@RequestBody quizCategory: QuizCategory) = addItemResponse(quizCategory, QuizDataType.SlovakStaging)
 }
