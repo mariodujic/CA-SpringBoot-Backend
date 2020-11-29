@@ -1,20 +1,27 @@
 package com.groundzero.camw.core
 
+import com.groundzero.camw.core.network.NetworkResponse
+import com.groundzero.camw.core.network.WriteHttpServletResponse
 import com.groundzero.camw.core.security.SecretAuthenticationFilter
+import com.groundzero.camw.utils.INVALID_SECRET
+import com.groundzero.camw.utils.code
 import org.junit.jupiter.api.Test
-import org.junit.jupiter.api.assertThrows
 import org.junit.jupiter.api.extension.ExtendWith
 import org.mockito.InjectMocks
 import org.mockito.Mock
 import org.mockito.Mockito.`when`
 import org.mockito.Mockito.verify
 import org.mockito.junit.jupiter.MockitoExtension
+import org.springframework.http.HttpStatus
 import javax.servlet.FilterChain
 import javax.servlet.http.HttpServletRequest
 import javax.servlet.http.HttpServletResponse
 
 @ExtendWith(MockitoExtension::class)
 class SecretAuthenticationFilterTest {
+
+    @Mock
+    private lateinit var writeResponse: WriteHttpServletResponse
 
     @Mock
     private lateinit var httpServletRequest: HttpServletRequest
@@ -36,11 +43,11 @@ class SecretAuthenticationFilterTest {
     }
 
     @Test()
-    fun `should throw SecurityException if secret is invalid`() {
-        assertThrows<SecurityException> {
-            `when`(httpServletRequest.getHeader(AUTHENTICATION_KEY)).thenReturn(INVALID_AUTHENTICATION_SECRET)
-            sut.doFilter(httpServletRequest, httpServletResponse, filterChain)
-        }
+    fun `should invoke writeResponse once with network response error when secret is invalid`() {
+        `when`(httpServletRequest.getHeader(AUTHENTICATION_KEY)).thenReturn(INVALID_AUTHENTICATION_SECRET)
+        sut.doFilter(httpServletRequest, httpServletResponse, filterChain)
+        val expectedResponse = NetworkResponse.Error(code(HttpStatus.UNAUTHORIZED), INVALID_SECRET)
+        verify(writeResponse).run { httpServletResponse(expectedResponse) }
     }
 
     private companion object {
