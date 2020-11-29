@@ -5,6 +5,7 @@ import com.groundzero.camw.core.network.WriteHttpServletResponse
 import com.groundzero.camw.features.authentication.AuthenticationService
 import com.groundzero.camw.utils.INVALID_UID
 import com.groundzero.camw.utils.code
+import org.springframework.http.HttpMethod
 import org.springframework.http.HttpStatus
 import org.springframework.stereotype.Component
 import org.springframework.web.filter.OncePerRequestFilter
@@ -36,12 +37,12 @@ class UidAuthenticationFilter(
         return authenticationService.authenticateUser(uidValue)
     }
 
-    private fun getRequest(requestMethod: String) = requestMethod == "GET"
+    private fun getRequest(requestMethod: String) = requestMethod == HttpMethod.GET.name
     private fun postUserReportRequest(request: HttpServletRequest) =
-        request.method == "POST" && request.servletPath.contains(USER_REPORT_PATH)
+        request.method == HttpMethod.POST.name && request.servletPath.contains(USER_REPORT_PATH)
 
     companion object {
-        private const val UID_KEY = "CA-Uid"
-        private const val USER_REPORT_PATH = "/user-report"
+        const val UID_KEY = "CA-Uid"
+        const val USER_REPORT_PATH = "/user-report"
     }
 }
