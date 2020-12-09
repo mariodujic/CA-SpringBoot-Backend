@@ -2,6 +2,7 @@ package com.groundzero.camw
 
 import com.groundzero.camw.core.base.BaseContentRepository
 import com.groundzero.camw.core.base.BaseContentValidator
+import com.groundzero.camw.core.base.BaseContentValidatorImpl
 import com.groundzero.camw.features.prayers.constants.PrayerDataType
 import com.groundzero.camw.features.prayers.controller.PrayersContentController
 import com.groundzero.camw.features.prayers.data.Prayer
@@ -10,7 +11,6 @@ import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith
 import org.mockito.BDDMockito.`when`
-import org.mockito.InjectMocks
 import org.mockito.Mock
 import org.mockito.junit.jupiter.MockitoExtension
 import org.springframework.http.MediaType
@@ -22,19 +22,17 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders
 @ExtendWith(MockitoExtension::class)
 class PrayersControllerTest {
 
-    private lateinit var mvc: MockMvc
-
     @Mock
     private lateinit var contentRepository: BaseContentRepository<Prayer>
 
-    @Mock
+    private lateinit var mvc: MockMvc
     private lateinit var contentValidator: BaseContentValidator
-
-    @InjectMocks
     private lateinit var prayersController: PrayersContentController
 
     @BeforeEach
     fun setUp() {
+        contentValidator = BaseContentValidatorImpl()
+        prayersController = PrayersContentController(contentRepository, contentValidator)
         mvc = MockMvcBuilders.standaloneSetup(prayersController)
                 .build()
     }

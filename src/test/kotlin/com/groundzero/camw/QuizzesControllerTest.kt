@@ -2,6 +2,7 @@ package com.groundzero.camw
 
 import com.groundzero.camw.core.base.BaseContentRepository
 import com.groundzero.camw.core.base.BaseContentValidator
+import com.groundzero.camw.core.base.BaseContentValidatorImpl
 import com.groundzero.camw.features.quizzes.constants.QuizDataType
 import com.groundzero.camw.features.quizzes.controller.QuizContentController
 import com.groundzero.camw.features.quizzes.data.QuizCategory
@@ -10,7 +11,6 @@ import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith
 import org.mockito.BDDMockito.`when`
-import org.mockito.InjectMocks
 import org.mockito.Mock
 import org.mockito.junit.jupiter.MockitoExtension
 import org.springframework.http.MediaType
@@ -22,19 +22,17 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders
 @ExtendWith(MockitoExtension::class)
 class QuizzesControllerTest {
 
-    private lateinit var mvc: MockMvc
-
     @Mock
     private lateinit var contentRepository: BaseContentRepository<QuizCategory>
 
-    @Mock
+    private lateinit var mvc: MockMvc
     private lateinit var contentValidator: BaseContentValidator
-
-    @InjectMocks
     private lateinit var quizController: QuizContentController
 
     @BeforeEach
     fun setUp() {
+        contentValidator = BaseContentValidatorImpl()
+        quizController = QuizContentController(contentRepository, contentValidator)
         mvc = MockMvcBuilders.standaloneSetup(quizController).build()
     }
 

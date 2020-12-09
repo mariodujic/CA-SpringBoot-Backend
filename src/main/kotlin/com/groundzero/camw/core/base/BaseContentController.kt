@@ -3,6 +3,7 @@ package com.groundzero.camw.core.base
 import com.groundzero.camw.core.data.DataType
 import com.groundzero.camw.core.data.NetworkModel
 import com.groundzero.camw.core.network.NetworkResponse
+import com.groundzero.camw.utils.NO_DATA_AVAILABLE
 import com.groundzero.camw.utils.code
 import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.RequestBody
@@ -14,7 +15,11 @@ open class BaseContentController<T : NetworkModel>(
 
     fun getItemsResponse(type: DataType): NetworkResponse {
         baseContentRepository.getItems(type)?.let {
-            return NetworkResponse.Success(code(HttpStatus.OK), "Success", it)
+            return if (baseContentValidator.hasItems(it)) {
+                NetworkResponse.Success(code(HttpStatus.OK), "Success", it)
+            } else {
+                NetworkResponse.Error(code(HttpStatus.NOT_FOUND), NO_DATA_AVAILABLE)
+            }
         }
         return NetworkResponse.Error(code(HttpStatus.NOT_FOUND), "Error")
     }

@@ -51,6 +51,7 @@ class BaseContentControllerTest {
 
     @Test
     fun `should assert equals when getItems is success`() {
+        `when`(baseContentValidator.hasItems(MOCK_DATA_LIST)).thenReturn(true)
         `when`(baseContentRepository.getItems(MOCK_DATA_TYPE)).thenReturn(MOCK_DATA_LIST)
         val expectedValue = mockSuccessResponse(MOCK_DATA_LIST)
         val actualValue = sut.getItemsResponse(MOCK_DATA_TYPE)
@@ -106,7 +107,7 @@ class BaseContentControllerTest {
         val MOCK_DATA_TYPE = InformationBlockDataType.Croatian
         val MOCK_DATA = InformationBlock(itemId = MOCK_ITEM_ID)
         fun mockSuccessResponse(data: List<InformationBlock>) = NetworkResponse.Success(code(HttpStatus.OK), "Success", data)
-        val MOCK_DATA_LIST = listOf<InformationBlock>()
+        val MOCK_DATA_LIST = listOf(InformationBlock())
         fun mockErrorResponse() = NetworkResponse.Error(code(HttpStatus.NOT_FOUND), "Error")
     }
 }
