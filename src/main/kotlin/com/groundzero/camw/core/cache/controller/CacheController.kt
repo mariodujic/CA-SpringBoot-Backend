@@ -15,5 +15,6 @@ class CacheController(private val cacheService: CacheService) : CommandLineRunne
         cacheService.updateInformation()
         cacheService.updateAdConfig()
         cacheService.updateUserReports()
+        cacheService.updateChatRooms()
     }
 }

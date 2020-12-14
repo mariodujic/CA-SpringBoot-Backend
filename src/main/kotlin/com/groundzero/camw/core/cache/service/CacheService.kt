@@ -8,4 +8,5 @@ interface CacheService {
     fun updateInformation()
     fun updateAdConfig()
     fun updateUserReports()
+    fun updateChatRooms()
 }

@@ -5,6 +5,7 @@ import com.groundzero.camw.core.service.WriteJsonService
 import com.groundzero.camw.features.adconfig.constants.*
 import com.groundzero.camw.features.adconfig.data.AdConfig
 import com.groundzero.camw.features.adconfig.data.DataSnapshotToAdConfigMapper
+import com.groundzero.camw.features.chat.data.*
 import com.groundzero.camw.features.information.constants.*
 import com.groundzero.camw.features.information.data.DataSnapshotToInformationBlockListMapper
 import com.groundzero.camw.features.information.data.InformationBlock
@@ -93,6 +94,16 @@ class CacheServiceImpl(
         updateDataFromFirestore<UserReport>(USER_REPORT_EN_COLLECTION_STAGING)
         updateDataFromFirestore<UserReport>(USER_REPORT_HR_COLLECTION_STAGING)
         updateDataFromFirestore<UserReport>(USER_REPORT_SK_COLLECTION_STAGING)
+    }
+
+
+    override fun updateChatRooms() {
+        updateDataFromFirestore<ChatRoom>(CHAT_ROOM_EN_COLLECTION)
+        updateDataFromFirestore<ChatRoom>(CHAT_ROOM_HR_COLLECTION)
+        updateDataFromFirestore<ChatRoom>(CHAT_ROOM_SK_COLLECTION)
+        updateDataFromFirestore<ChatRoom>(CHAT_ROOM_EN_COLLECTION_STAGING)
+        updateDataFromFirestore<ChatRoom>(CHAT_ROOM_HR_COLLECTION_STAGING)
+        updateDataFromFirestore<ChatRoom>(CHAT_ROOM_SK_COLLECTION_STAGING)
     }
 
     private inline fun <reified T> updateDataFromFirestore(collectionKey: String) {
