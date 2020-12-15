@@ -2,6 +2,7 @@ package com.groundzero.camw.core.security
 
 import com.groundzero.camw.core.network.NetworkResponse
 import com.groundzero.camw.core.network.WriteHttpServletResponse
+import com.groundzero.camw.features.chat.configurer.ChatRoomWebSocketConfigurer.Companion.CHAT_ROOM_END_POINT
 import com.groundzero.camw.features.serverstatus.ServerStatusSocketConfigurer.Companion.SERVER_STATUS_END_POINT
 import com.groundzero.camw.utils.INVALID_SECRET
 import com.groundzero.camw.utils.code
@@ -29,7 +30,9 @@ class SecretAuthenticationFilter(
         }
     }
 
-    private fun allowedEndPoint(request: HttpServletRequest) = request.servletPath == SERVER_STATUS_END_POINT
+    private fun allowedEndPoint(request: HttpServletRequest) =
+        request.servletPath == SERVER_STATUS_END_POINT || request.servletPath.contains(CHAT_ROOM_END_POINT)
+
     private fun validSecret(request: HttpServletRequest) =
         AUTHENTICATION_SECRET == request.getHeader(AUTHENTICATION_KEY)
 
