@@ -1,32 +1,52 @@
 package com.groundzero.camw.features.chat.controller
 
-import com.groundzero.camw.core.base.BaseConfigController
+import com.groundzero.camw.core.base.BaseContentController
+import com.groundzero.camw.core.base.BaseContentValidator
 import com.groundzero.camw.features.chat.data.ChatRoom
 import com.groundzero.camw.features.chat.data.ChatRoomDataType
 import com.groundzero.camw.features.chat.data.ChatRoomsRepository
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RestController
+import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping("/chat-rooms")
-class ChatRoomsController(repository: ChatRoomsRepository) : BaseConfigController<List<ChatRoom>>(repository) {
+class ChatRoomsController(
+        repository: ChatRoomsRepository,
+        contentValidator: BaseContentValidator
+) : BaseContentController<ChatRoom>(repository, contentValidator) {
 
     @GetMapping("/en")
-    fun getAdConfigEnglish() = getItemsResponse(ChatRoomDataType.English)
+    fun getChatRoomsEnglish() = getItemsResponse(ChatRoomDataType.English)
 
     @GetMapping("/en-staging")
-    fun getAdConfigEnglishStaging() = getItemsResponse(ChatRoomDataType.EnglishStaging)
+    fun getChatRoomsEnglishStaging() = getItemsResponse(ChatRoomDataType.EnglishStaging)
 
     @GetMapping("/hr")
-    fun getAdConfigsCroatian() = getItemsResponse(ChatRoomDataType.Croatian)
+    fun getChatRoomssCroatian() = getItemsResponse(ChatRoomDataType.Croatian)
 
     @GetMapping("/hr-staging")
-    fun getAdConfigsCroatianStaging() = getItemsResponse(ChatRoomDataType.CroatianStaging)
+    fun getChatRoomssCroatianStaging() = getItemsResponse(ChatRoomDataType.CroatianStaging)
 
     @GetMapping("/sk")
-    fun getAdConfigsSlovak() = getItemsResponse(ChatRoomDataType.Slovak)
+    fun getChatRoomssSlovak() = getItemsResponse(ChatRoomDataType.Slovak)
 
     @GetMapping("/sk-staging")
-    fun getAdConfigsSlovakStaging() = getItemsResponse(ChatRoomDataType.SlovakStaging)
+    fun getChatRoomssSlovakStaging() = getItemsResponse(ChatRoomDataType.SlovakStaging)
+
+    @PostMapping("/en")
+    fun postChatRoomEnglish(@RequestBody chatRoom: ChatRoom) = addItemResponse(chatRoom, ChatRoomDataType.English)
+
+    @PostMapping("/en-staging")
+    fun postChatRoomEnglishStaging(@RequestBody chatRoom: ChatRoom) = addItemResponse(chatRoom, ChatRoomDataType.EnglishStaging)
+
+    @PostMapping("/hr")
+    fun postChatRoomCroatian(@RequestBody chatRoom: ChatRoom) = addItemResponse(chatRoom, ChatRoomDataType.Croatian)
+
+    @PostMapping("/hr-staging")
+    fun postChatRoomCroatianStaging(@RequestBody chatRoom: ChatRoom) = addItemResponse(chatRoom, ChatRoomDataType.CroatianStaging)
+
+    @PostMapping("/sk")
+    fun postChatRoomSlovak(@RequestBody chatRoom: ChatRoom) = addItemResponse(chatRoom, ChatRoomDataType.Slovak)
+
+    @PostMapping("/sk-staging")
+    fun postChatRoomSlovakStaging(@RequestBody chatRoom: ChatRoom) = addItemResponse(chatRoom, ChatRoomDataType.SlovakStaging)
 }
