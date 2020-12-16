@@ -1,4 +1,4 @@
-package com.groundzero.camw.features.chat.data
+package com.groundzero.camw.features.chat.chatroomlist.data
 
 import com.groundzero.camw.core.data.NetworkModel
 

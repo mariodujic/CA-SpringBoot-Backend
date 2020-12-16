@@ -1,4 +1,4 @@
-package com.groundzero.camw.features.chat.data
+package com.groundzero.camw.features.chat.chatroomlist.data
 
 const val CHAT_ROOM_EN_COLLECTION = "en-chat-rooms"
 const val CHAT_ROOM_HR_COLLECTION = "hr-chat-rooms"

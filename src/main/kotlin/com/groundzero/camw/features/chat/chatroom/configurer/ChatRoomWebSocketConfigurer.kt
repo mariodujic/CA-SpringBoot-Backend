@@ -1,4 +1,4 @@
-package com.groundzero.camw.features.chat.configurer
+package com.groundzero.camw.features.chat.chatroom.configurer
 
 import org.springframework.context.annotation.Configuration
 import org.springframework.messaging.simp.config.MessageBrokerRegistry

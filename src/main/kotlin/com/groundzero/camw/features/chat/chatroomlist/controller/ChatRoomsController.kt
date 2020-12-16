@@ -1,10 +1,10 @@
-package com.groundzero.camw.features.chat.controller
+package com.groundzero.camw.features.chat.chatroomlist.controller
 
 import com.groundzero.camw.core.base.BaseContentController
 import com.groundzero.camw.core.base.BaseContentValidator
-import com.groundzero.camw.features.chat.data.ChatRoom
-import com.groundzero.camw.features.chat.data.ChatRoomDataType
-import com.groundzero.camw.features.chat.data.ChatRoomsRepository
+import com.groundzero.camw.features.chat.chatroomlist.data.ChatRoom
+import com.groundzero.camw.features.chat.chatroomlist.data.ChatRoomDataType
+import com.groundzero.camw.features.chat.chatroomlist.data.ChatRoomsRepository
 import org.springframework.web.bind.annotation.*
 
 @RestController

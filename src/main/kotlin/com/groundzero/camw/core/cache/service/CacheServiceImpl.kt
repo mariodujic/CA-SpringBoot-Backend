@@ -5,7 +5,7 @@ import com.groundzero.camw.core.service.WriteJsonService
 import com.groundzero.camw.features.adconfig.constants.*
 import com.groundzero.camw.features.adconfig.data.AdConfig
 import com.groundzero.camw.features.adconfig.data.DataSnapshotToAdConfigMapper
-import com.groundzero.camw.features.chat.data.*
+import com.groundzero.camw.features.chat.chatroomlist.data.*
 import com.groundzero.camw.features.information.constants.*
 import com.groundzero.camw.features.information.data.DataSnapshotToInformationBlockListMapper
 import com.groundzero.camw.features.information.data.InformationBlock

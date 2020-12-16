@@ -2,7 +2,7 @@ package com.groundzero.camw.core.security
 
 import com.groundzero.camw.core.network.NetworkResponse
 import com.groundzero.camw.core.network.WriteHttpServletResponse
-import com.groundzero.camw.features.chat.configurer.ChatRoomWebSocketConfigurer.Companion.CHAT_ROOM_END_POINT
+import com.groundzero.camw.features.chat.chatroom.configurer.ChatRoomWebSocketConfigurer.Companion.CHAT_ROOM_END_POINT
 import com.groundzero.camw.features.serverstatus.ServerStatusSocketConfigurer.Companion.SERVER_STATUS_END_POINT
 import com.groundzero.camw.utils.INVALID_SECRET
 import com.groundzero.camw.utils.code
