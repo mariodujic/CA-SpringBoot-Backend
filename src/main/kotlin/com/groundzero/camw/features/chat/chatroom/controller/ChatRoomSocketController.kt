@@ -16,5 +16,5 @@ class ChatRoomSocketController(private val chatRoomService: ChatRoomService) {
     fun echoRoomMessage(
         @DestinationVariable(value = "itemId") destination: String,
         messageRequest: ChatRoomMessageRequest
-    ): MutableList<ChatRoomMessageResponse>? = chatRoomService.getRoomMessages(destination, messageRequest)
+    ): MutableList<ChatRoomMessageResponse>? = chatRoomService.getMessagesPerRoomId(destination, messageRequest)
 }
