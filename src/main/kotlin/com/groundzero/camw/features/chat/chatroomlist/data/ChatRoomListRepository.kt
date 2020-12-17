@@ -9,7 +9,7 @@ import com.groundzero.camw.utils.isSubclassOf
 import org.springframework.stereotype.Component
 
 @Component
-class ChatRoomsRepository(
+class ChatRoomListRepository(
         private val readJson: ReadJsonService,
         private val writeJson: WriteJsonService,
         private val mapper: ItemMapper<ChatRoom>

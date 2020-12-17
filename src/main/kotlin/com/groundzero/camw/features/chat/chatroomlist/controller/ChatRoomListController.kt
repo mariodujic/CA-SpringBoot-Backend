@@ -4,13 +4,13 @@ import com.groundzero.camw.core.base.BaseContentController
 import com.groundzero.camw.core.base.BaseContentValidator
 import com.groundzero.camw.features.chat.chatroomlist.data.ChatRoom
 import com.groundzero.camw.features.chat.chatroomlist.data.ChatRoomDataType
-import com.groundzero.camw.features.chat.chatroomlist.data.ChatRoomsRepository
+import com.groundzero.camw.features.chat.chatroomlist.data.ChatRoomListRepository
 import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping("/chat-rooms")
-class ChatRoomsController(
-        repository: ChatRoomsRepository,
+class ChatRoomListController(
+        repository: ChatRoomListRepository,
         contentValidator: BaseContentValidator
 ) : BaseContentController<ChatRoom>(repository, contentValidator) {
 
