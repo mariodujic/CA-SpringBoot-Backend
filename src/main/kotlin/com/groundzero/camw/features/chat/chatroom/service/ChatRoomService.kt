@@ -1,11 +1,12 @@
 package com.groundzero.camw.features.chat.chatroom.service
 
-import com.groundzero.camw.features.chat.chatroom.data.ChatRoomTempStorage
+import com.groundzero.camw.features.chat.chatroom.data.ChatRoomMessagesRepository
 import com.groundzero.camw.features.chat.chatroom.network.ChatRoomMessageRequest
-import org.springframework.stereotype.Component
+import org.springframework.stereotype.Service
 
-@Component
-class ChatRoomService(private val storage: ChatRoomTempStorage) {
+@Service
+class ChatRoomService(private val chatRoomMessagesRepository: ChatRoomMessagesRepository) {
+
     fun getMessagesPerRoomId(roomId: String, messageRequest: ChatRoomMessageRequest) =
-        storage.getMessagesPerRoomId(roomId, messageRequest)
+        chatRoomMessagesRepository.getMessagesPerRoomId(roomId, messageRequest)
 }

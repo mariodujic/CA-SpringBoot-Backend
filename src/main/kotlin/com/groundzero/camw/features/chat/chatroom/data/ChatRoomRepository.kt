@@ -6,17 +6,23 @@ import com.groundzero.camw.features.chat.chatroom.network.ChatRoomMessageRespons
 import org.springframework.stereotype.Component
 
 @Component
-class ChatRoomTempStorage(private val mapper: Mapper<ChatRoomMessageRequest, ChatRoomMessageResponse>) {
+class ChatRoomRepository(
+    private val mapper: Mapper<ChatRoomMessageRequest, ChatRoomMessageResponse>
+) : ChatRoomPersistenceRepository, ChatRoomMessagesRepository {
 
-    private val roomMessagesMap = mutableMapOf<String, MutableList<ChatRoomMessageResponse>>()
+    private var roomMessagesMap = mutableMapOf<String, MutableList<ChatRoomMessageResponse>>()
 
-    fun getMessagesPerRoomId(roomId: String, messageRequest: ChatRoomMessageRequest): MutableList<ChatRoomMessageResponse>? {
+    // TODO decouple logic from this repository function
+    override fun getMessagesPerRoomId(
+        roomId: String,
+        request: ChatRoomMessageRequest
+    ): MutableList<ChatRoomMessageResponse>? {
 
-        val responseMessage = mapper.map(messageRequest)
+        val responseMessage = mapper.map(request)
 
         val messages: MutableList<ChatRoomMessageResponse>
 
-        if (!messageRequest.showMessage) {
+        if (!request.showMessage) {
             return if (roomMessagesMap.containsKey(roomId)) {
                 roomMessagesMap[roomId]
             } else mutableListOf()
@@ -31,5 +37,10 @@ class ChatRoomTempStorage(private val mapper: Mapper<ChatRoomMessageRequest, Cha
         roomMessagesMap[roomId] = messages
 
         return roomMessagesMap[roomId]
+    }
+
+    override fun retrieveMessagesFromMemory() = roomMessagesMap
+    override fun retrieveMessagesFromJsonStorage(retrievedRoomMessagesMap: Map<String, MutableList<ChatRoomMessageResponse>>) {
+        roomMessagesMap.putAll(retrievedRoomMessagesMap)
     }
 }
