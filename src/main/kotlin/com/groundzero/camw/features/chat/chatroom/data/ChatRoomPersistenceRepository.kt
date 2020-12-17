@@ -4,5 +4,5 @@ import com.groundzero.camw.features.chat.chatroom.network.ChatRoomMessageRespons
 
 interface ChatRoomPersistenceRepository {
     fun retrieveMessagesFromMemory(): MutableMap<String, MutableList<ChatRoomMessageResponse>>
-    fun retrieveMessagesFromJsonStorage(retrievedRoomMessagesMap: Map<String, MutableList<ChatRoomMessageResponse>>)
+    fun retrieveMessagesFromJsonStorage()
 }

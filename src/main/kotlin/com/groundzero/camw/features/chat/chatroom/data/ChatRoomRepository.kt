@@ -1,12 +1,15 @@
 package com.groundzero.camw.features.chat.chatroom.data
 
 import com.groundzero.camw.core.data.Mapper
+import com.groundzero.camw.core.service.ReadJsonService
 import com.groundzero.camw.features.chat.chatroom.network.ChatRoomMessageRequest
 import com.groundzero.camw.features.chat.chatroom.network.ChatRoomMessageResponse
+import com.groundzero.camw.features.chat.chatroom.service.ChatRoomPeriodicCacheService
 import org.springframework.stereotype.Component
 
 @Component
 class ChatRoomRepository(
+    private val readJsonService: ReadJsonService,
     private val mapper: Mapper<ChatRoomMessageRequest, ChatRoomMessageResponse>
 ) : ChatRoomPersistenceRepository, ChatRoomMessagesRepository {
 
@@ -40,7 +43,9 @@ class ChatRoomRepository(
     }
 
     override fun retrieveMessagesFromMemory() = roomMessagesMap
-    override fun retrieveMessagesFromJsonStorage(retrievedRoomMessagesMap: Map<String, MutableList<ChatRoomMessageResponse>>) {
-        roomMessagesMap.putAll(retrievedRoomMessagesMap)
+    override fun retrieveMessagesFromJsonStorage() {
+        val jsonStoredMessages =
+            readJsonService.read<Map<String, MutableList<ChatRoomMessageResponse>>>(ChatRoomPeriodicCacheService.CACHED_MESSAGES_FILE_NAME)
+        jsonStoredMessages?.let { roomMessagesMap.putAll(it) }
     }
 }
