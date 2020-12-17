@@ -17,7 +17,9 @@ class ChatRoomTempStorage(private val mapper: Mapper<ChatRoomMessageRequest, Cha
         val messages: MutableList<ChatRoomMessageResponse>
 
         if (!messageRequest.showMessage) {
-            return roomMessagesMap[roomId]
+            return if (roomMessagesMap.containsKey(roomId)) {
+                roomMessagesMap[roomId]
+            } else mutableListOf()
         }
         if (roomMessagesMap.containsKey(roomId)) {
             messages = roomMessagesMap[roomId]!!
