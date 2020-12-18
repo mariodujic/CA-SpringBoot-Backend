@@ -18,11 +18,10 @@ class ChatRoomMemoryStorageService(private val mapper: Mapper<ChatRoomMessageReq
         if (!request.showMessage) {
             return
         }
-        if (roomMessagesMap.containsKey(roomId)) {
-            messages = roomMessagesMap[roomId]!!
-            messages.toMutableList().add(responseMessage)
+        messages = if (roomMessagesMap.containsKey(roomId)) {
+            roomMessagesMap[roomId]!!.toMutableList().apply { add(responseMessage) }
         } else {
-            messages = mutableListOf(responseMessage)
+            mutableListOf(responseMessage)
         }
 
         roomMessagesMap[roomId] = messages
