@@ -10,19 +10,21 @@ import org.springframework.stereotype.Service
 
 @Service
 class ChatRoomPeriodicCacheService(
-    private val persistenceRepository: ChatRoomPersistenceRepository,
-    private val writeJsonService: WriteJsonService,
-    private val chatRoomPersistenceRepository: ChatRoomPersistenceRepository
+    private val chatRoomPersistenceRepository: ChatRoomPersistenceRepository,
+    private val writeJsonService: WriteJsonService
 ) {
 
-    fun retrieveMessagesFromJsonFileAndLoadIntoMemory() =
-        chatRoomPersistenceRepository.retrieveMessagesFromJsonStorage()
+    fun retrieveAllMessagesFromJsonStorage() {
+        chatRoomPersistenceRepository.retrieveAllMessagesFromJsonStorage().let {
+            chatRoomPersistenceRepository.setMessagesFromJsonStorageToMemory(it)
+        }
+    }
 
     fun storeMessagesFromMemoryToJsonFilePeriodically() {
         CoroutineScope(Dispatchers.IO).launch {
             while (true) {
                 delay(TIME_TILL_NEXT_CACHE_IN_MILLIS)
-                writeJsonService.write(CACHED_MESSAGES_FILE_NAME, persistenceRepository.retrieveMessagesFromMemory())
+                writeJsonService.write(CACHED_MESSAGES_FILE_NAME, chatRoomPersistenceRepository.retrieveAllMessagesFromMemory())
             }
         }
     }

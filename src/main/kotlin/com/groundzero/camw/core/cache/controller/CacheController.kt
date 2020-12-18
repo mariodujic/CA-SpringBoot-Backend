@@ -23,7 +23,7 @@ class CacheController(
         /**
          * On server start, messages are retrieved from database json file and injected into memory for runtime usage.
          */
-        chatRoomPeriodicCacheService.retrieveMessagesFromJsonFileAndLoadIntoMemory()
+        chatRoomPeriodicCacheService.retrieveAllMessagesFromJsonStorage()
         /**
          * Storing messages periodically to keep them persistent when server goes offline.
          */

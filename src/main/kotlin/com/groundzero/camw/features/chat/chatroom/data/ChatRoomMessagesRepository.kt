@@ -4,5 +4,6 @@ import com.groundzero.camw.features.chat.chatroom.network.ChatRoomMessageRequest
 import com.groundzero.camw.features.chat.chatroom.network.ChatRoomMessageResponse
 
 interface ChatRoomMessagesRepository {
-    fun getMessagesPerRoomId(roomId: String, request: ChatRoomMessageRequest): MutableList<ChatRoomMessageResponse>?
+    fun insertMessage(roomId: String, request: ChatRoomMessageRequest)
+    fun getMessagesPerRoomIdFromMemory(roomId: String): List<ChatRoomMessageResponse>
 }
