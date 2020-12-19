@@ -16,13 +16,12 @@ class ChatRoomMemoryStorageService(
     fun storeMessage(roomId: String, request: ChatRoomMessageRequest) {
 
         val responseMessage = mapper.map(request)
-        val messages: List<ChatRoomMessageResponse>
 
         if (!request.showMessage) {
             return
         }
 
-        messages = roomMessagesMap[roomId]?.let {
+        val messages: List<ChatRoomMessageResponse> = roomMessagesMap[roomId]?.let {
             maxMessagesRestrictionService(it).apply { add(responseMessage) }
         } ?: mutableListOf(responseMessage)
 

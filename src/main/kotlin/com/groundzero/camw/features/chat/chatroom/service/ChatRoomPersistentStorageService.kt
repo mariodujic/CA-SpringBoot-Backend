@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service
 class ChatRoomPersistentStorageService(private val realtimeDatabaseService: RealtimeDatabaseService) {
 
     @Value("\${messages.database.collection.path}")
-    lateinit var collectionPath: String
+    private lateinit var collectionPath: String
 
     suspend fun getMessagesFromPersistentStorage(): DataSnapshot =
         realtimeDatabaseService.getData(collectionPath).getSnapshotValue()
