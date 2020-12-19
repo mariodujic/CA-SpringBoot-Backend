@@ -9,5 +9,5 @@ class ChatRoomMessagesService(private val chatRoomMessagesRepository: ChatRoomMe
 
     fun getMessagesPerRoomId(roomId: String) = chatRoomMessagesRepository.getMessagesPerRoomIdFromMemory(roomId)
     fun insertMessage(roomId: String, messageRequest: ChatRoomMessageRequest) =
-        chatRoomMessagesRepository.insertMessage(roomId, messageRequest)
+        chatRoomMessagesRepository.insertMessageToMemory(roomId, messageRequest)
 }

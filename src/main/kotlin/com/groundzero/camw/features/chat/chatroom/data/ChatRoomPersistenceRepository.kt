@@ -3,7 +3,8 @@ package com.groundzero.camw.features.chat.chatroom.data
 import com.groundzero.camw.features.chat.chatroom.network.ChatRoomMessageResponse
 
 interface ChatRoomPersistenceRepository {
-    fun retrieveAllMessagesFromJsonStorage(): Map<String, List<ChatRoomMessageResponse>>
-    fun retrieveAllMessagesFromMemory(): Map<String, List<ChatRoomMessageResponse>>
-    fun setMessagesFromJsonStorageToMemory(roomMessagesMap: Map<String, List<ChatRoomMessageResponse>>)
+    suspend fun retrieveMessagesFromPersistentStorage(): Map<String, List<ChatRoomMessageResponse>>
+    fun insertMessagesToPersistentStorage(messages: Map<String, List<ChatRoomMessageResponse>>)
+    fun retrieveMessagesFromMemory(): Map<String, List<ChatRoomMessageResponse>>
+    fun insertMessagesToMemory(roomMessagesMap: Map<String, List<ChatRoomMessageResponse>>)
 }
