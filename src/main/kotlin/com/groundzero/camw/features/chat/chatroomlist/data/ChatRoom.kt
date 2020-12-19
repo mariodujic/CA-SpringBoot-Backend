@@ -7,5 +7,6 @@ data class ChatRoom(
         val title: String? = null,
         val subtitle: String? = null,
         val image: String? = null,
-        val available: Boolean? = null
+        val available: Boolean? = null,
+        val sortIndex: Int? = null
 ): NetworkModel
