@@ -15,11 +15,11 @@ class ChatRoomRepository(
 ) : ChatRoomPersistenceRepository, ChatRoomMessagesRepository {
 
     override fun insertMessageToMemory(roomId: String, request: ChatRoomMessageRequest) = chatRoomMemoryStorageService.storeMessage(roomId, request)
-    override fun getMessagesPerRoomIdFromMemory(roomId: String) = chatRoomMemoryStorageService.getMessages(roomId)
+    override fun getMessagesPerRoomIdFromMemory(roomId: String) = chatRoomMemoryStorageService.getMessagesPerRoomId(roomId)
 
     override suspend fun retrieveMessagesFromPersistentStorage() = mapper.map(chatRoomPersistentStorageService.getMessagesFromPersistentStorage())
     override fun insertMessagesToPersistentStorage(messages: Map<String, List<ChatRoomMessageResponse>>) { chatRoomPersistentStorageService.writeMessagesToPersistentStorage(messages) }
     override fun retrieveMessagesFromMemory(): Map<String, List<ChatRoomMessageResponse>> = chatRoomMemoryStorageService.getAllMemoryMessages()
     override fun insertMessagesToMemory(roomMessagesMap: Map<String, List<ChatRoomMessageResponse>>) =
-        chatRoomMemoryStorageService.setJsonStorageMessages(roomMessagesMap)
+        chatRoomMemoryStorageService.setMessagesFromJsonStorage(roomMessagesMap)
 }

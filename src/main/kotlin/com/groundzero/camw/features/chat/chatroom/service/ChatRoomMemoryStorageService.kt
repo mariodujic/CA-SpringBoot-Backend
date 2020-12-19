@@ -6,35 +6,37 @@ import com.groundzero.camw.features.chat.chatroom.network.ChatRoomMessageRespons
 import org.springframework.stereotype.Service
 
 @Service
-class ChatRoomMemoryStorageService(private val mapper: Mapper<ChatRoomMessageRequest, ChatRoomMessageResponse>) {
+class ChatRoomMemoryStorageService(
+    private val mapper: Mapper<ChatRoomMessageRequest, ChatRoomMessageResponse>,
+    private val maxMessagesRestrictionService: ChatRoomMaxMessagesRestrictionService
+) {
 
     private var roomMessagesMap = mutableMapOf<String, List<ChatRoomMessageResponse>>()
 
     fun storeMessage(roomId: String, request: ChatRoomMessageRequest) {
-        val responseMessage = mapper.map(request)
 
+        val responseMessage = mapper.map(request)
         val messages: List<ChatRoomMessageResponse>
 
         if (!request.showMessage) {
             return
         }
-        messages = if (roomMessagesMap.containsKey(roomId)) {
-            roomMessagesMap[roomId]!!.toMutableList().apply { add(responseMessage) }
-        } else {
-            mutableListOf(responseMessage)
-        }
+
+        messages = roomMessagesMap[roomId]?.let {
+            maxMessagesRestrictionService(it).apply { add(responseMessage) }
+        } ?: mutableListOf(responseMessage)
 
         roomMessagesMap[roomId] = messages
     }
 
-    fun getMessages(roomId: String): List<ChatRoomMessageResponse> =
+    fun getMessagesPerRoomId(roomId: String): List<ChatRoomMessageResponse> =
         if (roomMessagesMap.containsKey(roomId)) {
             roomMessagesMap[roomId]!!
         } else
             mutableListOf()
 
     fun getAllMemoryMessages(): Map<String, List<ChatRoomMessageResponse>> = roomMessagesMap
-    fun setJsonStorageMessages(roomMessagesMap: Map<String, List<ChatRoomMessageResponse>>) {
+    fun setMessagesFromJsonStorage(roomMessagesMap: Map<String, List<ChatRoomMessageResponse>>) {
         this.roomMessagesMap.clear()
         this.roomMessagesMap.putAll(roomMessagesMap)
     }
