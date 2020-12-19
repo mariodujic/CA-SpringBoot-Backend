@@ -25,7 +25,7 @@ class ChatRoomPeriodicCacheService(private val chatRoomPersistenceRepository: Ch
     /**
      * Periodically persisting messages in case of server restart.
      */
-    fun storeMessagesFromMemoryToJsonFilePeriodically() {
+    fun storeMessagesFromMemoryToPersistentStoragePeriodically() {
         CoroutineScope(Dispatchers.IO).launch {
             while (true) {
                 delay(TIME_TILL_NEXT_CACHE_IN_MILLIS)
@@ -37,6 +37,6 @@ class ChatRoomPeriodicCacheService(private val chatRoomPersistenceRepository: Ch
     }
 
     companion object {
-        private const val TIME_TILL_NEXT_CACHE_IN_MILLIS = 15_000L
+        private const val TIME_TILL_NEXT_CACHE_IN_MILLIS = 300_000L // 5 min
     }
 }
