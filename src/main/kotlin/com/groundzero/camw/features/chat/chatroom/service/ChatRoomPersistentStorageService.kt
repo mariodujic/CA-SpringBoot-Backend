@@ -4,19 +4,19 @@ import com.google.firebase.database.DataSnapshot
 import com.groundzero.camw.core.service.RealtimeDatabaseService
 import com.groundzero.camw.features.chat.chatroom.network.ChatRoomMessageResponse
 import com.groundzero.camw.utils.getSnapshotValue
+import org.springframework.beans.factory.annotation.Value
 import org.springframework.stereotype.Service
 
 @Service
 class ChatRoomPersistentStorageService(private val realtimeDatabaseService: RealtimeDatabaseService) {
 
+    @Value("\${messages.database.collection.path}")
+    lateinit var collectionPath: String
+
     suspend fun getMessagesFromPersistentStorage(): DataSnapshot =
-        realtimeDatabaseService.getData(CACHED_MESSAGES_FILE_NAME).getSnapshotValue()
+        realtimeDatabaseService.getData(collectionPath).getSnapshotValue()
 
     fun writeMessagesToPersistentStorage(messages: Map<String, List<ChatRoomMessageResponse>>) {
-        realtimeDatabaseService.setData(CACHED_MESSAGES_FILE_NAME, messages).get()
-    }
-
-    companion object {
-        const val CACHED_MESSAGES_FILE_NAME = "chat-room-messages"
+        realtimeDatabaseService.setData(collectionPath, messages).get()
     }
 }
