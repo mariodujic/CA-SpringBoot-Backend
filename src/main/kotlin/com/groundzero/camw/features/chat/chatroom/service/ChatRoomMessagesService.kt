@@ -1,20 +1,12 @@
 package com.groundzero.camw.features.chat.chatroom.service
 
-import com.groundzero.camw.features.chat.chatroom.data.ChatRoomMessagesRepository
+import com.groundzero.camw.features.chat.chatroom.network.ChatRoomMessage
 import com.groundzero.camw.features.chat.chatroom.network.ChatRoomMessageRequest
-import org.springframework.stereotype.Service
 
-@Service
-class ChatRoomMessagesService(private val chatRoomMessagesRepository: ChatRoomMessagesRepository) {
+interface ChatRoomMessagesService {
 
-    fun insertMessage(roomId: String, messageRequest: ChatRoomMessageRequest) =
-        chatRoomMessagesRepository.insertMessage(roomId, messageRequest)
-
-    fun updateMessage(roomId: String, messageRequest: ChatRoomMessageRequest) =
-        chatRoomMessagesRepository.updateMessage(roomId, messageRequest)
-
-    fun deleteMessage(roomId: String, messageId: String) =
-        chatRoomMessagesRepository.deleteMessage(roomId, messageId)
-
-    fun getMessagesPerRoomId(roomId: String) = chatRoomMessagesRepository.getMessagesPerRoomIdFromMemory(roomId)
+    fun insertMessage(roomId: String, messageRequest: ChatRoomMessageRequest)
+    fun updateMessage(roomId: String, messageRequest: ChatRoomMessageRequest)
+    fun deleteMessage(roomId: String, messageId: String)
+    fun getMessagesPerRoomId(roomId: String): List<ChatRoomMessage>
 }

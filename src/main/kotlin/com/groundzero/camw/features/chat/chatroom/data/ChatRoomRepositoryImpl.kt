@@ -7,7 +7,7 @@ import com.groundzero.camw.features.chat.chatroom.service.ChatRoomPersistentStor
 import org.springframework.stereotype.Repository
 
 @Repository
-class ChatRoomRepository(
+class ChatRoomRepositoryImpl(
     private val chatRoomPersistentStorageService: ChatRoomPersistentStorageService,
     private val chatRoomMemoryStorageService: ChatRoomMemoryStorageService,
     private val mapper: DataSnapshotToListChatRoomMessagesResponse
