@@ -1,9 +1,9 @@
 package com.groundzero.camw.features.chat.chatroom.data
 
 import com.groundzero.camw.features.chat.chatroom.network.ChatRoomMessageRequest
-import com.groundzero.camw.features.chat.chatroom.network.ChatRoomMessageResponse
+import com.groundzero.camw.features.chat.chatroom.network.ChatRoomMessage
 
 interface ChatRoomMessagesRepository {
-    fun insertMessageToMemory(roomId: String, request: ChatRoomMessageRequest)
-    fun getMessagesPerRoomIdFromMemory(roomId: String): List<ChatRoomMessageResponse>
+    fun handleMessage(roomId: String, request: ChatRoomMessageRequest)
+    fun getMessagesPerRoomIdFromMemory(roomId: String): List<ChatRoomMessage>
 }

@@ -8,6 +8,6 @@ import org.springframework.stereotype.Service
 class ChatRoomMessagesService(private val chatRoomMessagesRepository: ChatRoomMessagesRepository) {
 
     fun getMessagesPerRoomId(roomId: String) = chatRoomMessagesRepository.getMessagesPerRoomIdFromMemory(roomId)
-    fun insertMessage(roomId: String, messageRequest: ChatRoomMessageRequest) =
-        chatRoomMessagesRepository.insertMessageToMemory(roomId, messageRequest)
+    fun handleMessage(roomId: String, messageRequest: ChatRoomMessageRequest) =
+        chatRoomMessagesRepository.handleMessage(roomId, messageRequest)
 }

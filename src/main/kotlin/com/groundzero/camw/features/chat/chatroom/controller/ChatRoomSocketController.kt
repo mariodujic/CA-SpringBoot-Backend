@@ -1,7 +1,7 @@
 package com.groundzero.camw.features.chat.chatroom.controller
 
 import com.groundzero.camw.features.chat.chatroom.network.ChatRoomMessageRequest
-import com.groundzero.camw.features.chat.chatroom.network.ChatRoomMessageResponse
+import com.groundzero.camw.features.chat.chatroom.network.ChatRoomMessage
 import com.groundzero.camw.features.chat.chatroom.service.ChatRoomMessagesService
 import org.springframework.messaging.handler.annotation.DestinationVariable
 import org.springframework.messaging.handler.annotation.MessageMapping
@@ -16,8 +16,8 @@ class ChatRoomSocketController(private val chatRoomService: ChatRoomMessagesServ
     fun echoRoomMessage(
         @DestinationVariable(value = "itemId") roomId: String,
         messageRequest: ChatRoomMessageRequest
-    ): List<ChatRoomMessageResponse> {
-        chatRoomService.insertMessage(roomId, messageRequest)
+    ): List<ChatRoomMessage> {
+        chatRoomService.handleMessage(roomId, messageRequest)
         return chatRoomService.getMessagesPerRoomId(roomId = roomId)
     }
 }
