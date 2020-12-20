@@ -13,8 +13,14 @@ class ChatRoomRepository(
     private val mapper: DataSnapshotToListChatRoomMessagesResponse
 ) : ChatRoomPersistenceRepository, ChatRoomMessagesRepository {
 
-    override fun handleMessage(roomId: String, request: ChatRoomMessageRequest) =
-        chatRoomMemoryStorageService.handleMessage(roomId, request)
+    override fun insertMessage(roomId: String, request: ChatRoomMessageRequest) =
+        chatRoomMemoryStorageService.insertMessage(roomId, request)
+
+    override fun updateMessage(roomId: String, request: ChatRoomMessageRequest) =
+        chatRoomMemoryStorageService.updateMessage(roomId, request)
+
+    override fun deleteMessage(roomId: String, messageId: String) =
+        chatRoomMemoryStorageService.deleteMessage(roomId, messageId)
 
     override fun getMessagesPerRoomIdFromMemory(roomId: String) =
         chatRoomMemoryStorageService.getMessagesPerRoomId(roomId)

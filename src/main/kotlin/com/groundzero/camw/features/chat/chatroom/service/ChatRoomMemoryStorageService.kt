@@ -2,7 +2,6 @@ package com.groundzero.camw.features.chat.chatroom.service
 
 import com.groundzero.camw.core.data.Mapper
 import com.groundzero.camw.features.chat.chatroom.data.ChatRoomMessages
-import com.groundzero.camw.features.chat.chatroom.mapper.ChatRoomMessageRequestToMessageType
 import com.groundzero.camw.features.chat.chatroom.network.ChatRoomMessage
 import com.groundzero.camw.features.chat.chatroom.network.ChatRoomMessageRequest
 import org.springframework.stereotype.Service
@@ -10,26 +9,15 @@ import org.springframework.stereotype.Service
 @Service
 class ChatRoomMemoryStorageService(
     private val mapper: Mapper<ChatRoomMessageRequest, ChatRoomMessage>,
-    private val maxMessagesRestrictionService: ChatRoomMaxMessagesRestrictionService,
-    private val messageRequestToMessageType: ChatRoomMessageRequestToMessageType,
+    private val maxMessagesRestrictionService: ChatRoomMaxMessagesRestrictionService
 ) {
 
     private var roomMessagesList = listOf<ChatRoomMessages>()
 
-    fun handleMessage(roomId: String, request: ChatRoomMessageRequest) {
+    fun insertMessage(roomId: String, request: ChatRoomMessageRequest) {
 
-        val messageType = messageRequestToMessageType.map(request)
         val responseMessage = mapper.map(request)
 
-        when (messageType) {
-            ChatRoomMessageRequest.MessageType.INITIAL -> return
-            ChatRoomMessageRequest.MessageType.WRITE -> addMessageOrCreateRoom(roomId, responseMessage)
-            ChatRoomMessageRequest.MessageType.UPDATE -> updateMessage(roomId, responseMessage)
-            ChatRoomMessageRequest.MessageType.DELETE -> deleteMessage(roomId, responseMessage)
-        }
-    }
-
-    private fun addMessageOrCreateRoom(roomId: String, responseMessage: ChatRoomMessage) {
         roomMessagesList = if (roomMessagesList.hasRoom(roomId)) {
             roomMessagesList.map {
                 if (it.roomId == roomId) {
@@ -42,12 +30,12 @@ class ChatRoomMemoryStorageService(
         }
     }
 
-    private fun updateMessage(roomId: String, updatedMessage: ChatRoomMessage) {
+    fun updateMessage(roomId: String, request: ChatRoomMessageRequest) {
         roomMessagesList = roomMessagesList.map {
             if (it.roomId == roomId) {
-                val updatedMessages = it.roomMessages.map {message->
-                    if (message.messageId == updatedMessage.messageId) {
-                        updatedMessage
+                val updatedMessages = it.roomMessages.map { message ->
+                    if (message.messageId == request.messageId) {
+                        mapper.map(request)
                     } else message
                 }
                 ChatRoomMessages(roomId, updatedMessages)
@@ -55,11 +43,11 @@ class ChatRoomMemoryStorageService(
         }
     }
 
-    private fun deleteMessage(roomId: String, responseMessage: ChatRoomMessage) {
+    fun deleteMessage(roomId: String, messageId: String) {
         roomMessagesList = roomMessagesList.map {
             if (it.roomId == roomId) {
                 val updatedMessages = it.roomMessages.toMutableList().apply {
-                    removeIf { message -> message.messageId == responseMessage.messageId }
+                    removeIf { message -> message.messageId == messageId }
                 }
                 ChatRoomMessages(roomId, updatedMessages)
             } else it

@@ -11,14 +11,14 @@ class CacheController(
     private val chatRoomPeriodicCacheService: ChatRoomPeriodicCacheService
 ) : CommandLineRunner {
 
-    override fun run(vararg args: String?) {
+    override fun run(vararg args: String?) {/*
         cacheService.updateQuizzes()
         cacheService.updatePrayers()
         cacheService.updateThoughts()
         cacheService.updateSaints()
         cacheService.updateInformation()
         cacheService.updateAdConfig()
-        cacheService.updateUserReports()
+        cacheService.updateUserReports()*/
         cacheService.updateChatRooms()
         /**
          * On server start, messages are retrieved from database json file and injected into memory for runtime usage.
