@@ -5,6 +5,8 @@ import com.groundzero.camw.core.base.BaseConfigRepository
 import com.groundzero.camw.core.network.NetworkResponse
 import com.groundzero.camw.features.adconfig.constants.AdConfigDataType
 import com.groundzero.camw.features.adconfig.data.AdConfig
+import com.groundzero.camw.utils.INVALID_REQUEST
+import com.groundzero.camw.utils.NO_DATA_AVAILABLE
 import com.groundzero.camw.utils.code
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
@@ -48,7 +50,7 @@ class BaseConfigControllerTest {
     @Test
     fun `should assert equals when getConfig is null`() {
         `when`(baseConfigRepository.getConfig(MOCK_DATA_TYPE)).thenReturn(null)
-        val expectedValue = mockErrorResponse()
+        val expectedValue = mockErrorResponse(NO_DATA_AVAILABLE)
         val actualValue = sut.getItemsResponse(MOCK_DATA_TYPE)
         assertEquals(expectedValue, actualValue)
     }
@@ -65,7 +67,7 @@ class BaseConfigControllerTest {
     @Test
     fun `should assert equals when addConfig is false`() {
         `when`(baseConfigRepository.addConfig(MOCK_DATA, MOCK_DATA_TYPE)).thenReturn(false)
-        val expectedValue = mockErrorResponse()
+        val expectedValue = mockErrorResponse(INVALID_REQUEST)
         val actualValue = sut.addItemResponse(MOCK_DATA, MOCK_DATA_TYPE)
         assertEquals(expectedValue, actualValue)
     }
@@ -74,6 +76,6 @@ class BaseConfigControllerTest {
         val MOCK_DATA_TYPE = AdConfigDataType.Croatian
         val MOCK_DATA = AdConfig()
         fun mockSuccessResponse(data: AdConfig) = NetworkResponse.Success(code(HttpStatus.OK), "Success", data)
-        fun mockErrorResponse() = NetworkResponse.Error(code(HttpStatus.NOT_FOUND), "Error")
+        fun mockErrorResponse(errorMessage: String) = NetworkResponse.Error(code(HttpStatus.NOT_FOUND), errorMessage)
     }
 }
