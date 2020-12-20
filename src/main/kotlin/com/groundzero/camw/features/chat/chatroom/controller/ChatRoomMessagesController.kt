@@ -9,7 +9,7 @@ import org.springframework.messaging.handler.annotation.SendTo
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
-class ChatRoomSocketController(private val chatRoomService: ChatRoomMessagesService) {
+class ChatRoomMessagesController(private val chatRoomService: ChatRoomMessagesService) {
 
     @MessageMapping("/insert/{itemId}")
     @SendTo("/room/{itemId}")
