@@ -2,13 +2,13 @@ package com.groundzero.camw.features.chat.chatroom.service
 
 import com.groundzero.camw.core.data.Mapper
 import com.groundzero.camw.features.chat.chatroom.data.ChatRoomMessages
-import com.groundzero.camw.features.chat.chatroom.network.ChatRoomMessage
+import com.groundzero.camw.features.chat.chatroom.network.ChatRoomMessageResponse
 import com.groundzero.camw.features.chat.chatroom.network.ChatRoomMessageRequest
 import org.springframework.stereotype.Service
 
 @Service
 class ChatRoomMemoryStorageServiceImpl(
-    private val mapper: Mapper<ChatRoomMessageRequest, ChatRoomMessage>,
+    private val mapper: Mapper<ChatRoomMessageRequest, ChatRoomMessageResponse>,
     private val maxMessagesRestrictionService: ChatRoomMaxMessagesRestrictionService
 ) : ChatRoomMemoryStorageService {
 
@@ -56,7 +56,7 @@ class ChatRoomMemoryStorageServiceImpl(
 
     private fun List<ChatRoomMessages>.hasRoom(roomId: String) = this.map { it.roomId }.contains(roomId)
 
-    override fun getMessagesPerRoomId(roomId: String): List<ChatRoomMessage> =
+    override fun getMessagesPerRoomId(roomId: String): List<ChatRoomMessageResponse> =
         roomMessagesList.findLast { it.roomId == roomId }?.roomMessages ?: mutableListOf()
 
     override fun getAllMemoryMessages(): List<ChatRoomMessages> = roomMessagesList

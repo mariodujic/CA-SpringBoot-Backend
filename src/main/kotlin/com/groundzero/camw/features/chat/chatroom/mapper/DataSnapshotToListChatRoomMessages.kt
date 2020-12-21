@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component
 import java.util.ArrayList
 
 @Component
-class DataSnapshotToListChatRoomMessagesResponse : Mapper<DataSnapshot, List<ChatRoomMessages>> {
+class DataSnapshotToListChatRoomMessages : Mapper<DataSnapshot, List<ChatRoomMessages>> {
 
     override fun map(data: DataSnapshot): List<ChatRoomMessages> {
         val type = object : GenericTypeIndicator<ArrayList<ChatRoomMessages>>() {}

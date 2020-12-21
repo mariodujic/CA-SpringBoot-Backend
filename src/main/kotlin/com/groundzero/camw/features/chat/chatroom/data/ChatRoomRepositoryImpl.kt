@@ -1,6 +1,6 @@
 package com.groundzero.camw.features.chat.chatroom.data
 
-import com.groundzero.camw.features.chat.chatroom.mapper.DataSnapshotToListChatRoomMessagesResponse
+import com.groundzero.camw.features.chat.chatroom.mapper.DataSnapshotToListChatRoomMessages
 import com.groundzero.camw.features.chat.chatroom.network.ChatRoomMessageRequest
 import com.groundzero.camw.features.chat.chatroom.service.ChatRoomMemoryStorageService
 import com.groundzero.camw.features.chat.chatroom.service.ChatRoomPersistentStorageService
@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository
 class ChatRoomRepositoryImpl(
     private val chatRoomPersistentStorageService: ChatRoomPersistentStorageService,
     private val chatRoomMemoryStorageService: ChatRoomMemoryStorageService,
-    private val mapper: DataSnapshotToListChatRoomMessagesResponse
+    private val mapper: DataSnapshotToListChatRoomMessages
 ) : ChatRoomPersistenceRepository, ChatRoomMessagesRepository {
 
     override fun insertMessage(roomId: String, request: ChatRoomMessageRequest) =

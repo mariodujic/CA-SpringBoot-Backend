@@ -1,6 +1,6 @@
 package com.groundzero.camw.features.chat.chatroom.controller
 
-import com.groundzero.camw.features.chat.chatroom.network.ChatRoomMessage
+import com.groundzero.camw.features.chat.chatroom.network.ChatRoomMessageResponse
 import com.groundzero.camw.features.chat.chatroom.network.ChatRoomMessageRequest
 import com.groundzero.camw.features.chat.chatroom.service.ChatRoomMessagesService
 import org.springframework.messaging.handler.annotation.DestinationVariable
@@ -16,7 +16,7 @@ class ChatRoomMessagesController(private val chatRoomService: ChatRoomMessagesSe
     fun insertRoomMessage(
         @DestinationVariable(value = "itemId") roomId: String,
         messageRequest: ChatRoomMessageRequest
-    ): List<ChatRoomMessage> {
+    ): List<ChatRoomMessageResponse> {
         chatRoomService.insertMessage(roomId, messageRequest)
         return chatRoomService.getMessagesPerRoomId(roomId = roomId)
     }
@@ -26,7 +26,7 @@ class ChatRoomMessagesController(private val chatRoomService: ChatRoomMessagesSe
     fun updateRoomMessage(
         @DestinationVariable(value = "itemId") roomId: String,
         messageRequest: ChatRoomMessageRequest
-    ): List<ChatRoomMessage> {
+    ): List<ChatRoomMessageResponse> {
         chatRoomService.updateMessage(roomId, messageRequest)
         return chatRoomService.getMessagesPerRoomId(roomId = roomId)
     }
@@ -36,7 +36,7 @@ class ChatRoomMessagesController(private val chatRoomService: ChatRoomMessagesSe
     fun removeRoomMessage(
         @DestinationVariable(value = "itemId") roomId: String,
         @DestinationVariable(value = "messageId") messageId: String
-    ): List<ChatRoomMessage> {
+    ): List<ChatRoomMessageResponse> {
         chatRoomService.deleteMessage(roomId, messageId)
         return chatRoomService.getMessagesPerRoomId(roomId = roomId)
     }
@@ -45,5 +45,5 @@ class ChatRoomMessagesController(private val chatRoomService: ChatRoomMessagesSe
     @SendTo("/room/{itemId}")
     fun sendRoomMessage(
         @DestinationVariable(value = "itemId") roomId: String,
-    ): List<ChatRoomMessage> = chatRoomService.getMessagesPerRoomId(roomId = roomId)
+    ): List<ChatRoomMessageResponse> = chatRoomService.getMessagesPerRoomId(roomId = roomId)
 }
