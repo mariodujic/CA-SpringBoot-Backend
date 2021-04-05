@@ -37,63 +37,77 @@ class CacheServiceImpl(
         updateDataFromFirestore<QuizCategory>(QUIZ_EN_COLLECTION)
         updateDataFromFirestore<QuizCategory>(QUIZ_HR_COLLECTION)
         updateDataFromFirestore<QuizCategory>(QUIZ_SK_COLLECTION)
+        updateDataFromFirestore<QuizCategory>(QUIZ_ES_COLLECTION)
         updateDataFromFirestore<QuizCategory>(QUIZ_EN_COLLECTION_STAGING)
         updateDataFromFirestore<QuizCategory>(QUIZ_HR_COLLECTION_STAGING)
         updateDataFromFirestore<QuizCategory>(QUIZ_SK_COLLECTION_STAGING)
+        updateDataFromFirestore<QuizCategory>(QUIZ_ES_COLLECTION_STAGING)
     }
 
     override fun updatePrayers() {
         updateDataFromFirestore<Prayer>(PRAYER_EN_COLLECTION)
         updateDataFromFirestore<Prayer>(PRAYER_HR_COLLECTION)
         updateDataFromFirestore<Prayer>(PRAYER_SK_COLLECTION)
+        updateDataFromFirestore<Prayer>(PRAYER_ES_COLLECTION)
         updateDataFromFirestore<Prayer>(PRAYER_EN_COLLECTION_STAGING)
         updateDataFromFirestore<Prayer>(PRAYER_HR_COLLECTION_STAGING)
         updateDataFromFirestore<Prayer>(PRAYER_SK_COLLECTION_STAGING)
+        updateDataFromFirestore<Prayer>(PRAYER_ES_COLLECTION_STAGING)
     }
 
     override fun updateThoughts() {
         updateDataFromFirestore<Thought>(THOUGHT_EN_COLLECTION)
         updateDataFromFirestore<Thought>(THOUGHT_HR_COLLECTION)
         updateDataFromFirestore<Thought>(THOUGHT_SK_COLLECTION)
+        updateDataFromFirestore<Thought>(THOUGHT_ES_COLLECTION)
         updateDataFromFirestore<Thought>(THOUGHT_EN_COLLECTION_STAGING)
         updateDataFromFirestore<Thought>(THOUGHT_HR_COLLECTION_STAGING)
         updateDataFromFirestore<Thought>(THOUGHT_SK_COLLECTION_STAGING)
+        updateDataFromFirestore<Thought>(THOUGHT_ES_COLLECTION_STAGING)
     }
 
     override fun updateSaints() {
         updateDataFromFirestore<Saint>(SAINTS_EN_COLLECTION)
         updateDataFromFirestore<Saint>(SAINTS_HR_COLLECTION)
         updateDataFromFirestore<Saint>(SAINTS_SK_COLLECTION)
+        updateDataFromFirestore<Saint>(SAINTS_ES_COLLECTION)
         updateDataFromFirestore<Saint>(SAINTS_EN_COLLECTION_STAGING)
         updateDataFromFirestore<Saint>(SAINTS_HR_COLLECTION_STAGING)
         updateDataFromFirestore<Saint>(SAINTS_SK_COLLECTION_STAGING)
+        updateDataFromFirestore<Saint>(SAINTS_ES_COLLECTION_STAGING)
     }
 
     override fun updateInformation() {
         updateDataFromRealtimeDatabase<InformationBlock>(INFORMATION_EN_COLLECTION)
         updateDataFromRealtimeDatabase<InformationBlock>(INFORMATION_HR_COLLECTION)
         updateDataFromRealtimeDatabase<InformationBlock>(INFORMATION_SK_COLLECTION)
+        updateDataFromRealtimeDatabase<InformationBlock>(INFORMATION_ES_COLLECTION)
         updateDataFromRealtimeDatabase<InformationBlock>(INFORMATION_EN_COLLECTION_STAGING)
         updateDataFromRealtimeDatabase<InformationBlock>(INFORMATION_HR_COLLECTION_STAGING)
         updateDataFromRealtimeDatabase<InformationBlock>(INFORMATION_SK_COLLECTION_STAGING)
+        updateDataFromRealtimeDatabase<InformationBlock>(INFORMATION_ES_COLLECTION_STAGING)
     }
 
     override fun updateAdConfig() {
         updateDataFromRealtimeDatabase<AdConfig>(AD_CONFIG_EN_COLLECTION)
         updateDataFromRealtimeDatabase<AdConfig>(AD_CONFIG_HR_COLLECTION)
         updateDataFromRealtimeDatabase<AdConfig>(AD_CONFIG_SK_COLLECTION)
+        updateDataFromRealtimeDatabase<AdConfig>(AD_CONFIG_ES_COLLECTION)
         updateDataFromRealtimeDatabase<AdConfig>(AD_CONFIG_EN_COLLECTION_STAGING)
         updateDataFromRealtimeDatabase<AdConfig>(AD_CONFIG_HR_COLLECTION_STAGING)
         updateDataFromRealtimeDatabase<AdConfig>(AD_CONFIG_SK_COLLECTION_STAGING)
+        updateDataFromRealtimeDatabase<AdConfig>(AD_CONFIG_ES_COLLECTION_STAGING)
     }
 
     override fun updateUserReports() {
         updateDataFromFirestore<UserReport>(USER_REPORT_EN_COLLECTION)
         updateDataFromFirestore<UserReport>(USER_REPORT_HR_COLLECTION)
         updateDataFromFirestore<UserReport>(USER_REPORT_SK_COLLECTION)
+        updateDataFromFirestore<UserReport>(USER_REPORT_ES_COLLECTION)
         updateDataFromFirestore<UserReport>(USER_REPORT_EN_COLLECTION_STAGING)
         updateDataFromFirestore<UserReport>(USER_REPORT_HR_COLLECTION_STAGING)
         updateDataFromFirestore<UserReport>(USER_REPORT_SK_COLLECTION_STAGING)
+        updateDataFromFirestore<UserReport>(USER_REPORT_ES_COLLECTION_STAGING)
     }
 
 
@@ -101,9 +115,11 @@ class CacheServiceImpl(
         updateDataFromFirestore<ChatRoom>(CHAT_ROOM_EN_COLLECTION)
         updateDataFromFirestore<ChatRoom>(CHAT_ROOM_HR_COLLECTION)
         updateDataFromFirestore<ChatRoom>(CHAT_ROOM_SK_COLLECTION)
+        updateDataFromFirestore<ChatRoom>(CHAT_ROOM_ES_COLLECTION)
         updateDataFromFirestore<ChatRoom>(CHAT_ROOM_EN_COLLECTION_STAGING)
         updateDataFromFirestore<ChatRoom>(CHAT_ROOM_HR_COLLECTION_STAGING)
         updateDataFromFirestore<ChatRoom>(CHAT_ROOM_SK_COLLECTION_STAGING)
+        updateDataFromFirestore<ChatRoom>(CHAT_ROOM_ES_COLLECTION_STAGING)
     }
 
     private inline fun <reified T> updateDataFromFirestore(collectionKey: String) {
