@@ -9,4 +9,6 @@ sealed class SaintsDataType {
     object CroatianStaging : DataType.CroatianStaging(SAINTS_HR_COLLECTION_STAGING)
     object Slovak : DataType.Slovak(SAINTS_SK_COLLECTION)
     object SlovakStaging : DataType.SlovakStaging(SAINTS_SK_COLLECTION_STAGING)
+    object Spanish : DataType.Spanish(SAINTS_ES_COLLECTION)
+    object SpanishStaging : DataType.SpanishStaging(SAINTS_ES_COLLECTION_STAGING)
 }

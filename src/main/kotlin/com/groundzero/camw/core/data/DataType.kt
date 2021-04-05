@@ -7,4 +7,6 @@ sealed class DataType(val path: String) {
     open class CroatianStaging(path: String) : DataType(path)
     open class Slovak(path: String) : DataType(path)
     open class SlovakStaging(path: String) : DataType(path)
+    open class Spanish(path: String) : DataType(path)
+    open class SpanishStaging(path: String) : DataType(path)
 }

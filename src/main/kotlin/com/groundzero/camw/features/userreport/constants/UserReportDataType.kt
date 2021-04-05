@@ -9,4 +9,6 @@ sealed class UserReportDataType {
     object CroatianStaging : DataType.CroatianStaging(USER_REPORT_HR_COLLECTION_STAGING)
     object Slovak : DataType.Slovak(USER_REPORT_SK_COLLECTION)
     object SlovakStaging : DataType.SlovakStaging(USER_REPORT_SK_COLLECTION_STAGING)
+    object Spanish : DataType.Spanish(USER_REPORT_ES_COLLECTION)
+    object SpanishStaging : DataType.SpanishStaging(USER_REPORT_ES_COLLECTION_STAGING)
 }

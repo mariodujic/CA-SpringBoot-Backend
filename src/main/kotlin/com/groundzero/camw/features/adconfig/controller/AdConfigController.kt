@@ -28,6 +28,12 @@ class AdConfigController(repository: BaseConfigRepository<AdConfig>) : BaseConfi
     @GetMapping("/sk-staging")
     fun getAdConfigsSlovakStaging() = getItemsResponse(AdConfigDataType.SlovakStaging)
 
+    @GetMapping("/es")
+    fun getAdConfigsSpanish() = getItemsResponse(AdConfigDataType.Spanish)
+
+    @GetMapping("/es-staging")
+    fun getAdConfigsSpanishStaging() = getItemsResponse(AdConfigDataType.SpanishStaging)
+
     @PostMapping("/en")
     fun addAdConfigEnglish(@RequestBody adConfig: AdConfig) = addItemResponse(adConfig, AdConfigDataType.English)
 
@@ -45,4 +51,10 @@ class AdConfigController(repository: BaseConfigRepository<AdConfig>) : BaseConfi
 
     @PostMapping("/sk-staging")
     fun addAdConfigsSlovakStaging(@RequestBody adConfig: AdConfig) = addItemResponse(adConfig, AdConfigDataType.SlovakStaging)
+
+    @PostMapping("/es")
+    fun addAdConfigsSpanish(@RequestBody adConfig: AdConfig) = addItemResponse(adConfig, AdConfigDataType.Spanish)
+
+    @PostMapping("/es-staging")
+    fun addAdConfigsSpanishStaging(@RequestBody adConfig: AdConfig) = addItemResponse(adConfig, AdConfigDataType.SpanishStaging)
 }

@@ -10,4 +10,6 @@ sealed class InformationBlockDataType {
     object CroatianStaging : DataType.CroatianStaging(INFORMATION_HR_COLLECTION_STAGING)
     object Slovak : DataType.Slovak(INFORMATION_SK_COLLECTION)
     object SlovakStaging : DataType.SlovakStaging(INFORMATION_SK_COLLECTION_STAGING)
+    object Spanish : DataType.Spanish(INFORMATION_ES_COLLECTION)
+    object SpanishStaging : DataType.SpanishStaging(INFORMATION_ES_COLLECTION_STAGING)
 }

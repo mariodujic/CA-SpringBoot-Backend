@@ -9,4 +9,6 @@ sealed class AdConfigDataType {
     object CroatianStaging : DataType.CroatianStaging(AD_CONFIG_HR_COLLECTION_STAGING)
     object Slovak : DataType.Slovak(AD_CONFIG_SK_COLLECTION)
     object SlovakStaging : DataType.SlovakStaging(AD_CONFIG_SK_COLLECTION_STAGING)
+    object Spanish : DataType.Spanish(AD_CONFIG_ES_COLLECTION)
+    object SpanishStaging : DataType.SpanishStaging(AD_CONFIG_ES_COLLECTION_STAGING)
 }

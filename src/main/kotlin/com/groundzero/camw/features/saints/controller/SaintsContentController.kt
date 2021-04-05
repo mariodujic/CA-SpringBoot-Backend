@@ -32,6 +32,12 @@ class SaintsContentController(
     @GetMapping("/sk-staging")
     fun getSaintsSlovakStaging() = getItemsResponse(SaintsDataType.SlovakStaging)
 
+    @GetMapping("/es")
+    fun getSaintsSpanish() = getItemsResponse(SaintsDataType.Spanish)
+
+    @GetMapping("/es-staging")
+    fun getSaintsSpanishStaging() = getItemsResponse(SaintsDataType.SpanishStaging)
+
     @DeleteMapping("/en")
     fun removeSaintsEnglish(@RequestBody saint: Saint) = removeItemResponse(saint, SaintsDataType.English)
 
@@ -50,6 +56,12 @@ class SaintsContentController(
     @DeleteMapping("/sk-staging")
     fun removeSaintsSlovakStaging(@RequestBody saint: Saint) = removeItemResponse(saint, SaintsDataType.SlovakStaging)
 
+    @DeleteMapping("/es")
+    fun removeSaintsSpanish(@RequestBody saint: Saint) = removeItemResponse(saint, SaintsDataType.Spanish)
+
+    @DeleteMapping("/es-staging")
+    fun removeSaintsSpanishStaging(@RequestBody saint: Saint) = removeItemResponse(saint, SaintsDataType.SpanishStaging)
+
     @PostMapping("/en")
     fun addSaintsEnglish(@RequestBody saint: Saint) = addItemResponse(saint, SaintsDataType.English)
 
@@ -67,4 +79,10 @@ class SaintsContentController(
 
     @PostMapping("/sk-staging")
     fun addSaintsSlovakStaging(@RequestBody saint: Saint) = addItemResponse(saint, SaintsDataType.SlovakStaging)
+
+    @PostMapping("/es")
+    fun addSaintsSpanish(@RequestBody saint: Saint) = addItemResponse(saint, SaintsDataType.Spanish)
+
+    @PostMapping("/ses-staging")
+    fun addSaintsSpanishStaging(@RequestBody saint: Saint) = addItemResponse(saint, SaintsDataType.SpanishStaging)
 }

@@ -34,6 +34,12 @@ class MessagingController(private val messagingService: MessagingService) {
     @PostMapping("/sk-notifications-staging")
     fun sendSlovakStagingMessage(@RequestBody notificationRequest: NotificationRequest): NetworkResponse = sendMessage(notificationRequest, ThoughtDataType.SlovakStaging)
 
+    @PostMapping("/es-notifications")
+    fun sendSpanishMessage(@RequestBody notificationRequest: NotificationRequest): NetworkResponse = sendMessage(notificationRequest, ThoughtDataType.Spanish)
+
+    @PostMapping("/es-notifications-staging")
+    fun sendSpanishStagingMessage(@RequestBody notificationRequest: NotificationRequest): NetworkResponse = sendMessage(notificationRequest, ThoughtDataType.SpanishStaging)
+
     private fun sendMessage(notificationRequest: NotificationRequest, dataType: DataType): NetworkResponse {
         messagingService.sendMessage(notificationRequest, dataType)
         return NetworkResponse.Success<Nothing>(code(HttpStatus.OK), "Message sent successfully")

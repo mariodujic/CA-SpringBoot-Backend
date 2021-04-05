@@ -9,4 +9,6 @@ sealed class PrayerDataType {
     object CroatianStaging : DataType.CroatianStaging(PRAYER_HR_COLLECTION_STAGING)
     object Slovak : DataType.Slovak(PRAYER_SK_COLLECTION)
     object SlovakStaging : DataType.SlovakStaging(PRAYER_SK_COLLECTION_STAGING)
+    object Spanish : DataType.Spanish(PRAYER_SK_COLLECTION)
+    object SpanishStaging : DataType.SpanishStaging(PRAYER_SK_COLLECTION_STAGING)
 }

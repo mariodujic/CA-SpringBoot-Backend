@@ -21,16 +21,22 @@ class ChatRoomListController(
     fun getChatRoomsEnglishStaging() = getItemsResponse(ChatRoomDataType.EnglishStaging)
 
     @GetMapping("/hr")
-    fun getChatRoomssCroatian() = getItemsResponse(ChatRoomDataType.Croatian)
+    fun getChatRoomsCroatian() = getItemsResponse(ChatRoomDataType.Croatian)
 
     @GetMapping("/hr-staging")
-    fun getChatRoomssCroatianStaging() = getItemsResponse(ChatRoomDataType.CroatianStaging)
+    fun getChatRoomsCroatianStaging() = getItemsResponse(ChatRoomDataType.CroatianStaging)
 
     @GetMapping("/sk")
-    fun getChatRoomssSlovak() = getItemsResponse(ChatRoomDataType.Slovak)
+    fun getChatRoomsSlovak() = getItemsResponse(ChatRoomDataType.Slovak)
 
     @GetMapping("/sk-staging")
-    fun getChatRoomssSlovakStaging() = getItemsResponse(ChatRoomDataType.SlovakStaging)
+    fun getChatRoomsSlovakStaging() = getItemsResponse(ChatRoomDataType.SlovakStaging)
+
+    @GetMapping("/es")
+    fun getChatRoomsSpanish() = getItemsResponse(ChatRoomDataType.Spanish)
+
+    @GetMapping("/es-staging")
+    fun getChatRoomsSpanishStaging() = getItemsResponse(ChatRoomDataType.SpanishStaging)
 
     @PostMapping("/en")
     fun postChatRoomEnglish(@RequestBody chatRoom: ChatRoom) = addItemResponse(chatRoom, ChatRoomDataType.English)
@@ -49,4 +55,10 @@ class ChatRoomListController(
 
     @PostMapping("/sk-staging")
     fun postChatRoomSlovakStaging(@RequestBody chatRoom: ChatRoom) = addItemResponse(chatRoom, ChatRoomDataType.SlovakStaging)
+
+    @PostMapping("/es")
+    fun postChatRoomSpanish(@RequestBody chatRoom: ChatRoom) = addItemResponse(chatRoom, ChatRoomDataType.Spanish)
+
+    @PostMapping("/es-staging")
+    fun postChatRoomSpanishStaging(@RequestBody chatRoom: ChatRoom) = addItemResponse(chatRoom, ChatRoomDataType.SpanishStaging)
 }

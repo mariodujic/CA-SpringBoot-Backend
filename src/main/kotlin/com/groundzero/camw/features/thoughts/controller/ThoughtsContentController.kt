@@ -32,6 +32,12 @@ class ThoughtsContentController(
     @GetMapping("/sk-staging")
     fun getThoughtsSlovakStaging() = getItemsResponse(ThoughtDataType.SlovakStaging)
 
+    @GetMapping("/es")
+    fun getThoughtsSpanish() = getItemsResponse(ThoughtDataType.Spanish)
+
+    @GetMapping("/es-staging")
+    fun getThoughtsSpanishStaging() = getItemsResponse(ThoughtDataType.SpanishStaging)
+
     @DeleteMapping("/en")
     fun removeThoughtEnglish(@RequestBody thought: Thought) = removeItemResponse(thought, ThoughtDataType.English)
 
@@ -50,6 +56,12 @@ class ThoughtsContentController(
     @DeleteMapping("/sk-staging")
     fun removeThoughtSlovakStaging(@RequestBody thought: Thought) = removeItemResponse(thought, ThoughtDataType.SlovakStaging)
 
+    @DeleteMapping("/es")
+    fun removeThoughtSpanish(@RequestBody thought: Thought) = removeItemResponse(thought, ThoughtDataType.Spanish)
+
+    @DeleteMapping("/es-staging")
+    fun removeThoughtSpanishStaging(@RequestBody thought: Thought) = removeItemResponse(thought, ThoughtDataType.SpanishStaging)
+
     @PostMapping("/en")
     fun addThoughtEnglish(@RequestBody thought: Thought) = addItemResponse(thought, ThoughtDataType.English)
 
@@ -67,4 +79,10 @@ class ThoughtsContentController(
 
     @PostMapping("/sk-staging")
     fun addThoughtSlovakStaging(@RequestBody thought: Thought) = addItemResponse(thought, ThoughtDataType.SlovakStaging)
+
+    @PostMapping("/es")
+    fun addThoughtSpanish(@RequestBody thought: Thought) = addItemResponse(thought, ThoughtDataType.Spanish)
+
+    @PostMapping("/es-staging")
+    fun addThoughtSpanishStaging(@RequestBody thought: Thought) = addItemResponse(thought, ThoughtDataType.SpanishStaging)
 }

@@ -9,4 +9,6 @@ sealed class ChatRoomDataType {
     object CroatianStaging : DataType.CroatianStaging(CHAT_ROOM_HR_COLLECTION_STAGING)
     object Slovak : DataType.Slovak(CHAT_ROOM_SK_COLLECTION)
     object SlovakStaging : DataType.SlovakStaging(CHAT_ROOM_SK_COLLECTION_STAGING)
+    object Spanish : DataType.Spanish(CHAT_ROOM_ES_COLLECTION)
+    object SpanishStaging : DataType.SpanishStaging(CHAT_ROOM_ES_COLLECTION_STAGING)
 }
