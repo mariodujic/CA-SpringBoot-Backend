@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component
 class ThoughtsContentRepository(private val readJson: ReadJsonService, private val writeJson: WriteJsonService, private val mapper: ItemMapper<Thought>) : BaseContentRepository<Thought> {
 
     override fun getItems(dataType: DataType): List<Thought>? =
-            validateDataPathAndStartAction(dataType, readJson.readList(dataType.path))
+            validateDataPathAndStartAction<List<Thought>?>(dataType, readJson.readList(dataType.path))?.sortedByDescending { it.date }
 
     override fun addItem(thought: Thought, dataType: DataType) =
             validateDataPathAndStartAction(dataType, writeJson.writeList(dataType.path, mapper.addItem(thought, getItems(dataType))))

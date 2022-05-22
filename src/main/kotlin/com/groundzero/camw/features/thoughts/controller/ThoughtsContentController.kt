@@ -3,6 +3,7 @@ package com.groundzero.camw.features.thoughts.controller
 import com.groundzero.camw.core.base.BaseContentController
 import com.groundzero.camw.core.base.BaseContentRepository
 import com.groundzero.camw.core.base.BaseContentValidator
+import com.groundzero.camw.core.network.NetworkResponse
 import com.groundzero.camw.features.thoughts.constants.ThoughtDataType
 import com.groundzero.camw.features.thoughts.data.Thought
 import org.springframework.web.bind.annotation.*
@@ -15,28 +16,68 @@ class ThoughtsContentController(
 ) : BaseContentController<Thought>(contentRepository, contentValidator) {
 
     @GetMapping("/en")
-    fun getThoughtsEnglish() = getItemsResponse(ThoughtDataType.English)
+    fun getThoughtsEnglish(
+        @RequestParam page: Int? = null,
+        @RequestParam size: Int? = null
+    ): NetworkResponse {
+        return getItemsResponse(ThoughtDataType.English, page, size)
+    }
 
     @GetMapping("/en-staging")
-    fun getThoughtsEnglishStaging() = getItemsResponse(ThoughtDataType.EnglishStaging)
+    fun getThoughtsEnglishStaging(
+        @RequestParam page: Int? = null,
+        @RequestParam size: Int? = null
+    ): NetworkResponse {
+        return getItemsResponse(ThoughtDataType.EnglishStaging, page, size)
+    }
 
     @GetMapping("/hr")
-    fun getThoughtsCroatian() = getItemsResponse(ThoughtDataType.Croatian)
+    fun getThoughtsCroatian(
+        @RequestParam page: Int? = null,
+        @RequestParam size: Int? = null
+    ): NetworkResponse {
+        return getItemsResponse(ThoughtDataType.Croatian, page, size)
+    }
 
     @GetMapping("/hr-staging")
-    fun getThoughtsCroatianStaging() = getItemsResponse(ThoughtDataType.CroatianStaging)
+    fun getThoughtsCroatianStaging(
+        @RequestParam page: Int? = null,
+        @RequestParam size: Int? = null
+    ): NetworkResponse {
+        return getItemsResponse(ThoughtDataType.CroatianStaging, page, size)
+    }
 
     @GetMapping("/sk")
-    fun getThoughtsSlovak() = getItemsResponse(ThoughtDataType.Slovak)
+    fun getThoughtsSlovak(
+        @RequestParam page: Int? = null,
+        @RequestParam size: Int? = null
+    ): NetworkResponse {
+        return getItemsResponse(ThoughtDataType.Slovak, page, size)
+    }
 
     @GetMapping("/sk-staging")
-    fun getThoughtsSlovakStaging() = getItemsResponse(ThoughtDataType.SlovakStaging)
+    fun getThoughtsSlovakStaging(
+        @RequestParam page: Int? = null,
+        @RequestParam size: Int? = null
+    ): NetworkResponse {
+        return getItemsResponse(ThoughtDataType.SlovakStaging, page, size)
+    }
 
     @GetMapping("/es")
-    fun getThoughtsSpanish() = getItemsResponse(ThoughtDataType.Spanish)
+    fun getThoughtsSpanish(
+        @RequestParam page: Int? = null,
+        @RequestParam size: Int? = null
+    ): NetworkResponse {
+        return getItemsResponse(ThoughtDataType.Spanish, page, size)
+    }
 
     @GetMapping("/es-staging")
-    fun getThoughtsSpanishStaging() = getItemsResponse(ThoughtDataType.SpanishStaging)
+    fun getThoughtsSpanishStaging(
+        @RequestParam page: Int? = null,
+        @RequestParam size: Int? = null
+    ): NetworkResponse {
+        return getItemsResponse(ThoughtDataType.SpanishStaging, page, size)
+    }
 
     @DeleteMapping("/en")
     fun removeThoughtEnglish(@RequestBody thought: Thought) = removeItemResponse(thought, ThoughtDataType.English)

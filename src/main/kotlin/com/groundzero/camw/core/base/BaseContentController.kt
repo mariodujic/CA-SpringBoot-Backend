@@ -13,10 +13,19 @@ open class BaseContentController<T : NetworkModel>(
         private val baseContentValidator: BaseContentValidator
 ) {
 
-    fun getItemsResponse(type: DataType): NetworkResponse {
+    fun getItemsResponse(
+        type: DataType,
+        page: Int? = null,
+        size: Int? = null
+    ): NetworkResponse {
         baseContentRepository.getItems(type)?.let {
             return if (baseContentValidator.hasItems(it)) {
-                NetworkResponse.Success(code(HttpStatus.OK), "Success", it)
+                val data = if (page != null && size != null) {
+                    it.chunked(size).getOrElse(page) { emptyList() }
+                } else {
+                    it
+                }
+                NetworkResponse.Success(code(HttpStatus.OK), "Success", data)
             } else {
                 NetworkResponse.Error(code(HttpStatus.NOT_FOUND), NO_DATA_AVAILABLE)
             }
