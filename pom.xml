@@ -15,8 +15,8 @@
     <description>Demo project for Spring Boot</description>
 
     <properties>
-        <java.version>14</java.version>
-        <kotlin.version>1.4.0</kotlin.version>
+        <java.version>15</java.version>
+        <kotlin.version>1.5.0</kotlin.version>
     </properties>
 
     <dependencies>
